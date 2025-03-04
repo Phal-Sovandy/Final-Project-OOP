@@ -1,2 +1,1 @@
-print("Hello Day Zero")
-print("Testing Git Collaboration")
+from utils import *
