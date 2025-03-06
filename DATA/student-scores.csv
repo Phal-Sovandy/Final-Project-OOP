@@ -1,4 +1,4 @@
-id,first_name,last_name,gender,drop_out,grade,age,career_aspiration,math_score,history_score,physics_score,chemistry_score,biology_score,english_score,geography_score
+id,first_name,last_name,gender,drop_out,absences,age,class,math_score,history_score,physics_score,chemistry_score,biology_score,english_score,geography_score
 1,Paul,Casey,male,FALSE,3,27,Lawyer,73,81,93,97,63,80,87
 2,Danielle,Sandoval,female,FALSE,2,47,Doctor,90,86,96,100,90,88,90
 3,Tina,Andrews,female,FALSE,9,13,Government Officer,81,97,95,96,65,77,94
