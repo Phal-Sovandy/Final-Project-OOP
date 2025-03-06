@@ -1,3 +1,6 @@
+-- 
+Introduction
+--
 The Student Grade Analyzer is a Python application designed to improve grade management and performance analysis in educational environments.This tool uses object-oriented programming to provide educators with a
 comprehensive solution for tracking student academic achievement. 
 
@@ -9,3 +12,24 @@ and choosing the best teaching strategies.
 
 The Student Grade Analyzer addresses a real requirement in educational and administration while showcasing the practical application of programming ideas through the implementation
 of fundamental OOP concepts.
+
+-- 
+Functionality
+--
+I. Manage Students
+  1. Show All Students
+  2. Add Student
+  3. Remove Student
+  4. Modify Student
+  5. Find Student by ID
+  6. Count Dropout Student
+II. Analyze Student's Perfromance
+  1. Find Average Score of Student
+  2. Find Average Score of Students in a Class
+  3. Find Average Score of Students in a School
+  4. Identify Outstanding and Low Performing Students
+III. Visual Data
+  1. Show Whisker Plot of Scores in Each Class
+  2. Show Pie Chart of Gender Distribution
+  3. Show Dot Plot of Student Ages
+  4. Show Subject Average Scores
