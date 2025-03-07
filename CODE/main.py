@@ -1,5 +1,5 @@
 from utils import *
-
+print("Ah poy chheav")
 def main_menu():
     while True:
         print("\n===== Student Grade Analyzer =====")
