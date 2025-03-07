@@ -163,7 +163,7 @@ class School(GroupStudent):
         """Mark a student as dropped out"""
         student = self.find_student(student_id)
         if student:
-            student.__drop_out = True
+            student.score = True
 
     def modify_student(self, student_id: int, **kwargs):
         """Modify a student's details"""
