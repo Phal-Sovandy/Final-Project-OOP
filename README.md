@@ -1,4 +1,4 @@
-#Student Grade Analyzer
+# Student Grade Analyzer
 Analyze student grade performance and informations.
 
 ## Table of Contents
@@ -18,7 +18,7 @@ This application's reporting capabilities is a crucial component that uses stati
 The Student Grade Analyzer addresses a real requirement in educational and administration while showcasing the practical application of programming ideas through the implementation of fundamental OOP concepts.
 
 ## Functionality
-###I. Manage Students
+### I. Manage Students
   1. Show All Students
   2. Add Student
   3. Remove Student
@@ -26,13 +26,13 @@ The Student Grade Analyzer addresses a real requirement in educational and admin
   5. Find Student by ID
   6. Count Dropout Student
 
-###II. Analyze Student's Perfromance
+### II. Analyze Student's Perfromance
   1. Find Average Score of Student
   2. Find Average Score of Students in a Class
   3. Find Average Score of Students in a School
   4. Identify Outstanding and Low Performing Students
 
-###III. Visual Data
+### III. Visual Data
   1. Show Whisker Plot of Scores in Each Class
   2. Show Pie Chart of Gender Distribution
   3. Show Dot Plot of Student Ages
