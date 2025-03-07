@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+#===========Student===========
 class Student:
     """Represents a single student"""
 
@@ -29,44 +30,93 @@ class Student:
 
     @property
     def student_id(self):
-        """Return student's ID"""
-        pass
+        return self.__student_id
 
     @property
     def full_name(self):
-        """Return full name of the student"""
-        pass
+        return f"{self.__first_name} {self.__last_name}"
+
+    @property
+    def first_name(self):
+        return self.__first_name
+
+    @first_name.setter
+    def first_name(self, value):
+        self.__first_name = value
+
+    @property
+    def last_name(self):
+        return self.__last_name
+
+    @last_name.setter
+    def last_name(self, value):
+        self.__last_name = value
+
+    @property
+    def gender(self):
+        return self.__gender
+
+    @gender.setter
+    def gender(self, value):
+        self.__gender = value
 
     @property
     def age(self):
-        """Return student's age"""
-        pass
+        return self.__age
+
+    @age.setter
+    def age(self, value):
+        self.__age = value
 
     @property
     def is_dropout(self):
-        """Return True if the student is a dropout, otherwise False"""
-        pass
+        return self.__drop_out
+
+    @is_dropout.setter
+    def is_dropout(self, value):
+        self.__drop_out = value
+
+    @property
+    def absences(self):
+        return self.__absences
+
+    @absences.setter
+    def absences(self, value):
+        self.__absences = value
+
+    @property
+    def student_class(self):
+        return self.__student_class
+
+    @student_class.setter
+    def student_class(self, value):
+        self.__student_class = value
 
     @property
     def scores(self):
-        """Return student's total scores"""
-        pass
+        return self.__scores
+
+    @scores.setter
+    def scores(self, new_scores):
+        self.__scores = new_scores
 
     def get_average_score(self):
         """Calculate and return the student's average score"""
-        pass
+        return sum(self.__scores.values()) / len(self.__scores)
 
     def get_highest_subject(self):
         """Return the subject which the student scored highest"""
-        pass
+        return max(self.__scores.items(), key=lambda x: x[1])[0]
 
     def get_lowest_subject(self):
         """Return the subject which the student scored lowest"""
-        pass
+        return min(self.__scores.items(), key=lambda x: x[1])[0]
 
     def show_info(self):
         """Print detailed information about the student"""
-        pass
+        print(f"ID: {self.__student_id}, Name: {self.full_name}, Age: {self.__age}, Class: {self.__student_class}, Average Score: {self.get_average_score():.2f}")
+
+#===========Group_Of_Student_Abstract_Class===========
 class GroupStudent(ABC):
     @abstractmethod
     def display_students_info(self):
@@ -77,60 +127,101 @@ class GroupStudent(ABC):
     def find_student(self, student_id: int):
         """Find and return details of a student by their ID"""
         pass
+
+#===========School===========
 class School(GroupStudent):
     """Represents a school containing all students (All data in file)"""
     
-    def __init__(self, students: list=[]):
+    def __init__(self, students=None):
+        if students is None:
+            students = []
         self.__students = students
 
     @property
     def students(self):
         """Return list of all students"""
-        pass
+        return self.__students
 
     def display_students_info(self):
         """Display a list of all students in the school"""
-        pass
+        print("===============SCHOOL===============")
+        for student in self.__students:
+            student.show_info()
 
     def find_student(self, student_id: int):
         """Find and return student by ID; Return a student object"""
-        pass
+        for student in self.__students:
+            if student.student_id == student_id:
+                return student
+        return None
 
     def add_student(self, student: Student):
         """Add a new student to the school"""
-        pass
+        self.__students.append(student)
 
     def remove_student(self, student_id: int):
         """Mark a student as dropped out"""
-        pass
+        student = self.find_student(student_id)
+        if student:
+            student.__drop_out = True
 
     def modify_student(self, student_id: int, **kwargs):
         """Modify a student's details"""
-        pass
+        student = self.find_student(student_id)
+        if student:
+            if "first_name" in kwargs:
+                student.first_name = kwargs["first_name"]
+            if "last_name" in kwargs:
+                student.last_name = kwargs["last_name"]
+            if "gender" in kwargs:
+                student.gender = kwargs["gender"]
+            if "drop_out" in kwargs:
+                student.is_dropout = kwargs["drop_out"]
+            if "absences" in kwargs:
+                student.absences = kwargs["absences"]
+            if "age" in kwargs:
+                student.age = kwargs["age"]
+            if "student_class" in kwargs:
+                student.student_class = kwargs["student_class"]
+            for subject in student.scores:
+                if subject in kwargs:
+                    student.scores[subject] = kwargs[subject]
 
     def count_students_in_class(self, student_class: str):
         """Return the number of students in a given class"""
-        pass
+        count = 0
+        for student in self.__students:
+            if student.student_class == student_class:
+                count += 1
+        return count
 
     def filter_students_by_gender(self, gender: str):
         """Return a list of students filtered by gender"""
-        pass 
+        return [student for student in self.__students if student.gender == gender]
+
+#===========Class===========
 class Class(GroupStudent):
     """Represents a specific class in the school"""
 
-    def __init__(self, student_class: str, students: list=[]):
+    def __init__(self, student_class: str, students=None):
+        if students is None:
+            students = []
         self.__student_class = student_class
         self.__students = students
 
     def display_students_info(self):
         """Display information of all students in this class"""
-        pass
+        print("===============CLASS===============")
+        for student in self.__students:
+            student.show_info()
 
     def find_student(self, student_id: int):
         """Find a student by ID in this class"""
-        pass
+        for student in self.__students:
+            if student.student_id == student_id:
+                return student
+        return None
 
     def count_students(self):
         """Return the number of students in this class"""
-        pass
-    
+        return len(self.__students)
