@@ -15,11 +15,13 @@ The Student Grade Analyzer addresses a real requirement in educational and admin
   4. Modify Student
   5. Find Student by ID
   6. Count Dropout Student
+
 ##II. Analyze Student's Perfromance
   1. Find Average Score of Student
   2. Find Average Score of Students in a Class
   3. Find Average Score of Students in a School
   4. Identify Outstanding and Low Performing Students
+
 ##III. Visual Data
   1. Show Whisker Plot of Scores in Each Class
   2. Show Pie Chart of Gender Distribution
