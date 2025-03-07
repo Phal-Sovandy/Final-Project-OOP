@@ -2,7 +2,7 @@
 Analyze student grade performance and informations.
 
 ## Table of Contents
-- [Overview](##overview)
+- [Overview](##Overview)
 - [Functionalities](##functionalities)
 - [How To Run the Code?](##how_to_run_code)
 - [Installation](##installation)
