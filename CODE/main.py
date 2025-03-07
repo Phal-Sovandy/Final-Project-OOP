@@ -1,5 +1,4 @@
 from utils import *
-print("Ah poy chheav")
 def main_menu():
     while True:
         print("\n===== Student Grade Analyzer =====")
@@ -7,6 +6,7 @@ def main_menu():
         print("2. Analyze Performance")
         print("3. Visualize Data")
         print("4. Exit")
+        
         
         choice = input("Enter your choice: ")
         
