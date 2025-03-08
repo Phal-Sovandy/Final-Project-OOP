@@ -73,7 +73,10 @@ class Analyzer:
     @staticmethod
     def find_overall_average(students):
         """Find overall average score on a group of students"""
-        total = 0
+        if not students: #If empty list of student
+            return 0.0
+        
+        total = 0.0
         for student in students:
             total += student.get_average_scores()
         return total / len(students)
@@ -81,16 +84,16 @@ class Analyzer:
     @staticmethod
     def find_failing_students(students):
         """Identify students who are failing based on average score"""
-        total_score = 0
+        if not students: #If empty list of student, then return empty list
+            return []
+        
+        total_score = 0.0
         for student in students:
             total_score += student.get_average_score()
 
         average_among_all = total_score / len(students)
         
-        failing_students = []
-        for student in students:
-            if student.get_average_score() < average_among_all:
-                failing_students.append(student)
+        failing_students = [student for student in students if student.get_average_score() < average_among_all]
 
         return failing_students
 
