@@ -220,6 +220,3 @@ class Visuallize:
         plt.ylabel("Average Score")
         plt.title("Average Score per Subject")
         plt.show()
-    
-
-Visuallize.show_subject_averages_bar_chart(FileManager.load_file("DATA\student-scores.csv"))
