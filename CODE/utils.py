@@ -138,7 +138,7 @@ class Analyzer:
 
 
     
-class Visuallize(Analyzer):
+class Visuallize:
     """Show data in visuallized form"""
 
     @staticmethod
