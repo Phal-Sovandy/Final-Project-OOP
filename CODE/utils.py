@@ -204,6 +204,8 @@ class Visuallize:
         plt.figure(figsize=(12, 8))
         plt.scatter(students_age.keys(), students_age.values(), color="tomato")
         plt.xticks(range(0, 101, 5))
+        plt.xlabel("Age")
+        plt.ylabel("Count")
         plt.title("Student age distribution")
         plt.show()
 
