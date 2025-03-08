@@ -106,9 +106,10 @@ class Analyzer:
     
     @staticmethod
     def find_students_in_class(students, student_class):
+        """List students in a given class"""
         if not (students and student_class):  #If empty list of student
             return []
-        return [student for student in students if student.student_class == student_class]
+        return [student for student in students if student.student_class.lower() == student_class.lower()]
     @staticmethod
     def find_overall_average(students):
         """Find overall average score on a group of students"""
@@ -142,7 +143,7 @@ class Visuallize:
     """Show data in visuallized form"""
 
     @staticmethod
-    def show_whisker_plot_avg_scores(students):
+    def show_whisker_plot_avg_scores(students: list):
         """Show a box plot of scores for every class"""
         if not students:
             print("No students' data available")
@@ -175,9 +176,19 @@ class Visuallize:
         plt.tight_layout() # There are too many label on x axis
         plt.show()
     @staticmethod
-    def show_pie_chart_gender():
+    def show_pie_chart_gender(students: list):
         """Show a pie chart of gender in school or class"""
-        pass
+        if not students:
+            print("No students' data available")
+            return
+        
+        male_students = [student for student in students if student.gender == "male"]
+        female_students = [student for student in students if student.gender == "female"]
+   
+        plt.figure(figsize=(12, 8))
+        plt.pie([len(male_students), len(female_students)], labels= ["Male", "Female"], colors= ["Skyblue", "Pink"])
+        plt.title("Students Gender Distribution")
+        plt.show()
 
     @staticmethod
     def show_scatter_plot_age():
@@ -188,4 +199,6 @@ class Visuallize:
     def show_subject_averages_bar_chart():
         """Show a bar chart of average scores for each subject"""
         pass
+    
 
+Visuallize.show_pie_chart_gender(FileManager.load_file("DATA\student-scores.csv"))
