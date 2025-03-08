@@ -18,15 +18,47 @@ class FileManager:
         except Exception as e:
             print(e)
 
-    @staticmethod
+        @staticmethod
     def load_file(path: str):
-        """Load student data from file and return it as a list."""
+        """Load student data from file and return it as a list of Student objects."""
         try:
+            students = []  # Initialize an empty list to store student objects
+            
             with open(path, "r") as file:
                 data = csv.reader(file)
-                return list(data)
+                next(data)  # Skip the header row
+                
+                for row in data:
+                    # Convert the row into a Student object
+                    student_id = int(row[0])
+                    first_name = row[1]
+                    last_name = row[2]
+                    gender = row[3]
+                    drop_out = (row[4] == "TRUE")  # Convert "TRUE" or "FALSE" to boolean value
+                    absences = int(row[5])
+                    age = int(row[6])
+                    student_class = row[7]
+                    scores = {
+                        "math_score": float(row[8]),
+                        "history_score": float(row[9]),
+                        "physics_score": float(row[10]),
+                        "chemistry_score": float(row[11]),
+                        "biology_score": float(row[12]),
+                        "english_score": float(row[13]),
+                        "geography_score": float(row[14])
+                    }
+                    
+                    # Create a Student object
+                    student = Student(student_id, first_name, last_name, gender, drop_out, absences, age, student_class, **scores)
+                    
+                    students.append(student)
+                    
+            return students  # Return the list of student objects
+            
         except Exception as e:
             print(e)
+            return []
+
 
     @staticmethod
     def append_to_file(path: str, student: list):
