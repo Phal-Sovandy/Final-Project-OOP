@@ -1,5 +1,5 @@
 from utils import *
-def main_menu():
+def main_menu(): 
     while True:
         print("\n===== Student Grade Analyzer =====")
         print("1. Manage Students")
