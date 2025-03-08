@@ -112,19 +112,18 @@ class Student:
     def student_class(self, value):
         """Set the student's class"""
         self.__student_class = value
-
     
-@property
-def scores(self):
-    """Get the student's scores"""
-    return self.__scores
+    @property
+    def scores(self):
+        """Get the student's scores"""
+        return self.__scores
 
-@scores.setter
-def scores(self, new_scores):
-    """Set the student's scores (all must be positive)"""
-    if any(score < 0 for score in new_scores.values()):
-        raise ValueError("Scores cannot be negative")
-    self.__scores = new_scores
+    @scores.setter
+    def scores(self, new_scores):
+        """Set the student's scores (all must be positive)"""
+        if any(score < 0 for score in new_scores.values()):
+            raise ValueError("Scores cannot be negative")
+        self.__scores = new_scores
 
     def get_average_score(self):
         """Calculate and return the student's average score"""
