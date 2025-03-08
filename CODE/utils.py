@@ -191,9 +191,21 @@ class Visuallize:
         plt.show()
 
     @staticmethod
-    def show_scatter_plot_age():
+    def show_scatter_plot_age(students: list):
         """Show a scatter plot of student ages in school or class"""
-        pass
+        students_age = {}
+        
+        for student in students:
+            if student.age not in students_age:
+                students_age[student.age] = 1
+            else:
+                students_age[student.age] += 1
+        
+        plt.figure(figsize=(12, 8))
+        plt.scatter(students_age.keys(), students_age.values(), color="tomato")
+        plt.xticks(range(0, 101, 5))
+        plt.title("Student age distribution")
+        plt.show()
 
     @staticmethod
     def show_subject_averages_bar_chart():
@@ -201,4 +213,4 @@ class Visuallize:
         pass
     
 
-Visuallize.show_pie_chart_gender(FileManager.load_file("DATA\student-scores.csv"))
+Visuallize.show_scatter_plot_age(FileManager.load_file("DATA\student-scores.csv"))
