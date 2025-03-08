@@ -6,7 +6,6 @@ def main_menu():
         print("2. Analyze Performance")
         print("3. Visualize Data")
         print("4. Exit")
-        print("===============================")
         
         
         choice = input("Enter your choice: ")

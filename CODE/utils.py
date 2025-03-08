@@ -1,5 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
+from entities import *
 
 class FileManager:
     """Handles file operations such as saving, appending and loading student data."""
@@ -60,6 +61,7 @@ class FileManager:
             return []
 
 
+
     @staticmethod
     def append_to_file(path: str, student: list):
         """Append a single student's data to an existing file."""
@@ -103,9 +105,17 @@ class Analyzer:
         return subject_avg
     
     @staticmethod
+    def find_students_in_class(students, student_class):
+        if not (students and student_class):  #If empty list of student
+            return []
+        return [student for student in students if student.student_class == student_class]
+    @staticmethod
     def find_overall_average(students):
         """Find overall average score on a group of students"""
-        total = 0
+        if not students: #If empty list of student
+            return 0.0
+        
+        total = 0.0
         for student in students:
             total += student.get_average_scores()
         return total / len(students)
@@ -113,16 +123,16 @@ class Analyzer:
     @staticmethod
     def find_failing_students(students):
         """Identify students who are failing based on average score"""
-        total_score = 0
+        if not students: #If empty list of student, then return empty list
+            return []
+        
+        total_score = 0.0
         for student in students:
             total_score += student.get_average_score()
 
         average_among_all = total_score / len(students)
         
-        failing_students = []
-        for student in students:
-            if student.get_average_score() < average_among_all:
-                failing_students.append(student)
+        failing_students = [student for student in students if student.get_average_score() < average_among_all]
 
         return failing_students
 
@@ -132,10 +142,38 @@ class Visuallize(Analyzer):
     """Show data in visuallized form"""
 
     @staticmethod
-    def show_whisker_plot_avg_scores():
+    def show_whisker_plot_avg_scores(students):
         """Show a box plot of scores for every class"""
-        pass
-
+        if not students:
+            print("No students' data available")
+            return
+        
+        # A dictionary contains class_name as key and list of its students' average scores
+        class_avg_scores = {}
+        
+        for student in students:
+            # If a class not yet in dictionary
+            if student.student_class not in class_avg_scores:
+                class_avg_scores[student.student_class] = []
+                
+            # Append student average score to their class list
+            class_avg_scores[student.student_class].append(student.get_average_score())
+        
+        # Data Visuallization
+        
+        class_labels = list(class_avg_scores.keys())        # Label for each entity(class_name)
+        average_scores = list(class_avg_scores.values())    # Students' average scores of each class
+        
+        #Plotting
+        plt.figure(figsize=(12, 8))
+        plt.boxplot(average_scores, vert=True, patch_artist=True)
+        plt.xticks(range(1, len(class_labels) + 1), class_labels)
+        plt.xticks(fontsize=8)
+        plt.title("Box and Whisker Plot of Average Scores by Class")
+        plt.xlabel("Class")
+        plt.ylabel("Average Score")
+        plt.tight_layout() # There are too many label on x axis
+        plt.show()
     @staticmethod
     def show_pie_chart_gender():
         """Show a pie chart of gender in school or class"""
@@ -150,3 +188,4 @@ class Visuallize(Analyzer):
     def show_subject_averages_bar_chart():
         """Show a bar chart of average scores for each subject"""
         pass
+
