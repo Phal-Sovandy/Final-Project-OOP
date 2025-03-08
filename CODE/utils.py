@@ -19,7 +19,7 @@ class FileManager:
         except Exception as e:
             print(e)
 
-        @staticmethod
+    @staticmethod
     def load_file(path: str):
         """Load student data from file and return it as a list of Student objects."""
         try:
