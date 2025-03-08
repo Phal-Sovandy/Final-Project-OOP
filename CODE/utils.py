@@ -210,9 +210,16 @@ class Visuallize:
         plt.show()
 
     @staticmethod
-    def show_subject_averages_bar_chart():
+    def show_subject_averages_bar_chart(students: list):
         """Show a bar chart of average scores for each subject"""
-        pass
+        subjects_score = Analyzer.find_average_score_per_subject(students)
+        
+        plt.figure(figsize=(12, 8))
+        plt.bar(subjects_score.keys(), subjects_score.values(), color="tomato")
+        plt.xlabel("Subject")
+        plt.ylabel("Average Score")
+        plt.title("Average Score per Subject")
+        plt.show()
     
 
-Visuallize.show_scatter_plot_age(FileManager.load_file("DATA\student-scores.csv"))
+Visuallize.show_subject_averages_bar_chart(FileManager.load_file("DATA\student-scores.csv"))
