@@ -91,8 +91,7 @@ def visualize_data(school):
         
         choice = input("Enter your choice: ")
         choice = choice.strip()
-
-        
+   
         if choice == "1":
             show_whisker_plot_scores()
         elif choice == "2":
