@@ -114,7 +114,6 @@ def show_all_students():
     if not students:
         print("No student data available.")
         return
-    
     print("ID | First Name | Last Name | Gender | Dropout | Absences | Age | Class")
     print("-----------------------------------------------------------------------------------")
     for student in students:
