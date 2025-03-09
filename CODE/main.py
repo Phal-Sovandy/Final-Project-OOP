@@ -8,7 +8,6 @@ def main_menu():
         print("4. Exit")
         print("===============================")
         
-        
         choice = input("Enter your choice: ")
         
         if choice == "1":
