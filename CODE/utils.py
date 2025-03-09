@@ -210,13 +210,39 @@ class Visuallize:
         plt.show()
 
     @staticmethod
-    def show_subject_averages_bar_chart(students: list):
+    def show_subject_averages_bar_chart(school: School):
         """Show a bar chart of average scores for each subject"""
-        subjects_score = Analyzer.find_average_score_per_subject(students)
+        subjects = ["math", "history", "physics", "chemistry", "biology", "english", "geography"]
+        subject_scores = {subject : [] for subject in subjects} # A dictionary of list subject average score of every class
+        
+        # Find every unique class
+        classes = []
+        for student in school.students:
+            if student.student_class not in classes:
+                classes.append(student.student_class)
+                
+        # Find average score by subject in each class
+        for each_class in classes:
+            student_in_class = Analyzer.find_students_in_class(school.students, each_class)     # List of student in a specific class
+            avg_score_per_subject = Analyzer.find_average_score_per_subject(student_in_class)   # Return object of each subject average score of a specific class
+            
+            for key in avg_score_per_subject.keys():
+                subject_scores[key].append(avg_score_per_subject[key])
+        
+        
+        x_positions = list(range(len(classes)))  # X-axis points
+        width = 0.12
         
         plt.figure(figsize=(12, 8))
-        plt.bar(subjects_score.keys(), subjects_score.values(), color="tomato")
+        for i, subject in enumerate(subjects):
+            # Plotting one subject of every class at a time
+            offset = i * width  # Shift bar
+            adjusted_x = [x + offset for x in x_positions]  # Adjust x ticks for each subject of every class
+            plt.bar(adjusted_x, subject_scores[subject], width=width, label=subject)
+            
         plt.xlabel("Subject")
         plt.ylabel("Average Score")
         plt.title("Average Score per Subject")
+        plt.tight_layout() # There are too many label on x axis
+        plt.xticks([x + (width * len(subjects) / 2 - width / 2) for x in x_positions], classes)
         plt.show()

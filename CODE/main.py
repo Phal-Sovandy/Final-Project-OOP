@@ -17,7 +17,7 @@ def main_menu():
         elif choice == "2":
             analyze_performance(school)
         elif choice == "3":
-            visualize_data()
+            visualize_data(school)
         elif choice == "4":
             print("Exiting program...")
             return
@@ -80,7 +80,7 @@ def analyze_performance(school):
         else:
             print("Invalid choice. Try again.")
 
-def visualize_data():
+def visualize_data(school):
     while True:
         print("\n===== Visualize Data =====")
         print("1. Show Box and Whisker Plot of Scores")
@@ -100,7 +100,7 @@ def visualize_data():
         elif choice == "3":
             show_scatter_plot_age()
         elif choice == "4":
-            show_subject_average_scores()
+            show_subject_average_scores(school)
         elif choice == "5":
             return
         else:
@@ -265,9 +265,14 @@ def show_scatter_plot_age():
             print("Invalid choice. Try again.")
             return
 
-def show_subject_average_scores():
-    """Show the average scores for each subject in the school/class"""
-    pass
+def show_subject_average_scores(school):
+    """Show the average scores for each subject in the school (Compare Each Class based on Subject)"""
+    print("------------------------------------")
+    print("Show Scatter Plot of Age")
+    print("------------------------------------")
+    print("Plotting...")
+    
+    Visuallize.show_subject_averages_bar_chart(school)
 
 if __name__ == "__main__":
     main_menu()
