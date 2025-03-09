@@ -118,7 +118,7 @@ class Analyzer:
         
         total = 0.0
         for student in students:
-            total += student.get_average_scores()
+            total += student.get_average_score()
         return total / len(students)
 
     @staticmethod
