@@ -7,8 +7,8 @@ def main_menu():
         print("3. Visualize Data")
         print("4. Exit")
         
-        
         choice = input("Enter your choice: ")
+        choice = choice.strip()
         
         if choice == "1":
             manage_students()
@@ -34,6 +34,7 @@ def manage_students():
         print("7. Back to Main Menu")
         
         choice = input("Enter your choice: ")
+        choice = choice.strip()
         
         if choice == "1":
             show_all_students()
@@ -62,6 +63,7 @@ def analyze_performance():
         print("5. Back to Main Menu")
         
         choice = input("Enter your choice: ")
+        choice = choice.strip()
         
         if choice == "1":
             find_average_score_of_student()
@@ -79,13 +81,15 @@ def analyze_performance():
 def visualize_data():
     while True:
         print("\n===== Visualize Data =====")
-        print("1. Show Whisker Plot of Scores in Each Class")
+        print("1. Show Box and Whisker Plot of Scores")
         print("2. Show Pie Chart of Gender Distribution")
         print("3. Show Dot Plot of Student Ages")
         print("4. Show Subject Average Scores")
         print("5. Back to Main Menu")
         
         choice = input("Enter your choice: ")
+        choice = choice.strip()
+
         
         if choice == "1":
             show_whisker_plot_scores()
@@ -147,9 +151,27 @@ def find_high_and_low_performers():
 # ===== DATA VISUALIZATION FUNCTIONS =====
 
 def show_whisker_plot_scores():
-    """Show a whisker plot (boxplot) of student scores in each class"""
-    pass
-
+    """Show a whisker plot (boxplot) of student scores in each class or a class"""
+    while True:
+        print("------------------------------------")
+        print("Show Box and Whisker Plot of Scores")
+        print("------------------------------------")
+        print("1. Show in a Specific Class")
+        print("2. Show All Classes")
+        option = input("Enter your choice: ")
+        if option.strip() == "1":
+            class_to_show = input("Enter the class name: ")
+            print("Plotting...")
+            Visuallize.show_whisker_plot_avg_scores(Analyzer.find_students_in_class(FileManager.load_file("DATA\student-scores.csv"), class_to_show))
+            return
+        elif option.strip() == "2":
+            print("Plotting...")
+            Visuallize.show_whisker_plot_avg_scores(FileManager.load_file("DATA\student-scores.csv"))
+            return
+        else:
+            print("Invalid choice. Try again.")
+            return
+        
 def show_pie_chart_gender():
     """Show a pie chart of the gender distribution in the school/class"""
     pass
