@@ -63,6 +63,7 @@ class Student:
     @property
     def age(self):
         return self.__age
+    
 
     @age.setter
     def age(self, value):
@@ -131,8 +132,7 @@ class GroupStudent(ABC):
 #===========School===========
 class School(GroupStudent):
     """Represents a school containing all students (All data in file)"""
-    
-    def __init__(self, students=None):
+    def __init__(self, students=None):  
         if students is None:
             students = []
         self.__students = students
@@ -141,12 +141,13 @@ class School(GroupStudent):
     def students(self):
         """Return list of all students"""
         return self.__students
-
+    
     def display_students_info(self):
         """Display a list of all students in the school"""
         print("===============SCHOOL===============")
         for student in self.__students:
             student.show_info()
+            
 
     def find_student(self, student_id: int):
         """Find and return student by ID; Return a student object"""
@@ -198,6 +199,7 @@ class School(GroupStudent):
     def filter_students_by_gender(self, gender: str):
         """Return a list of students filtered by gender"""
         return [student for student in self.__students if student.gender == gender]
+
 
 #===========Class===========
 class Class(GroupStudent):
