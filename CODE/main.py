@@ -79,7 +79,6 @@ def analyze_performance(school):
             return
         else:
             print("Invalid choice. Try again.")
-
 def visualize_data():
     while True:
         print("\n===== Visualize Data =====")
