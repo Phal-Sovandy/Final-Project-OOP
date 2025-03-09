@@ -42,7 +42,7 @@ The Student Grade Analyzer addresses a real need in education and administration
   Before running the project, please ensure that you have the following installed:
 - [Python](https://www.python.org/downloads/)
 - [Matplotlib](https://matplotlib.org/)
-## V. Installation
+## Installation
   1. Clone repository
 ```sh
 git clone https://github.com/Phal-Sovandy/Final-Project-OOP.git
