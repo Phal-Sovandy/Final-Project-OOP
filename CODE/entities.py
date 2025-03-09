@@ -147,7 +147,6 @@ class GroupStudent(ABC):
     @abstractmethod
     def display_students_info(self):
         """Display information of all students in the group (school or class)"""
-        
         pass
 
     @abstractmethod
