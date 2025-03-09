@@ -4,8 +4,9 @@ Analyze student grade performance and information.
 ## Table of Contents
 - [Overview](#overview)
 - [Functionality](#functionality)
-- [How To Run the Code?](#how-to-run-the-code)
+- [Prerequisite](#prerequitsite)
 - [Installation](#installation)
+- [How To Run the Code?](#how-to-run-the-code)
 - [Conclusion](#conclusion)
 
 ## Overview
