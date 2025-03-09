@@ -44,13 +44,13 @@ The Student Grade Analyzer addresses a real need in education and administration
 - [Matplotlib](https://matplotlib.org/)
 ## Installation
   1. Clone repository
-    ```sh
-    git clone <this_repo_url>
-    ```
+```sh
+git clone <this_repo_url>
+```
   2. Navigate to project directory
-    ```sh
-    cd Final-Project-OOP/CODE
-    ```
+```sh
+cd Final-Project-OOP/CODE
+```
   3. Install the required library
 - Windows
   ```sh
