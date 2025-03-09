@@ -38,14 +38,14 @@ The Student Grade Analyzer addresses a real need in education and administration
   3. Display Dot Plot of Student Ages
   4. Show Subject Average Scores
 
-## IV. Prerequisite
+## Prerequisite
   Before running the project, please ensure that you have the following installed:
 - [Python](https://www.python.org/downloads/)
 - [Matplotlib](https://matplotlib.org/)
 ## V. Installation
   1. Clone repository
 ```sh
-git clone <https://github.com/Phal-Sovandy/Final-Project-OOP.git>
+git clone https://github.com/Phal-Sovandy/Final-Project-OOP.git
 ```
   2. Navigate to project directory
 ```sh
@@ -60,7 +60,7 @@ cd Final-Project-OOP/CODE
   ```sh
   pip3 install matplotlib
   ```
-## VI. How To Run the Code?
+## How To Run the Code?
 - Execute the following command (Windows):
   ```sh
   python Final-Project-OOP/CODE/main.py
@@ -70,5 +70,5 @@ cd Final-Project-OOP/CODE
   python3 Final-Project-OOP/CODE/main.py
   ```
 
-## VII. Conclusion
+## Conclusion
 The Student Grade Analyzer addresses a real need in education and administration while demonstrating the practical application of programming principles through fundamental OOP concepts.
