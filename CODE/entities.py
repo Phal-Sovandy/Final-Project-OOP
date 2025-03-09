@@ -165,14 +165,14 @@ class School(GroupStudent):
     @property
     def students(self):
         """Return list of all students"""
-        return self.__students
+        return self.__students        
     
     def display_students_info(self):
         """Display a list of all students in the school"""
-        print("===============SCHOOL===============")
+        if not self.__students:
+            print("No students found!")
         for student in self.__students:
-            student.show_info()
-            
+            student.show_info()                    
 
     def find_student(self, student_id: int):
         """Find and return student by ID; Return a student object"""
@@ -184,34 +184,39 @@ class School(GroupStudent):
     def add_student(self, student: Student):
         """Add a new student to the school"""
         self.__students.append(student)
+        student.student_id = len(self.__students) + 1
+        
 
     def remove_student(self, student_id: int):
         """Mark a student as dropped out"""
         student = self.find_student(student_id)
-        if student:
-            student.score = True
+        if not student:
+            raise ValueError("Student not found")
+        student.is_dropout = True
+        
 
     def modify_student(self, student_id: int, **kwargs):
         """Modify a student's details"""
         student = self.find_student(student_id)
-        if student:
-            if "first_name" in kwargs:
-                student.first_name = kwargs["first_name"]
-            if "last_name" in kwargs:
-                student.last_name = kwargs["last_name"]
-            if "gender" in kwargs:
-                student.gender = kwargs["gender"]
-            if "drop_out" in kwargs:
-                student.is_dropout = kwargs["drop_out"]
-            if "absences" in kwargs:
-                student.absences = kwargs["absences"]
-            if "age" in kwargs:
-                student.age = kwargs["age"]
-            if "student_class" in kwargs:
-                student.student_class = kwargs["student_class"]
-            for subject in student.scores:
-                if subject in kwargs:
-                    student.scores[subject] = kwargs[subject]
+        if not student:
+            raise ValueError("Student not found")
+        if "first_name" in kwargs:
+            student.first_name = kwargs["first_name"]
+        if "last_name" in kwargs:
+            student.last_name = kwargs["last_name"]
+        if "gender" in kwargs:
+            student.gender = kwargs["gender"]
+        if "drop_out" in kwargs:
+            student.is_dropout = kwargs["drop_out"]
+        if "absences" in kwargs:
+            student.absences = kwargs["absences"]
+        if "age" in kwargs:
+            student.age = kwargs["age"]
+        if "student_class" in kwargs:
+            student.student_class = kwargs["student_class"]
+        for subject in student.scores:
+            if subject in kwargs:
+                student.scores[subject] = kwargs[subject]
 
     def count_students_in_class(self, student_class: str):
         """Return the number of students in a given class"""
@@ -238,7 +243,9 @@ class Class(GroupStudent):
 
     def display_students_info(self):
         """Display information of all students in this class"""
-        print("===============CLASS===============")
+        print(f"Class: {self.__student_class}")
+        if not self.__students:
+            print("No students found!")
         for student in self.__students:
             student.show_info()
 
