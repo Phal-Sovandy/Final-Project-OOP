@@ -40,8 +40,8 @@ The Student Grade Analyzer addresses a real need in education and administration
 
 ## IV. Prerequisite
   Before running the project, please ensure that you have the following installed:
-    - [Python](#https://www.python.org/downloads/)
-    - [Matplotlib]()
+- [Python](#https://www.python.org/downloads/)
+- [Matplotlib](#https://matplotlib.org/)
 ## Installation
   1. Clone repository
     ```git clone <this_repo_url>```
@@ -53,10 +53,10 @@ The Student Grade Analyzer addresses a real need in education and administration
     - Macs
       ```pip3 install matplotlib```
 ## How To Run the Code?
-  - Execute the following command (Windows):
-  ```python Final-Project-OOP/CODE/main.py```
-  - Execute the following command (Macs):
-  ```python3 Final-Project-OOP/CODE/main.py```
+- Execute the following command (Windows):
+```python Final-Project-OOP/CODE/main.py```
+- Execute the following command (Macs):
+```python3 Final-Project-OOP/CODE/main.py```
 
 ## Conclusion
 The Student Grade Analyzer addresses a real need in education and administration while demonstrating the practical application of programming principles through fundamental OOP concepts.
