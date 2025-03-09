@@ -223,7 +223,25 @@ def show_whisker_plot_scores():
         
 def show_pie_chart_gender():
     """Show a pie chart of the gender distribution in the school/class"""
-    pass
+    while True:
+        print("------------------------------------")
+        print("Show Pie Chart of Genders")
+        print("------------------------------------")
+        print("1. Show in a Specific Class")
+        print("2. Show All Classes")
+        option = input("Enter your choice: ")
+        if option.strip() == "1":
+            class_to_show = input("Enter the class name: ")
+            print("Plotting...")
+            Visuallize.show_pie_chart_gender(Analyzer.find_students_in_class(FileManager.load_file("DATA\student-scores.csv"), class_to_show))
+            return
+        elif option.strip() == "2":
+            print("Plotting...")
+            Visuallize.show_pie_chart_gender(FileManager.load_file("DATA\student-scores.csv"))
+            return
+        else:
+            print("Invalid choice. Try again.")
+            return
 
 def show_dot_plot_age():
     """Show a dot plot of student ages in the school/class"""
