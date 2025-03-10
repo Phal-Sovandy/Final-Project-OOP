@@ -137,7 +137,6 @@ class Analyzer:
 
         return failing_students
 
-
     
 class Visuallize:
     """Show data in visuallized form"""
