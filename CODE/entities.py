@@ -140,7 +140,7 @@ class Student:
 
     def show_info(self):
         """Print detailed information about the student"""
-        print(f"ID: {self.__student_id}, Name: {self.full_name}, Age: {self.__age}, Class: {self.__student_class}, Average Score: {self.get_average_score():.2f}")
+        print(f"ID: {self.__student_id}, Name: {self.full_name}, Age: {self.__age}, Class: {self.__student_class}, Attendance: {self.__absences}, Average Score: {self.get_average_score():.2f}")
 
 #===========Group_Of_Student_Abstract_Class===========
 class GroupStudent(ABC):
