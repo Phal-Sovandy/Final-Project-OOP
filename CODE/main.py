@@ -113,10 +113,10 @@ def show_all_students():
     if not students:
         print("No student data available.")
         return
-    print("ID | First Name | Last Name | Gender | Dropout | Absences | Age | Class")
-    print("-----------------------------------------------------------------------------------")
+    print("   ID | First Name           | Last Name            | Gender  | Dropout | Absences | Age | Class")
+    print("--------------------------------------------------------------------------------------------------------------")
     for student in students:
-        print(f"{student.student_id} | {student.first_name} | {student.last_name} | {student.gender} | {student.is_dropout} | {student.absences} | {student.age} | {student.student_class}")
+        print(f"{student.student_id:5} | {student.first_name:20} | {student.last_name:20} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:10}")
 
 
 def add_student():
