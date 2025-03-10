@@ -250,9 +250,9 @@ class Class(GroupStudent):
         """Find a student by ID in this class"""
         for student in self.__students:
             if student.student_id == student_id:
-                return student      
-        return None
+                return student      # Return the student if the ID matches  
+        return None     # Return None if no student with the given ID is found
 
     def count_students(self):
         """Return the number of students in this class"""
-        return len(self.__students)
+        return len(self.__students)     # Return the total number of students
