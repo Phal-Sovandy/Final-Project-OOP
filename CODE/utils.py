@@ -5,13 +5,13 @@ from entities import *
 class FileManager:
     """Handles file operations such as saving, appending and loading student data."""
 
-    @staticmethod
+    @staticmethod 
     def save_file(path: str, data: list):
         """Save student data to file."""
         try:
-            with open(path, "w", newline="") as file:
-                writer = csv.writer(file)
-                for student in data:
+            with open(path, "w", newline="") as file: # Open file in write mode
+                writer = csv.writer(file) # Create a csv writer object
+                for student in data: # Write each student's data to the file
                     writer.writerow([student.student_id, student.first_name, student.last_name, student.gender,
                                      student.is_dropout, student.absences, student.age, student.student_class] +
                                     list(student.scores.values()))
@@ -19,7 +19,7 @@ class FileManager:
         except Exception as e:
             print(e)
 
-    @staticmethod
+    @staticmethod 
     def load_file(path: str):
         """Load student data from file and return it as a list of Student objects."""
         try:
@@ -83,7 +83,7 @@ class Analyzer:
     def find_top_performers(students, n=10):
         """Find the top N students based on average score"""
         sorted_students = sorted(students, key=lambda student: student.get_average_score(), reverse=True)
-        return sorted_students[:n]
+        return sorted_students[:n] # Return the top N students 
 
     @staticmethod
     def find_low_performers(students, n=10):
