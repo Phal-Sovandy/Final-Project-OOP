@@ -1,6 +1,6 @@
 from utils import *
 def main_menu():
-    school = School(FileManager.load_file("DATA/student-scores.csv")) 
+    school = School(FileManager.load_file("DATA/student-scores.csv"))
     
     while True:
         print("\n===== Student Grade Analyzer =====")
@@ -13,7 +13,7 @@ def main_menu():
         choice = choice.strip()
         
         if choice == "1":
-            manage_students()
+            manage_students(school)
         elif choice == "2":
             analyze_performance(school)
         elif choice == "3":
@@ -24,7 +24,7 @@ def main_menu():
         else:
             print("Invalid choice. Please enter a valid option.")
 
-def manage_students():
+def manage_students(school):
     while True:
         print("\n===== Manage Students =====")
         print("1. Show All Students")
@@ -49,7 +49,7 @@ def manage_students():
         elif choice == "5":
             find_student_by_id()
         elif choice == "6":
-            count_dropout_students()
+            count_dropout_students(school)
         elif choice == "7":
             return
         else:
@@ -202,10 +202,9 @@ def find_student_by_id():
     print("Student not found!")
 
 
-def count_dropout_students():
+def count_dropout_students(school):
     """Count the number of dropout students"""
-    students = FileManager.load_file("DATA/student-scores.csv")
-    dropout_count = sum(1 for student in students if student.is_dropout)
+    dropout_count = sum(1 for student in school.students if student.is_dropout)
     print(f"Total dropout students: {dropout_count}")
 
 # ===== PERFORMANCE ANALYSIS FUNCTIONS =====
