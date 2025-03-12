@@ -102,7 +102,7 @@ class Analyzer:
         subject_avg = {subject: sum(scores) / len(scores) for subject, scores in subject_scores.items()}
         return subject_avg  
     @staticmethod
-    def find_students_in_class(students, student_class):
+    def find_students_in_class(students: list[Student], student_class: str):
         """List students in a given class"""
         # If there is no student in the list passed in and/or no student_class passed in
         if not (students and student_class):
@@ -111,7 +111,7 @@ class Analyzer:
         
         return [student for student in students if student.student_class.lower() == student_class.lower()]
     @staticmethod
-    def find_overall_average(students):
+    def find_overall_average(students: list[Student]):
         """Find overall average score on a group of students"""
         # If there is no student in the list passed in
         if not students:
@@ -125,7 +125,7 @@ class Analyzer:
         # Find average by divide the sum by number of students
         return total / len(students)
     @staticmethod
-    def find_failing_students(students):
+    def find_failing_students(students: list[Student]):
         """Identify students who are failing based on average score"""
         # If there is no student in the list passed in
         if not students:
