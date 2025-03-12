@@ -217,11 +217,7 @@ def find_average_score_of_student():
     print(f"Average score of student ID: {student_input} is {student.get_average_score():.2f}")
     # Print the average score of the student
 
-<<<<<<< HEAD
-def find_average_score_of_students_in_class(school):
-=======
 def find_average_score_of_students_in_class():
->>>>>>> 871cb00cba707dcae773d8270f9ddc4141a5b529
     """Find and display the average score of students in a specific class"""
     student_class_input = input("Enter the class name: ")   # Let user to enter the class name
     class_students = Analyzer.find_students_in_class(school.students, student_class_input)     # Find the students in the specified class
@@ -229,14 +225,9 @@ def find_average_score_of_students_in_class():
         print("No students found in this class")    # Print a message if no students are found in the class
         return
     print(f"Average score of students in class {student_class_input} is {Analyzer.find_overall_average(class_students):.2f}")
-<<<<<<< HEAD
-
-def find_average_score_of_students_in_school():
-=======
     # Print the average score of students in the class
     
-def find_average_score_of_students_in_school(school):
->>>>>>> b298e836c15e1c76e36f0b02eb7ea4816a18ab15
+def find_average_score_of_students_in_school():
     """Find and display the average score of all students in the school"""
     print(f"Average score of students in school is {Analyzer.find_overall_average(school.students):.2f}")
     # Print the average score of all students in the school
