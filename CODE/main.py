@@ -1,4 +1,5 @@
 from utils import *
+
 def main_menu():    
     while True:
         print("\n===== Student Grade Analyzer =====")
@@ -287,11 +288,11 @@ def show_whisker_plot_scores():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visuallize.show_whisker_plot_avg_scores(Analyzer.find_students_in_class(FileManager.load_file("DATA\student-scores.csv"), class_to_show))
+            Visuallize.show_whisker_plot_avg_scores(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visuallize.show_whisker_plot_avg_scores(FileManager.load_file("DATA\student-scores.csv"))
+            Visuallize.show_whisker_plot_avg_scores(FileManager.load_file("DATA/student-scores.csv"))
             return
         else:
             print("Invalid choice. Try again.")
@@ -309,11 +310,11 @@ def show_pie_chart_gender():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visuallize.show_pie_chart_gender(Analyzer.find_students_in_class(FileManager.load_file("DATA\student-scores.csv"), class_to_show))
+            Visuallize.show_pie_chart_gender(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visuallize.show_pie_chart_gender(FileManager.load_file("DATA\student-scores.csv"))
+            Visuallize.show_pie_chart_gender(FileManager.load_file("DATA/student-scores.csv"))
             return
         else:
             print("Invalid choice. Try again.")
@@ -331,11 +332,11 @@ def show_scatter_plot_age():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visuallize.show_scatter_plot_age(Analyzer.find_students_in_class(FileManager.load_file("DATA\student-scores.csv"), class_to_show))
+            Visuallize.show_scatter_plot_age(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visuallize.show_scatter_plot_age(FileManager.load_file("DATA\student-scores.csv"))
+            Visuallize.show_scatter_plot_age(FileManager.load_file("DATA/student-scores.csv"))
             return
         else:
             print("Invalid choice. Try again.")

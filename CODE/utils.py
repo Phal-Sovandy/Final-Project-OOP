@@ -142,8 +142,11 @@ class Visuallize:
     """Show data in visuallized form"""
 
     @staticmethod
-    def show_whisker_plot_avg_scores(students: list):
+    def show_whisker_plot_avg_scores(students: list[Student]):
         """Show a box plot of scores for every class"""
+        
+        # NECCESSARY DATA FOR VISULLIZATION
+        # If there is not student in the list passed in
         if not students:
             print("No students' data available")
             return
@@ -159,89 +162,100 @@ class Visuallize:
             # Append student average score to their class list
             class_avg_scores[student.student_class].append(student.get_average_score())
         
-        # Data Visuallization
-        
         class_labels = list(class_avg_scores.keys())        # Label for each entity(class_name)
         average_scores = list(class_avg_scores.values())    # Students' average scores of each class
         
-        #Plotting
-        plt.figure(figsize=(12, 8))
-        plt.boxplot(average_scores, vert=True, patch_artist=True)
-        plt.xticks(range(1, len(class_labels) + 1), class_labels)
-        plt.xticks(fontsize=8)
-        plt.title("Box and Whisker Plot of Average Scores by Class")
-        plt.xlabel("Class")
-        plt.ylabel("Average Score")
-        plt.tight_layout() # There are too many label on x axis
-        plt.show()
+        # VISUALLIZATION
+        plt.figure(figsize=(12, 8))                                     # Window size
+        plt.boxplot(average_scores, vert=True, patch_artist=True)       # Plot Box plots
+        plt.xticks(range(1, len(class_labels) + 1), class_labels)       # Point position in X-axis
+        plt.xticks(fontsize=8)                                          # X-axis points font size
+        plt.title("Box and Whisker Plot of Average Scores by Class")    # Title of the plot
+        plt.xlabel("Class")                                             # Label of X-axis
+        plt.ylabel("Average Score")                                     # Label of Y-axis
+        plt.tight_layout()                                              # Save space, there are too many label on x axis
+        plt.show()                                                      # Plotting graph
     @staticmethod
-    def show_pie_chart_gender(students: list):
+    def show_pie_chart_gender(students: list[Student]):
         """Show a pie chart of gender in school or class"""
+        
+        # NECCESSARY DATA FOR VISULLIZATION
+        # If there is not student in the list passed in
         if not students:
             print("No students' data available")
             return
         
-        male_students = [student for student in students if student.gender == "male"]
-        female_students = [student for student in students if student.gender == "female"]
+        male_students = [student for student in students if student.gender == "male"]       # List of male studnets
+        female_students = [student for student in students if student.gender == "female"]   # List of female students
    
-        plt.figure(figsize=(12, 8))
-        plt.pie([len(male_students), len(female_students)], labels= ["Male", "Female"], colors= ["Skyblue", "Pink"])
-        plt.title("Students Gender Distribution")
-        plt.show()
+        # VISUALLIZATION
+        plt.figure(figsize=(12, 8))     # Window size
+        plt.pie([len(male_students), len(female_students)], labels= ["Male", "Female"], colors= ["Skyblue", "Pink"]) # Plotting Pie chart
+        plt.title("Students Gender Distribution")   # Chart title
+        plt.show()    #Plotting chart
 
     @staticmethod
-    def show_scatter_plot_age(students: list):
+    def show_scatter_plot_age(students: list[Student]):
         """Show a scatter plot of student ages in school or class"""
+        # NECCESSARY DATA FOR VISULLIZATION
+        # A dictionary contains Age as key and Number of student with that age as value
         students_age = {}
         
+        # Gathering data
         for student in students:
             if student.age not in students_age:
                 students_age[student.age] = 1
             else:
                 students_age[student.age] += 1
         
-        plt.figure(figsize=(12, 8))
-        plt.scatter(students_age.keys(), students_age.values(), color="tomato")
-        plt.xticks(range(0, 101, 5))
-        plt.xlabel("Age")
-        plt.ylabel("Count")
-        plt.title("Student age distribution")
-        plt.show()
+        # VISUALLIZATION
+        plt.figure(figsize=(12, 8))     # X-axis label
+        plt.scatter(students_age.keys(), students_age.values(), color="tomato") # Plot scatter plot
+        plt.xticks(range(0, 101, 5))    # Points on X-axis
+        plt.xlabel("Age")               # X-axis label
+        plt.ylabel("Count")             # Y-axis label
+        plt.title("Student age distribution")   # Plot title
+        plt.show()  # Plotting graph
 
     @staticmethod
-    def show_subject_averages_bar_chart(school: School):
+    def show_subject_averages_bar_chart(students: list[Student]):
         """Show a bar chart of average scores for each subject"""
-        subjects = ["math", "history", "physics", "chemistry", "biology", "english", "geography"]
-        subject_scores = {subject : [] for subject in subjects} # A dictionary of list subject average score of every class
+        # NECCESSARY DATA FOR VISULLIZATION
+        subjects = ["math", "history", "physics", "chemistry", "biology", "english", "geography"]   # All subject
+        subject_scores = {subject : [] for subject in subjects}                                     # A dictionary of subject with list of average score of every class as value
         
         # Find every unique class
         classes = []
-        for student in school.students:
+        for student in students:
             if student.student_class not in classes:
                 classes.append(student.student_class)
                 
         # Find average score by subject in each class
         for each_class in classes:
-            student_in_class = Analyzer.find_students_in_class(school.students, each_class)     # List of student in a specific class
+            student_in_class = Analyzer.find_students_in_class(students, each_class)            # List of student in a specific class
             avg_score_per_subject = Analyzer.find_average_score_per_subject(student_in_class)   # Return object of each subject average score of a specific class
             
+            # Append score of each subject to the dictionary key
             for key in avg_score_per_subject.keys():
                 subject_scores[key].append(avg_score_per_subject[key])
         
         
+        # VISUALLIZATION
+        # Grouped bar chart
         x_positions = list(range(len(classes)))  # X-axis points
-        width = 0.12
+        width = 0.12                             # Bar width
         
-        plt.figure(figsize=(12, 8))
+        plt.figure(figsize=(12, 8))             # Window size
+        # Shifting bar position
         for i, subject in enumerate(subjects):
             # Plotting one subject of every class at a time
             offset = i * width  # Shift bar
             adjusted_x = [x + offset for x in x_positions]  # Adjust x ticks for each subject of every class
-            plt.bar(adjusted_x, subject_scores[subject], width=width, label=subject)
+            plt.bar(adjusted_x, subject_scores[subject], width=width, label=subject)    # Plot bar chart
             
-        plt.xlabel("Subject")
-        plt.ylabel("Average Score")
-        plt.title("Average Score per Subject")
-        plt.tight_layout() # There are too many label on x axis
-        plt.xticks([x + (width * len(subjects) / 2 - width / 2) for x in x_positions], classes)
-        plt.show()
+        plt.xlabel("Subject")                   # X-axis label
+        plt.ylabel("Average Score")             # Y-axis label
+        plt.title("Average Score per Subject")  # Chart title
+        plt.tight_layout()                      # Save space, there are too many label on x axis
+        plt.xticks([x + (width * len(subjects) / 2 - width / 2) for x in x_positions], classes)     # Adjusting points on X-axis
+        plt.show()  # Plotting chart
