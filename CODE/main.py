@@ -1,7 +1,5 @@
 from utils import *
-def main_menu():
-    school = School(FileManager.load_file("DATA/student-scores.csv"))
-    
+def main_menu():    
     while True:
         print("\n===== Student Grade Analyzer =====")
         print("1. Manage Students")
@@ -13,18 +11,18 @@ def main_menu():
         choice = choice.strip()
         
         if choice == "1":
-            manage_students(school)
+            manage_students()
         elif choice == "2":
-            analyze_performance(school)
+            analyze_performance()
         elif choice == "3":
-            visualize_data(school)
+            visualize_data()
         elif choice == "4":
             print("Exiting program...")
             return
         else:
             print("Invalid choice. Please enter a valid option.")
 
-def manage_students(school):
+def manage_students():
     while True:
         print("\n===== Manage Students =====")
         print("1. Show All Students")
@@ -49,13 +47,13 @@ def manage_students(school):
         elif choice == "5":
             find_student_by_id()
         elif choice == "6":
-            count_dropout_students(school)
+            count_dropout_students()
         elif choice == "7":
             return
         else:
             print("Invalid choice. Try again.")
 
-def analyze_performance(school):
+def analyze_performance():
     while True:
         print("\n===== Analyze Performance =====")
         print("1. Find Average Score of Student")
@@ -68,19 +66,19 @@ def analyze_performance(school):
         choice = choice.strip()
         
         if choice == "1":
-            find_average_score_of_student(school)
+            find_average_score_of_student()
         elif choice == "2":
-            find_average_score_of_students_in_class(school)
+            find_average_score_of_students_in_class()
         elif choice == "3":
-            find_average_score_of_students_in_school(school)
+            find_average_score_of_students_in_school()
         elif choice == "4":
-            find_high_and_low_performers(school)
+            find_high_and_low_performers()
         elif choice == "5":
             return
         else:
             print("Invalid choice. Try again.")
 
-def visualize_data(school):
+def visualize_data():
     while True:
         print("\n===== Visualize Data =====")
         print("1. Show Box and Whisker Plot of Scores")
@@ -99,7 +97,7 @@ def visualize_data(school):
         elif choice == "3":
             show_scatter_plot_age()
         elif choice == "4":
-            show_subject_average_scores(school)
+            show_subject_average_scores()
         elif choice == "5":
             return
         else:
@@ -202,36 +200,48 @@ def find_student_by_id():
     print("Student not found!")
 
 
-def count_dropout_students(school):
+def count_dropout_students():
     """Count the number of dropout students"""
     dropout_count = sum(1 for student in school.students if student.is_dropout)
     print(f"Total dropout students: {dropout_count}")
 
 # ===== PERFORMANCE ANALYSIS FUNCTIONS =====
 
-def find_average_score_of_student(school):
+def find_average_score_of_student():
     """Find and display the average score of a student"""
-    student_input = input("Enter the student ID: ")
-    student = school.find_student(int(student_input))
+    student_input = input("Enter the student ID: ")     # Let user to enter the student ID
+    student = school.find_student(int(student_input))   # find the student by ID
     if not student:
-        print("Student not found")
+        print("Student not found")      # Print a message if the student doesn't found
         return 
     print(f"Average score of student ID: {student_input} is {student.get_average_score():.2f}")
+    # Print the average score of the student
 
+<<<<<<< HEAD
 def find_average_score_of_students_in_class(school):
+=======
+def find_average_score_of_students_in_class():
+>>>>>>> 871cb00cba707dcae773d8270f9ddc4141a5b529
     """Find and display the average score of students in a specific class"""
-    student_class_input = input("Enter the class name: ")
-    class_students = Analyzer.find_students_in_class(school.students, student_class_input)
+    student_class_input = input("Enter the class name: ")   # Let user to enter the class name
+    class_students = Analyzer.find_students_in_class(school.students, student_class_input)     # Find the students in the specified class
     if not class_students:
-        print("No students found in this class")
+        print("No students found in this class")    # Print a message if no students are found in the class
         return
     print(f"Average score of students in class {student_class_input} is {Analyzer.find_overall_average(class_students):.2f}")
+<<<<<<< HEAD
 
+def find_average_score_of_students_in_school():
+=======
+    # Print the average score of students in the class
+    
 def find_average_score_of_students_in_school(school):
+>>>>>>> b298e836c15e1c76e36f0b02eb7ea4816a18ab15
     """Find and display the average score of all students in the school"""
     print(f"Average score of students in school is {Analyzer.find_overall_average(school.students):.2f}")
+    # Print the average score of all students in the school
     
-def find_high_and_low_performers(school):
+def find_high_and_low_performers():
     """Identify and display high and low-performing students"""
     while True:
         print("------------------------------------")
@@ -239,35 +249,36 @@ def find_high_and_low_performers(school):
         print("------------------------------------")
         print("1. Show in a Specific Class")
         print("2. Show in a School")
-        option = input("Enter your choice: ")
+        option = input("Enter your choice: ")   # Ask user to choose specific class or school
         if option.strip() == "1":
-            class_to_show = input("Enter the class name: ")
-            specific_class = Analyzer.find_students_in_class(school.students, class_to_show)
-            student_to_show = int(input("Enter the number of students to show: "))
-            top_perfomers = Analyzer.find_top_performers(specific_class, student_to_show)
+            class_to_show = input("Enter the class name: ")     # Ask the user to enter the class name
+            specific_class = Analyzer.find_students_in_class(school.students, class_to_show)    # Find students in the specified class
+            student_to_show = int(input("Enter the number of students to show: "))  # Ask the user to enter the number of students to show
+            top_perfomers = Analyzer.find_top_performers(specific_class, student_to_show)   # Find top performers in the class
             print("Top performers in class")
             for student in top_perfomers:
-                student.show_info()
+                student.show_info()     # Display information of top performers
             
-            low_perfomers = Analyzer.find_low_performers(specific_class, student_to_show)
+            low_perfomers = Analyzer.find_low_performers(specific_class, student_to_show)   # Find low performers in the class
             print("Low performers in class")
             for student in low_perfomers:
-                student.show_info()
+                student.show_info()     # Display information of low performers
             return
+        
         elif option.strip() == "2":
-            student_to_show = int(input("Enter the number of students to show: "))
-            top_perfomers = Analyzer.find_top_performers(school.students, student_to_show)
+            student_to_show = int(input("Enter the number of students to show: "))      # Ask the user to enter the number of students to show
+            top_perfomers = Analyzer.find_top_performers(school.students, student_to_show)  # Find top performers in the school
             print("Top performers in school")
             for student in top_perfomers:
-                student.show_info()
+                student.show_info()     # Display information of top performers
             
-            low_perfomers = Analyzer.find_low_performers(school.students, student_to_show)
+            low_perfomers = Analyzer.find_low_performers(school.students, student_to_show)  # Find low performers in the school
             print("Low performers in school")
             for student in low_perfomers:
-                student.show_info()
+                student.show_info()     # Display information if low performers
             return
         else: 
-            print("Invalid choice. Try again.")
+            print("Invalid choice. Try again.")     # Print a message if the choice is invalid
     return
 
 
@@ -339,7 +350,7 @@ def show_scatter_plot_age():
             print("Invalid choice. Try again.")
             return
 
-def show_subject_average_scores(school):
+def show_subject_average_scores():
     """Show the average scores for each subject in the school (Compare Each Class based on Subject)"""
     print("------------------------------------")
     print("Show Scatter Plot of Age")
@@ -349,4 +360,5 @@ def show_subject_average_scores(school):
     Visuallize.show_subject_averages_bar_chart(school)
 
 if __name__ == "__main__":
+    school = School(FileManager.load_file("DATA/student-scores.csv"))
     main_menu()
