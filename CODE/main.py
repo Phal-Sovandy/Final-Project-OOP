@@ -22,7 +22,6 @@ def main_menu():
             return
         else:
             print("Invalid choice. Please enter a valid option.")
-
 def manage_students():
     while True:
         print("\n===== Manage Students =====")
@@ -53,7 +52,6 @@ def manage_students():
             return
         else:
             print("Invalid choice. Try again.")
-
 def analyze_performance():
     while True:
         print("\n===== Analyze Performance =====")
@@ -78,7 +76,6 @@ def analyze_performance():
             return
         else:
             print("Invalid choice. Try again.")
-
 def visualize_data():
     while True:
         print("\n===== Visualize Data =====")
@@ -116,8 +113,6 @@ def show_all_students():
     print("--------------------------------------------------------------------------------------------------------------")
     for student in students:
         print(f"{student.student_id:5} | {student.first_name:20} | {student.last_name:20} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:10}")
-
-
 def add_student():
     """Add a new student to the school"""
     try:
@@ -144,8 +139,6 @@ def add_student():
         print("Student added successfully!")
     except ValueError:
         print("Invalid input! Please enter correct values.")
-
-
 def remove_student():
     """Remove a student from the school"""
     students = FileManager.load_file("DATA/student-scores.csv")
@@ -159,8 +152,6 @@ def remove_student():
     
     FileManager.save_file("DATA/student-scores.csv", updated_students)
     print("Student removed successfully!")
-
-
 def modify_student():
     """Modify an existing student's details"""
     students = FileManager.load_file("DATA/student-scores.csv")
@@ -186,8 +177,6 @@ def modify_student():
             return
     
     print("Student not found!")
-
-
 def find_student_by_id():
     """Find a student by their ID"""
     students = FileManager.load_file("DATA/student-scores.csv")
@@ -199,8 +188,6 @@ def find_student_by_id():
             print(f"ID: {student.student_id}, Name: {student.first_name} {student.last_name}, Class: {student.student_class}, Average Score: {student.get_average_score():.2f}")
             return
     print("Student not found!")
-
-
 def count_dropout_students():
     """Count the number of dropout students"""
     dropout_count = sum(1 for student in school.students if student.is_dropout)
@@ -217,7 +204,6 @@ def find_average_score_of_student():
         return 
     print(f"Average score of student ID: {student_input} is {student.get_average_score():.2f}")
     # Print the average score of the student
-
 def find_average_score_of_students_in_class():
     """Find and display the average score of students in a specific class"""
     student_class_input = input("Enter the class name: ")   # Let user to enter the class name
@@ -226,13 +212,11 @@ def find_average_score_of_students_in_class():
         print("No students found in this class")    # Print a message if no students are found in the class
         return
     print(f"Average score of students in class {student_class_input} is {Analyzer.find_overall_average(class_students):.2f}")
-    # Print the average score of students in the class
-    
+    # Print the average score of students in the class  
 def find_average_score_of_students_in_school():
     """Find and display the average score of all students in the school"""
     print(f"Average score of students in school is {Analyzer.find_overall_average(school.students):.2f}")
-    # Print the average score of all students in the school
-    
+    # Print the average score of all students in the school  
 def find_high_and_low_performers():
     """Identify and display high and low-performing students"""
     while True:
@@ -272,7 +256,6 @@ def find_high_and_low_performers():
         else: 
             print("Invalid choice. Try again.")     # Print a message if the choice is invalid
     return
-
 
 # ===== DATA VISUALIZATION FUNCTIONS =====
 

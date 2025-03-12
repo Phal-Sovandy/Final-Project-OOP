@@ -72,8 +72,7 @@ class Student:
     def age(self):
         """Get the student's age"""
         return self.__age
-    
-
+   
     @age.setter
     def age(self, value):
         """Set the student's age (must be positive)"""
@@ -102,7 +101,6 @@ class Student:
         if value < 0:
             raise ValueError("Absences cannot be negative")
         self.__absences = value
-
 
     @property
     def student_class(self):
@@ -144,6 +142,7 @@ class Student:
 
 #===========Group_Of_Student_Abstract_Class===========
 class GroupStudent(ABC):
+    """A abstract class for grouped student classes"""
     @abstractmethod
     def display_students_info(self):
         """Display information of all students in the group (school or class)"""
