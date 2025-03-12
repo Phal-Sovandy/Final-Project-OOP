@@ -102,51 +102,48 @@ class Analyzer:
                 subject_scores[subject].append(score)
         
         subject_avg = {subject: sum(scores) / len(scores) for subject, scores in subject_scores.items()}
-        return subject_avg
-    
+        return subject_avg  
     @staticmethod
     def find_students_in_class(students, student_class):
         """List students in a given class"""
-        if not (students and student_class):  #If empty list of student
+        # If there is no student in the list passed in and/or no student_class passed in
+        if not (students and student_class):
+            print("No students' data available")
             return []
+        
         return [student for student in students if student.student_class.lower() == student_class.lower()]
     @staticmethod
     def find_overall_average(students):
         """Find overall average score on a group of students"""
-        if not students: #If empty list of student
+        # If there is no student in the list passed in
+        if not students:
+            print("No students' data available")
             return 0.0
         
         total = 0.0
+        # Sum up the average of all students
         for student in students:
             total += student.get_average_score()
+        # Find average by divide the sum by number of students
         return total / len(students)
-
     @staticmethod
     def find_failing_students(students):
         """Identify students who are failing based on average score"""
-        if not students: #If empty list of student, then return empty list
+        # If there is no student in the list passed in
+        if not students:
             return []
+        # If student fall behind the average score, then consider a fail student
+        failing_students = [student for student in students if student.get_average_score() < Analyzer.find_overall_average(students)]
         
-        total_score = 0.0
-        for student in students:
-            total_score += student.get_average_score()
-
-        average_among_all = total_score / len(students)
-        
-        failing_students = [student for student in students if student.get_average_score() < average_among_all]
-
         return failing_students
-
-    
 class Visuallize:
     """Show data in visuallized form"""
-
     @staticmethod
     def show_whisker_plot_avg_scores(students: list[Student]):
         """Show a box plot of scores for every class"""
         
         # NECCESSARY DATA FOR VISULLIZATION
-        # If there is not student in the list passed in
+        # If there is no student in the list passed in
         if not students:
             print("No students' data available")
             return
@@ -180,7 +177,7 @@ class Visuallize:
         """Show a pie chart of gender in school or class"""
         
         # NECCESSARY DATA FOR VISULLIZATION
-        # If there is not student in the list passed in
+        # If there is no student in the list passed in
         if not students:
             print("No students' data available")
             return
@@ -193,11 +190,15 @@ class Visuallize:
         plt.pie([len(male_students), len(female_students)], labels= ["Male", "Female"], colors= ["Skyblue", "Pink"]) # Plotting Pie chart
         plt.title("Students Gender Distribution")   # Chart title
         plt.show()    #Plotting chart
-
     @staticmethod
     def show_scatter_plot_age(students: list[Student]):
         """Show a scatter plot of student ages in school or class"""
         # NECCESSARY DATA FOR VISULLIZATION
+        # If there is no student in the list passed in
+        if not students:
+            print("No students' data available")
+            return
+        
         # A dictionary contains Age as key and Number of student with that age as value
         students_age = {}
         
@@ -216,11 +217,15 @@ class Visuallize:
         plt.ylabel("Count")             # Y-axis label
         plt.title("Student age distribution")   # Plot title
         plt.show()  # Plotting graph
-
     @staticmethod
     def show_subject_averages_bar_chart(students: list[Student]):
         """Show a bar chart of average scores for each subject"""
         # NECCESSARY DATA FOR VISULLIZATION
+        # If there is no student in the list passed in
+        if not students:
+            print("No students' data available")
+            return
+        
         subjects = ["math", "history", "physics", "chemistry", "biology", "english", "geography"]   # All subject
         subject_scores = {subject : [] for subject in subjects}                                     # A dictionary of subject with list of average score of every class as value
         
