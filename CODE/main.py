@@ -296,8 +296,6 @@ def show_whisker_plot_scores():
             return
         else:
             print("Invalid choice. Try again.")
-            return
-        
 def show_pie_chart_gender():
     """Show a pie chart of the gender distribution in the school/class"""
     while True:
@@ -318,8 +316,6 @@ def show_pie_chart_gender():
             return
         else:
             print("Invalid choice. Try again.")
-            return
-
 def show_scatter_plot_age():
     """Show a scatter plot of student ages in the school/class"""
     while True:
@@ -340,16 +336,13 @@ def show_scatter_plot_age():
             return
         else:
             print("Invalid choice. Try again.")
-            return
-
 def show_subject_average_scores():
     """Show the average scores for each subject in the school (Compare Each Class based on Subject)"""
     print("------------------------------------")
     print("Show Scatter Plot of Age")
     print("------------------------------------")
     print("Plotting...")
-    
-    Visuallize.show_subject_averages_bar_chart(school)
+    Visuallize.show_subject_averages_bar_chart(school.students)
 
 if __name__ == "__main__":
     school = School(FileManager.load_file("DATA/student-scores.csv"))

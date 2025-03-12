@@ -177,9 +177,15 @@ class Visuallize:
    
         # VISUALLIZATION
         plt.figure(figsize=(12, 8))     # Window size
-        plt.pie([len(male_students), len(female_students)], labels= ["Male", "Female"], colors= ["Skyblue", "Pink"]) # Plotting Pie chart
-        plt.title("Students Gender Distribution")   # Chart title
-        plt.show()    #Plotting chart
+        plt.pie([len(male_students), len(female_students)],
+                 labels= ["Male", "Female"],
+                 colors= ["royalblue", "deeppink"],
+                 autopct='%1.2f%%',
+                 startangle=90,
+                 textprops={'fontsize': 12}) # Plotting Pie chart
+        plt.legend(["Male", "Female"], title="Gender", loc= "upper right")   # Add legends
+        plt.title("Students Gender Distribution", fontsize=16, fontweight='bold')   # Chart title
+        plt.show()      #Plotting chart
     @staticmethod
     def show_scatter_plot_age(students: list[Student]):
         """Show a scatter plot of student ages in school or class"""
@@ -201,11 +207,11 @@ class Visuallize:
         
         # VISUALLIZATION
         plt.figure(figsize=(12, 8))     # X-axis label
-        plt.scatter(students_age.keys(), students_age.values(), color="tomato") # Plot scatter plot
+        plt.scatter(students_age.keys(), students_age.values(), color="deeppink") # Plot scatter plot
         plt.xticks(range(0, 101, 5))    # Points on X-axis
-        plt.xlabel("Age")               # X-axis label
-        plt.ylabel("Count")             # Y-axis label
-        plt.title("Student age distribution")   # Plot title
+        plt.xlabel("Age", fontweight="bold")               # X-axis label
+        plt.ylabel("Count", fontweight="bold")             # Y-axis label
+        plt.title("Student age distribution", fontsize=16, fontweight="bold")   # Plot title
         plt.show()  # Plotting graph
     @staticmethod
     def show_subject_averages_bar_chart(students: list[Student]):
@@ -239,18 +245,21 @@ class Visuallize:
         # Grouped bar chart
         x_positions = list(range(len(classes)))  # X-axis points
         width = 0.12                             # Bar width
+        colors = ["deeppink", "springgreen", "tomato", "crimson", "gold", "dodgerblue", "blueviolet"]
         
-        plt.figure(figsize=(12, 8))             # Window size
+        plt.figure(figsize=(12, 8))   # Window size
         # Shifting bar position
         for i, subject in enumerate(subjects):
             # Plotting one subject of every class at a time
             offset = i * width  # Shift bar
             adjusted_x = [x + offset for x in x_positions]  # Adjust x ticks for each subject of every class
-            plt.bar(adjusted_x, subject_scores[subject], width=width, label=subject)    # Plot bar chart
+            plt.bar(adjusted_x, subject_scores[subject], width=width, label=subject, color=colors[i])    # Plot bar chart
             
-        plt.xlabel("Subject")                   # X-axis label
-        plt.ylabel("Average Score")             # Y-axis label
-        plt.title("Average Score per Subject")  # Chart title
-        plt.tight_layout()                      # Save space, there are too many label on x axis
-        plt.xticks([x + (width * len(subjects) / 2 - width / 2) for x in x_positions], classes)     # Adjusting points on X-axis
+        plt.xlabel("Subject", fontweight="bold")                   # X-axis label
+        plt.ylabel("Average Score", fontweight="bold")             # Y-axis label
+        plt.title("Average Score per Subject", fontsize=16, fontweight="bold")  # Chart title
+        plt.tight_layout()      # Save space, there are too many label on x axis
+        plt.xticks([x + (width * len(subjects) / 2 - width / 2) for x in x_positions], classes, rotation=45)     # Adjusting points on X-axis
+        plt.yticks(range(0, 101, 5))
+        plt.grid(True)
         plt.show()  # Plotting chart
