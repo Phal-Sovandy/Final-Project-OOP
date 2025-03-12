@@ -74,8 +74,6 @@ class FileManager:
                 print("Student data appended successfully!")
         except Exception as e:
             print(e)        
-
-
 class Analyzer:
     """Analyzes student performance"""
 
