@@ -4,7 +4,6 @@ from entities import *
 
 class FileManager:
     """Handles file operations such as saving, appending and loading student data."""
-
     @staticmethod
     def save_file(path: str, data: list):
         """Save student data to file."""
@@ -18,7 +17,6 @@ class FileManager:
                 print("File saving... Completed!")
         except Exception as e:
             print(e)
-
     @staticmethod
     def load_file(path: str):
         """Load student data from file and return it as a list of Student objects."""
@@ -59,9 +57,6 @@ class FileManager:
         except Exception as e:
             print(e)
             return []
-
-
-
     @staticmethod
     def append_to_file(path: str, student: list):
         """Append a single student's data to an existing file."""
@@ -76,19 +71,16 @@ class FileManager:
             print(e)        
 class Analyzer:
     """Analyzes student performance"""
-
     @staticmethod
     def find_top_performers(students, n=10):
         """Find the top N students based on average score"""
         sorted_students = sorted(students, key=lambda student: student.get_average_score(), reverse=True)
         return sorted_students[:n]
-
     @staticmethod
     def find_low_performers(students, n=10):
         """Find the low N students based on average score"""
         sorted_students = sorted(students, key=lambda student: student.get_average_score())
         return sorted_students[:n]
-
     @staticmethod
     def find_average_score_per_subject(students):
         """Calculate the average score for each subject across all students"""
@@ -100,7 +92,7 @@ class Analyzer:
                 subject_scores[subject].append(score)
         
         subject_avg = {subject: sum(scores) / len(scores) for subject, scores in subject_scores.items()}
-        return subject_avg  
+        return subject_avg
     @staticmethod
     def find_students_in_class(students: list[Student], student_class: str):
         """List students in a given class"""
