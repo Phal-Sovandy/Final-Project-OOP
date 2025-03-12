@@ -218,7 +218,6 @@ def find_average_score_of_student(school):
         return 
     print(f"Average score of student ID: {student_input} is {student.get_average_score():.2f}")
 
-
 def find_average_score_of_students_in_class(school):
     """Find and display the average score of students in a specific class"""
     student_class_input = input("Enter the class name: ")
