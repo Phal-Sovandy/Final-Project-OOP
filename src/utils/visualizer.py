@@ -1,132 +1,9 @@
-import csv
+"""Visualize data with chart, plots,..."""
 import matplotlib.pyplot as plt
-from entities import *
+from src.models.student import Student
+from .analyzer import Analyzer
 
-class FileManager:
-    """Handles file operations such as saving, appending and loading student data."""
-    @staticmethod
-    def save_file(path: str, data: list):
-        """Save student data to file."""
-        try:
-            with open(path, "w", newline="") as file:
-                writer = csv.writer(file)
-                for student in data:
-                    writer.writerow([student.student_id, student.first_name, student.last_name, student.gender,
-                                     student.is_dropout, student.absences, student.age, student.student_class] +
-                                    list(student.scores.values()))
-                print("File saving... Completed!")
-        except Exception as e:
-            print(e)
-    @staticmethod
-    def load_file(path: str):
-        """Load student data from file and return it as a list of Student objects."""
-        try:
-            students = []  # Initialize an empty list to store student objects
-            
-            with open(path, "r") as file:
-                data = csv.reader(file)
-                next(data)  # Skip the header row
-                
-                for row in data:
-                    # Convert the row into a Student object
-                    student_id = int(row[0])
-                    first_name = row[1]
-                    last_name = row[2]
-                    gender = row[3]
-                    drop_out = (row[4] == "TRUE")  # Convert "TRUE" or "FALSE" to boolean value
-                    absences = int(row[5])
-                    age = int(row[6])
-                    student_class = row[7]
-                    scores = {
-                        "math_score": float(row[8]),
-                        "history_score": float(row[9]),
-                        "physics_score": float(row[10]),
-                        "chemistry_score": float(row[11]),
-                        "biology_score": float(row[12]),
-                        "english_score": float(row[13]),
-                        "geography_score": float(row[14])
-                    }
-                    
-                    # Create a Student object
-                    student = Student(student_id, first_name, last_name, gender, drop_out, absences, age, student_class, **scores)
-                    
-                    students.append(student)
-                    
-            return students  # Return the list of student objects
-            
-        except Exception as e:
-            print(e)
-            return []
-    @staticmethod
-    def append_to_file(path: str, student: list):
-        """Append a single student's data to an existing file."""
-        try:
-            with open(path, "a", newline="") as file:
-                writer = csv.writer(file)
-                writer.writerow([student.student_id, student.first_name, student.last_name, student.gender,
-                                 student.is_dropout, student.absences, student.age, student.student_class] +
-                                list(student.scores.values()))
-                print("Student data appended successfully!")
-        except Exception as e:
-            print(e)        
-class Analyzer:
-    """Analyzes student performance"""
-    @staticmethod
-    def find_top_performers(students, n=10):
-        """Find the top N students based on average score"""
-        sorted_students = sorted(students, key=lambda student: student.get_average_score(), reverse=True)
-        return sorted_students[:n]
-    @staticmethod
-    def find_low_performers(students, n=10):
-        """Find the low N students based on average score"""
-        sorted_students = sorted(students, key=lambda student: student.get_average_score())
-        return sorted_students[:n]
-    @staticmethod
-    def find_average_score_per_subject(students):
-        """Calculate the average score for each subject across all students"""
-        subjects = ["math", "history", "physics", "chemistry", "biology", "english", "geography"]
-        subject_scores = {subject: [] for subject in subjects}
-        
-        for student in students:
-            for subject, score in student.scores.items():
-                subject_scores[subject].append(score)
-        
-        subject_avg = {subject: sum(scores) / len(scores) for subject, scores in subject_scores.items()}
-        return subject_avg
-    @staticmethod
-    def find_students_in_class(students: list[Student], student_class: str):
-        """List students in a given class"""
-        # If there is no student in the list passed in and/or no student_class passed in
-        if not (students and student_class):
-            print("No students' data available")
-            return []
-        
-        return [student for student in students if student.student_class.lower() == student_class.lower()]
-    @staticmethod
-    def find_overall_average(students: list[Student]):
-        """Find overall average score on a group of students"""
-        # If there is no student in the list passed in
-        if not students:
-            print("No students' data available")
-            return 0.0
-        
-        total = 0.0
-        # Sum up the average of all students
-        for student in students:
-            total += student.get_average_score()
-        # Find average by divide the sum by number of students
-        return total / len(students)
-    @staticmethod
-    def find_failing_students(students: list[Student]):
-        """Identify students who are failing based on average score"""
-        # If there is no student in the list passed in
-        if not students:
-            return []
-        # If student fall behind the average score, then consider a fail student
-        failing_students = [student for student in students if student.get_average_score() < Analyzer.find_overall_average(students)]
-        
-        return failing_students
-class Visuallize:
+class Visualizer:
     """Show data in visuallized form"""
     @staticmethod
     def show_whisker_plot_avg_scores(students: list[Student]):
@@ -152,7 +29,7 @@ class Visuallize:
         class_labels = list(class_avg_scores.keys())        # Label for each entity(class_name)
         average_scores = list(class_avg_scores.values())    # Students' average scores of each class
         
-        # VISUALLIZATION
+        # VISUALIZATION
         plt.figure(figsize=(12, 8))                                     # Window size
         plt.boxplot(average_scores, vert=True, patch_artist=True)       # Plot Box plots
         plt.xticks(range(1, len(class_labels) + 1), class_labels)       # Point position in X-axis
@@ -175,7 +52,7 @@ class Visuallize:
         male_students = [student for student in students if student.gender == "male"]       # List of male studnets
         female_students = [student for student in students if student.gender == "female"]   # List of female students
    
-        # VISUALLIZATION
+        # VISUALIZATION
         plt.figure(figsize=(12, 8))     # Window size
         plt.pie([len(male_students), len(female_students)],
                  labels= ["Male", "Female"],
@@ -205,7 +82,7 @@ class Visuallize:
             else:
                 students_age[student.age] += 1
         
-        # VISUALLIZATION
+        # VISUALIZATION
         plt.figure(figsize=(12, 8))     # X-axis label
         plt.scatter(students_age.keys(), students_age.values(), color="deeppink") # Plot scatter plot
         plt.xticks(range(0, 101, 5))    # Points on X-axis
@@ -241,7 +118,7 @@ class Visuallize:
                 subject_scores[key].append(avg_score_per_subject[key])
         
         
-        # VISUALLIZATION
+        # VISUALIZATION
         # Grouped bar chart
         x_positions = list(range(len(classes)))  # X-axis points
         width = 0.12                             # Bar width

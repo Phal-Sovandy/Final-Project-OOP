@@ -1,11 +1,12 @@
-from utils import *
+from src.models import *
+from src.utils import *
 
 def main_menu():    
     while True:
         print("\n===== Student Grade Analyzer =====")
         print("1. Manage Students")
         print("2. Analyze Performance")
-        print("3. Visualize Data")
+        print("3. Visualizer Data")
         print("4. Exit")
         
         choice = input("Enter your choice: ")
@@ -16,7 +17,7 @@ def main_menu():
         elif choice == "2":
             analyze_performance()
         elif choice == "3":
-            visualize_data()
+            visualizer_data()
         elif choice == "4":
             print("Exiting program...")
             return
@@ -76,9 +77,9 @@ def analyze_performance():
             return
         else:
             print("Invalid choice. Try again.")
-def visualize_data():
+def visualizer_data():
     while True:
-        print("\n===== Visualize Data =====")
+        print("\n===== Visualizer Data =====")
         print("1. Show Box and Whisker Plot of Scores")
         print("2. Show Pie Chart of Gender Distribution")
         print("3. Show Scatter Plot of Student Ages")
@@ -271,11 +272,11 @@ def show_whisker_plot_scores():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visuallize.show_whisker_plot_avg_scores(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
+            Visualizer.show_whisker_plot_avg_scores(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visuallize.show_whisker_plot_avg_scores(FileManager.load_file("DATA/student-scores.csv"))
+            Visualizer.show_whisker_plot_avg_scores(FileManager.load_file("DATA/student-scores.csv"))
             return
         else:
             print("Invalid choice. Try again.")
@@ -291,11 +292,11 @@ def show_pie_chart_gender():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visuallize.show_pie_chart_gender(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
+            Visualizer.show_pie_chart_gender(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visuallize.show_pie_chart_gender(FileManager.load_file("DATA/student-scores.csv"))
+            Visualizer.show_pie_chart_gender(FileManager.load_file("DATA/student-scores.csv"))
             return
         else:
             print("Invalid choice. Try again.")
@@ -311,11 +312,11 @@ def show_scatter_plot_age():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visuallize.show_scatter_plot_age(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
+            Visualizer.show_scatter_plot_age(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visuallize.show_scatter_plot_age(FileManager.load_file("DATA/student-scores.csv"))
+            Visualizer.show_scatter_plot_age(FileManager.load_file("DATA/student-scores.csv"))
             return
         else:
             print("Invalid choice. Try again.")
@@ -325,7 +326,7 @@ def show_subject_average_scores():
     print("Show Scatter Plot of Age")
     print("------------------------------------")
     print("Plotting...")
-    Visuallize.show_subject_averages_bar_chart(school.students)
+    Visualizer.show_subject_averages_bar_chart(school.students)
 
 if __name__ == "__main__":
     school = School(FileManager.load_file("DATA/student-scores.csv"))
