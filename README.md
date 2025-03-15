@@ -50,7 +50,7 @@ git clone https://github.com/Phal-Sovandy/Final-Project-OOP.git
 ```
   2. Navigate to project directory
 ```sh
-cd Final-Project-OOP/CODE
+cd Final-Project-OOP
 ```
   3. Install the required library
 - Windows
@@ -64,11 +64,11 @@ cd Final-Project-OOP/CODE
 ## How To Run the Code?
 - Execute the following command (Windows):
   ```sh
-  python Final-Project-OOP/CODE/main.py
+  python Final-Project-OOP/main.py
   ```
 - Execute the following command (Macs):
   ```sh
-  python3 Final-Project-OOP/CODE/main.py
+  python3 Final-Project-OOP/main.py
   ```
 
 ## Conclusion

@@ -1,6 +1,8 @@
 from src.models import *
 from src.utils import *
 
+DATA_BASE_PATH = "data/student-scores.csv"
+
 def main_menu():    
     while True:
         print("\n===== Student Grade Analyzer =====")
@@ -106,7 +108,7 @@ def visualizer_data():
 
 def show_all_students():
     """Display the list of all students in the school"""
-    students = FileManager.load_file("DATA/student-scores.csv")
+    students = FileManager.load_file(DATA_BASE_PATH)
     if not students:
         print("No student data available.")
         return
@@ -136,13 +138,13 @@ def add_student():
         }
         
         new_student = Student(student_id, first_name, last_name, gender, is_dropout, absences, age, student_class, **scores)
-        FileManager.append_to_file("DATA/student-scores.csv", new_student)
+        FileManager.append_to_file(DATA_BASE_PATH, new_student)
         print("Student added successfully!")
     except ValueError:
         print("Invalid input! Please enter correct values.")
 def remove_student():
     """Remove a student from the school"""
-    students = FileManager.load_file("DATA/student-scores.csv")
+    students = FileManager.load_file(DATA_BASE_PATH)
     student_id = int(input("Enter Student ID to remove: "))
     
     updated_students = [student for student in students if student.student_id != student_id]
@@ -151,11 +153,11 @@ def remove_student():
         print("Student not found!")
         return
     
-    FileManager.save_file("DATA/student-scores.csv", updated_students)
+    FileManager.save_file(DATA_BASE_PATH, updated_students)
     print("Student removed successfully!")
 def modify_student():
     """Modify an existing student's details"""
-    students = FileManager.load_file("DATA/student-scores.csv")
+    students = FileManager.load_file(DATA_BASE_PATH)
     student_id = int(input("Enter Student ID to modify: "))
     
     for student in students:
@@ -173,14 +175,14 @@ def modify_student():
                 if new_score:
                     student.scores[subject] = float(new_score)
             
-            FileManager.save_file("DATA/student-scores.csv", students)
+            FileManager.save_file(DATA_BASE_PATH, students)
             print("Student details updated successfully!")
             return
     
     print("Student not found!")
 def find_student_by_id():
     """Find a student by their ID"""
-    students = FileManager.load_file("DATA/student-scores.csv")
+    students = FileManager.load_file(DATA_BASE_PATH)
     student_id = int(input("Enter Student ID: "))
     
     for student in students:
@@ -272,11 +274,11 @@ def show_whisker_plot_scores():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visualizer.show_whisker_plot_avg_scores(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
+            Visualizer.show_whisker_plot_avg_scores(Analyzer.find_students_in_class(FileManager.load_file(DATA_BASE_PATH), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visualizer.show_whisker_plot_avg_scores(FileManager.load_file("DATA/student-scores.csv"))
+            Visualizer.show_whisker_plot_avg_scores(FileManager.load_file(DATA_BASE_PATH))
             return
         else:
             print("Invalid choice. Try again.")
@@ -292,11 +294,11 @@ def show_pie_chart_gender():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visualizer.show_pie_chart_gender(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
+            Visualizer.show_pie_chart_gender(Analyzer.find_students_in_class(FileManager.load_file(DATA_BASE_PATH), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visualizer.show_pie_chart_gender(FileManager.load_file("DATA/student-scores.csv"))
+            Visualizer.show_pie_chart_gender(FileManager.load_file(DATA_BASE_PATH))
             return
         else:
             print("Invalid choice. Try again.")
@@ -312,11 +314,11 @@ def show_scatter_plot_age():
         if option.strip() == "1":
             class_to_show = input("Enter the class name: ")
             print("Plotting...")
-            Visualizer.show_scatter_plot_age(Analyzer.find_students_in_class(FileManager.load_file("DATA/student-scores.csv"), class_to_show))
+            Visualizer.show_scatter_plot_age(Analyzer.find_students_in_class(FileManager.load_file(DATA_BASE_PATH), class_to_show))
             return
         elif option.strip() == "2":
             print("Plotting...")
-            Visualizer.show_scatter_plot_age(FileManager.load_file("DATA/student-scores.csv"))
+            Visualizer.show_scatter_plot_age(FileManager.load_file(DATA_BASE_PATH))
             return
         else:
             print("Invalid choice. Try again.")
@@ -329,5 +331,6 @@ def show_subject_average_scores():
     Visualizer.show_subject_averages_bar_chart(school.students)
 
 if __name__ == "__main__":
-    school = School(FileManager.load_file("DATA/student-scores.csv"))
+    DATA_BASE_PATH = "data/student-scores.csv"
+    school = School(FileManager.load_file(DATA_BASE_PATH))
     main_menu()
