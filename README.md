@@ -36,8 +36,9 @@ The Student Grade Analyzer addresses a real need in education and administration
 ### III. Visual Data
   1. Display Box-and-Whisker Plot of Class Scores
   2. Display Gender Distribution Using a Pie Chart
-  3. Display Dot Plot of Student Ages
-  4. Show Subject Average Scores
+  3. Display Bar Chart of Student Count
+  4. Display Scatter Plot of Student Ages
+  5. Show Subject Average Scores Using Bar Chart
 
 ## Prerequisite
   Before running the project, please ensure that you have the following installed:

@@ -100,9 +100,10 @@ def visualizer_data():
         print("\n" + "=" * 27 + " VISUALIZE DATA " + "=" * 26)
         print("1. Show Box and Whisker Plot of Scores")
         print("2. Show Pie Chart of Gender Distribution")
-        print("3. Show Scatter Plot of Student Ages")
-        print("4. Show Subject Average Scores")
-        print("5. Back to Main Menu")
+        print("3. Show Dot Plot of Student Count Distribution")
+        print("4. Show Scatter Plot of Student Ages")
+        print("5. Show Subject Average Scores")
+        print("6. Back to Main Menu")
         print("-" * 70)
         
         choice = input("Enter your choice: ")
@@ -113,10 +114,12 @@ def visualizer_data():
         elif choice == "2":
             show_pie_chart_gender()
         elif choice == "3":
-            show_scatter_plot_age()
+            show_student_count()
         elif choice == "4":
-            show_subject_average_scores()
+            show_scatter_plot_age()
         elif choice == "5":
+            show_subject_average_scores()
+        elif choice == "6":
             return
         else:
             print("Invalid choice. Try again.")
@@ -378,7 +381,7 @@ def find_student_by_id():
             print(f"Error: {e}")
 
 # ===== PERFORMANCE ANALYSIS FUNCTIONS =====
-
+#Should find details of student with this one with GPA, Percentage,...
 def find_average_score_of_student():
     """Find and display the average score of a student"""
     try:
@@ -597,6 +600,41 @@ def show_pie_chart_gender():
             break
         else:
             print("Invalid choice. Try again.")
+def show_student_count():
+    """Show number of student across class or school"""
+    while True:
+        print()
+        print("-" * 70)
+        print("Show Number of Students")
+        print("-" * 70)
+        print("1. Show in a Specific Class")
+        print("2. Show All Classes")
+        print("-" * 70)
+        
+        option = input("Enter your choice: ")
+        if option.strip() == "1":
+            class_to_show = input("Enter the class name: ")
+            try:
+                classroom = Classroom(class_to_show, Analyzer.find_students_in_class(FileManager.load_file(DATA_BASE_PATH), class_to_show))
+            except ValueError:
+                print(f"Error: {ValueError}")
+            except Exception as e:
+                print(f"Error: {e}")
+            print("Plotting...")
+            Visualizer.show_number_students(classroom.students)
+            break
+        elif option.strip() == "2":
+            try:
+                school = School(FileManager.load_file(DATA_BASE_PATH))
+            except ValueError:
+                print(f"Error: {ValueError}")
+            except Exception as e:
+                print(f"Error: {e}")
+            print("Plotting...")
+            Visualizer.show_number_students(school.students)
+            break
+        else:
+            print("Invalid choice. Try again.")
 def show_scatter_plot_age():
     """Show a scatter plot of student ages in the school/class"""
     while True:
@@ -646,7 +684,7 @@ def show_subject_average_scores():
     except Exception as e:
         print(f"Error: {e}")
     Visualizer.show_subject_averages_bar_chart(school.students)
-    
+
 if __name__ == "__main__":
     DATA_BASE_PATH = "data/student-scores.csv"
     main_menu()

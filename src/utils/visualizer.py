@@ -64,6 +64,38 @@ class Visualizer:
         plt.title("Students Gender Distribution", fontsize=16, fontweight='bold')   # Chart title
         plt.show()      #Plotting chart
     @staticmethod
+    def show_number_students(students: list[Student]):
+        """Plot dot plot for showing number of student in class or school"""
+        # NECCESSARY DATA FOR VISULLIZATION
+        # If there is no student in the list passed in
+        if not students:
+            print("No students' data available")
+            return
+        
+        # A dictionary contains class_name as key and list of its students' average scores
+        class_students = {}
+        
+        for student in students:
+            # If a class not yet in dictionary
+            if student.student_class not in class_students:
+                class_students[student.student_class] = len(Analyzer.find_students_in_class(students, student.student_class))
+        
+        # VISUALIZATION
+        plt.figure(figsize=(12, 8))     # X-axis label
+        plt.bar(class_students.keys(), class_students.values(), edgecolor="black", color="dodgerblue")
+        plt.title("Students Count Distribution", fontsize=16, fontweight="bold")
+        plt.xticks(rotation=45)
+        plt.xlabel("Classes", fontweight="bold")
+        plt.ylabel(f"Count ({sum(class_students.values())})", fontweight="bold")
+        
+        bar_height = list(class_students.values())
+        # Adding bars values
+        for i in range(len(class_students.keys())):
+            plt.text(i, bar_height[i] + 0.5, bar_height[i], ha="center") #x, y coordinate of the value, ha = horizontal alignment
+        
+        plt.grid()
+        plt.show() # Plotting
+    @staticmethod
     def show_scatter_plot_age(students: list[Student]):
         """Show a scatter plot of student ages in school or class"""
         # NECCESSARY DATA FOR VISULLIZATION
