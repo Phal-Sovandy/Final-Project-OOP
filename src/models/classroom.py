@@ -8,7 +8,14 @@ class Classroom(GroupStudent):
             students = []   # if no students are provided, initialize with an empty list
         self.__student_class = student_class    # store the class name
         self.__students = students      # store the list of students
-
+    
+    @property
+    def student_class(self):
+        return self.__student_class
+    @property
+    def students(self):
+        return self.__students
+    
     def display_students_info(self):
         """Display information of all students in this class"""
         print(f"Class: {self.__student_class}")     #Print the class name

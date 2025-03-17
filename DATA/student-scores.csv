@@ -1,12 +1,17 @@
+id,first_name,last_name,gender,drop_out,grade,age,class,math_score,history_score,physics_score,chemistry_score,biology_score,english_score,geography_score
+1,Paul,Casey,male,False,3,27,Lawyer,73.0,81.0,93.0,97.0,63.0,80.0,87.0
+2,Danielle,Sandoval,female,False,2,47,Doctor,90.0,86.0,96.0,100.0,90.0,88.0,90.0
+3,Tina,Andrews,female,False,9,13,Government Officer,81.0,97.0,95.0,96.0,65.0,77.0,94.0
+4,Tara,Clark,female,False,5,3,Artist,71.0,74.0,88.0,80.0,89.0,63.0,86.0
 5,Anthony,Campos,male,False,5,10,Data Science,84.0,77.0,65.0,65.0,80.0,74.0,76.0
 6,Kelly,Wade,female,False,2,26,Data Science,93.0,100.0,67.0,78.0,72.0,80.0,84.0
 7,Anthony,Smith,male,False,3,23,Software Engineer,99.0,96.0,97.0,73.0,88.0,76.0,64.0
-8,George,Short,male,False,2,34,Software Engineer,95.0,95.0,82.0,63.0,84.0,70.0,85.0
+8,George,Short,male,True,2,34,Software Engineer,95.0,95.0,82.0,63.0,84.0,70.0,85.0
 9,Stanley,Gutierrez,male,False,6,25,Data Science,94.0,68.0,94.0,85.0,81.0,74.0,72.0
 10,Audrey,Simpson,female,False,3,18,Teacher,98.0,69.0,88.0,71.0,67.0,71.0,73.0
 11,Gabrielle,White,female,False,2,7,Teacher,65.0,60.0,97.0,94.0,71.0,81.0,66.0
 12,Clinton,Randolph,male,False,1,7,Data Science,80.0,61.0,100.0,65.0,87.0,64.0,61.0
-13,Patricia,Gomez,female,False,7,4,Business Owner,94.0,59.0,69.0,67.0,89.0,65.0,73.0
+13,Patricia,Gomez,female,True,7,4,Business Owner,94.0,59.0,69.0,67.0,89.0,65.0,73.0
 14,Pamela,Jackson,female,False,10,2,Business Owner,66.0,94.0,86.0,100.0,57.0,90.0,63.0
 15,Laura,Jackson,female,False,3,39,Doctor,96.0,90.0,86.0,92.0,92.0,95.0,87.0
 16,Roger,Wiley,male,False,6,0,Business Owner,94.0,50.0,78.0,64.0,79.0,74.0,84.0
@@ -14,7 +19,7 @@
 18,Maxwell,Davidson,male,False,2,28,Software Engineer,86.0,83.0,85.0,79.0,93.0,76.0,77.0
 19,Jonathan,Werner,male,False,1,37,Doctor,92.0,87.0,92.0,99.0,97.0,87.0,86.0
 20,Angela,Rios,female,False,2,27,Software Engineer,99.0,65.0,98.0,75.0,66.0,72.0,100.0
-21,Tim,Nichols,male,False,3,15,Software Engineer,100.0,90.0,72.0,98.0,73.0,97.0,72.0
+21,Tim,Nichols,male,True,3,15,Software Engineer,100.0,90.0,72.0,98.0,73.0,97.0,72.0
 22,Kyle,Willis,male,False,8,4,Business Owner,57.0,55.0,78.0,94.0,83.0,88.0,88.0
 23,Shannon,Simpson,female,False,9,2,Business Owner,89.0,72.0,68.0,72.0,71.0,54.0,90.0
 24,Sean,Griffin,male,False,9,1,Business Owner,50.0,76.0,81.0,55.0,56.0,80.0,79.0
@@ -35,11 +40,11 @@
 39,Miguel,Martinez,male,False,4,21,Banker,77.0,64.0,64.0,88.0,94.0,82.0,78.0
 40,Christopher,Taylor,male,False,4,18,Accountant,92.0,60.0,66.0,87.0,60.0,83.0,95.0
 41,Emily,Holloway,female,False,4,31,Software Engineer,85.0,97.0,64.0,90.0,79.0,81.0,81.0
-42,Jesus,Rasmussen,male,False,7,4,Business Owner,65.0,55.0,66.0,50.0,88.0,56.0,86.0
-43,Lauren,Farmer,female,False,6,3,Business Owner,93.0,94.0,92.0,77.0,87.0,98.0,63.0
+42,Jesus,Rasmussen,male,True,7,4,Business Owner,65.0,55.0,66.0,50.0,88.0,56.0,86.0
+43,Lauren,Farmer,female,True,6,3,Business Owner,93.0,94.0,92.0,77.0,87.0,98.0,63.0
 44,Pamela,Cole,female,False,4,3,Game Developer,97.0,99.0,85.0,96.0,91.0,68.0,66.0
-45,David,Gillespie,male,False,4,3,Business Owner,54.0,99.0,79.0,57.0,53.0,95.0,83.0
-46,Kenneth,Davis,male,False,5,5,Business Owner,88.0,53.0,50.0,58.0,84.0,53.0,96.0
+45,David,Gillespie,male,True,4,3,Business Owner,54.0,99.0,79.0,57.0,53.0,95.0,83.0
+46,Kenneth,Davis,male,True,5,5,Business Owner,88.0,53.0,50.0,58.0,84.0,53.0,96.0
 47,Elizabeth,Martin,female,False,5,27,Lawyer,71.0,85.0,93.0,68.0,100.0,91.0,87.0
 48,Billy,Soto,male,False,0,28,Stock Investor,81.0,98.0,74.0,70.0,97.0,65.0,65.0
 49,Kimberly,Kelly,female,False,4,32,Data Science,80.0,78.0,86.0,80.0,64.0,68.0,100.0
@@ -51,7 +56,7 @@
 55,Jamie,Taylor,male,False,2,3,Game Developer,85.0,100.0,92.0,68.0,60.0,77.0,83.0
 56,Jennifer,Murphy,female,False,6,31,Software Engineer,91.0,60.0,84.0,88.0,76.0,71.0,99.0
 57,Melissa,Lee,female,False,3,21,Data Science,95.0,72.0,79.0,86.0,87.0,81.0,62.0
-58,David,Vaughn,male,False,2,18,Banker,94.0,78.0,73.0,97.0,67.0,78.0,99.0
+58,David,Vaughn,male,True,2,18,Banker,94.0,78.0,73.0,97.0,67.0,78.0,99.0
 59,Jacob,Hanson,male,False,7,26,Software Engineer,94.0,89.0,64.0,96.0,91.0,95.0,77.0
 60,Casey,May,male,False,4,23,Software Engineer,89.0,99.0,90.0,79.0,85.0,96.0,98.0
 61,Michelle,Roman,female,False,2,1,Game Developer,91.0,81.0,88.0,71.0,78.0,83.0,76.0
@@ -59,22 +64,22 @@
 63,Brian,Lewis,male,False,7,2,Business Owner,98.0,65.0,53.0,64.0,52.0,96.0,62.0
 64,Veronica,Cameron,female,False,1,34,Banker,83.0,97.0,65.0,88.0,67.0,95.0,69.0
 65,Eric,Reyes,male,False,2,18,Construction Engineer,91.0,73.0,99.0,70.0,63.0,80.0,78.0
-66,Kristy,Weber,female,False,6,2,Business Owner,90.0,54.0,77.0,74.0,76.0,96.0,88.0
+66,Kristy,Weber,female,True,6,2,Business Owner,90.0,54.0,77.0,74.0,76.0,96.0,88.0
 67,Anthony,Smith,male,False,3,27,Software Engineer,92.0,86.0,66.0,69.0,100.0,71.0,80.0
 68,Steven,Stephens,male,False,2,8,Real Estate Developer,64.0,64.0,73.0,76.0,72.0,97.0,91.0
 69,Henry,Davis,male,False,4,14,Software Engineer,90.0,70.0,85.0,60.0,81.0,71.0,88.0
 70,Raymond,Shea,male,False,10,22,Banker,99.0,81.0,96.0,69.0,91.0,87.0,83.0
 71,Jill,Perez,female,False,1,15,Designer,89.0,66.0,93.0,81.0,86.0,88.0,70.0
-72,Kimberly,Bonilla,female,False,3,22,Writer,62.0,87.0,93.0,83.0,93.0,97.0,73.0
-73,Louis,Edwards,male,False,10,1,Business Owner,61.0,70.0,69.0,64.0,59.0,78.0,80.0
-74,Michael,Hodge,male,False,8,3,Business Owner,51.0,54.0,66.0,87.0,99.0,58.0,68.0
+72,Kimberly,Bonilla,female,True,3,22,Writer,62.0,87.0,93.0,83.0,93.0,97.0,73.0
+73,Louis,Edwards,male,True,10,1,Business Owner,61.0,70.0,69.0,64.0,59.0,78.0,80.0
+74,Michael,Hodge,male,True,8,3,Business Owner,51.0,54.0,66.0,87.0,99.0,58.0,68.0
 75,Anna,Li,female,False,2,20,Software Engineer,85.0,100.0,64.0,68.0,73.0,81.0,87.0
 76,Andrea,Case,female,False,7,27,Software Engineer,99.0,90.0,96.0,92.0,100.0,98.0,77.0
 77,Jennifer,Garcia,female,False,3,24,Software Engineer,87.0,63.0,60.0,90.0,89.0,99.0,80.0
 78,Rhonda,Davenport,female,False,1,5,Data Science,75.0,91.0,80.0,93.0,74.0,93.0,65.0
 79,Chelsea,Craig,female,False,7,34,Data Science,88.0,94.0,80.0,63.0,68.0,77.0,64.0
 80,Shawn,Chase,male,False,3,16,Software Engineer,87.0,79.0,89.0,68.0,93.0,75.0,92.0
-81,Elizabeth,Calhoun,female,False,3,3,Business Owner,87.0,67.0,94.0,92.0,62.0,58.0,65.0
+81,Elizabeth,Calhoun,female,True,3,3,Business Owner,87.0,67.0,94.0,92.0,62.0,58.0,65.0
 82,Lisa,Harris,female,False,1,15,Stock Investor,76.0,67.0,83.0,85.0,91.0,61.0,67.0
 83,Carol,Snyder,female,False,7,11,Government Officer,60.0,80.0,61.0,63.0,95.0,92.0,75.0
 84,Charles,Butler,male,False,7,32,Scientist,85.0,65.0,99.0,100.0,88.0,93.0,72.0
@@ -92,12 +97,12 @@
 96,Victoria,Jones,female,False,2,34,Software Engineer,100.0,98.0,89.0,85.0,81.0,64.0,94.0
 97,Natasha,Hansen,female,False,3,2,Artist,86.0,76.0,84.0,93.0,76.0,69.0,91.0
 98,Thomas,White,male,False,3,4,Real Estate Developer,87.0,89.0,93.0,98.0,79.0,72.0,88.0
-99,Derrick,Figueroa,male,False,0,28,Lawyer,100.0,93.0,85.0,61.0,96.0,83.0,86.0
+99,Derrick,Figueroa,male,True,0,28,Lawyer,100.0,93.0,85.0,61.0,96.0,83.0,86.0
 100,Kimberly,Ward,female,False,0,5,Game Developer,85.0,89.0,94.0,69.0,99.0,93.0,98.0
 101,Rhonda,Jones,female,False,2,4,Artist,87.0,73.0,98.0,91.0,79.0,60.0,77.0
 102,Abigail,Perez,female,False,2,25,Software Engineer,96.0,80.0,100.0,61.0,81.0,98.0,65.0
 103,James,Yang,male,False,5,29,Writer,76.0,87.0,64.0,74.0,73.0,90.0,99.0
-104,Stephen,Patton,male,False,6,1,Artist,90.0,80.0,63.0,94.0,64.0,70.0,79.0
+104,Stephen,Patton,male,True,6,1,Artist,90.0,80.0,63.0,94.0,64.0,70.0,79.0
 105,Emma,Wright,female,False,7,2,Business Owner,65.0,60.0,100.0,91.0,87.0,78.0,99.0
 106,Cynthia,Brown,female,False,2,0,Real Estate Developer,98.0,97.0,62.0,89.0,62.0,95.0,77.0
 107,Erin,Kelley,female,False,3,16,Accountant,91.0,80.0,97.0,89.0,94.0,95.0,84.0
@@ -105,8 +110,8 @@
 109,Alexandra,Gibson,female,False,1,4,Data Science,91.0,93.0,72.0,61.0,61.0,87.0,95.0
 110,Phillip,Allen,male,False,5,13,Accountant,78.0,69.0,82.0,60.0,64.0,77.0,82.0
 111,Joshua,Gonzalez,male,False,4,24,Stock Investor,76.0,89.0,89.0,83.0,89.0,90.0,64.0
-112,Erin,Jones,female,False,9,2,Business Owner,82.0,54.0,85.0,57.0,50.0,54.0,76.0
-113,Charles,Hayes,male,False,2,4,Business Owner,45.0,85.0,94.0,76.0,57.0,93.0,86.0
+112,Erin,Jones,female,True,9,2,Business Owner,82.0,54.0,85.0,57.0,50.0,54.0,76.0
+113,Charles,Hayes,male,True,2,4,Business Owner,45.0,85.0,94.0,76.0,57.0,93.0,86.0
 114,Kelsey,Brown,female,False,1,22,Banker,92.0,75.0,65.0,97.0,61.0,76.0,81.0
 115,Robert,Turner,male,False,6,0,Business Owner,43.0,65.0,91.0,75.0,64.0,94.0,100.0
 116,Robert,Hill,male,False,2,24,Data Science,96.0,66.0,69.0,65.0,72.0,84.0,77.0
@@ -114,7 +119,7 @@
 118,Beth,Bell,female,False,1,19,Data Science,68.0,96.0,64.0,70.0,74.0,63.0,75.0
 119,Andrew,Dixon,male,False,1,19,Software Engineer,93.0,73.0,94.0,65.0,60.0,63.0,93.0
 120,Crystal,Walker,female,False,6,5,Business Owner,55.0,93.0,67.0,74.0,55.0,60.0,64.0
-121,Jordan,Bennett,female,False,0,13,Teacher,66.0,90.0,83.0,80.0,76.0,90.0,91.0
+121,Jordan,Bennett,female,True,0,13,Teacher,66.0,90.0,83.0,80.0,76.0,90.0,91.0
 122,Antonio,Caldwell,male,False,4,26,Doctor,98.0,92.0,91.0,99.0,97.0,88.0,75.0
 123,Jacob,Reyes,male,False,4,41,Doctor,94.0,94.0,94.0,89.0,85.0,86.0,85.0
 124,Wendy,Lewis,female,False,3,47,Doctor,96.0,100.0,96.0,91.0,91.0,96.0,89.0
@@ -124,10 +129,10 @@
 128,Mario,Taylor,male,False,4,14,Accountant,96.0,67.0,80.0,83.0,86.0,77.0,75.0
 129,Amanda,Williamson,female,False,4,26,Data Science,82.0,70.0,80.0,70.0,96.0,69.0,86.0
 130,Michael,Miller,male,False,6,27,Data Science,99.0,97.0,64.0,90.0,87.0,68.0,69.0
-131,Amanda,Vasquez,female,False,5,25,Stock Investor,96.0,73.0,90.0,85.0,63.0,84.0,87.0
-132,Chelsea,Obrien,female,False,4,16,Banker,95.0,82.0,66.0,63.0,67.0,92.0,69.0
+131,Amanda,Vasquez,female,True,5,25,Stock Investor,96.0,73.0,90.0,85.0,63.0,84.0,87.0
+132,Chelsea,Obrien,female,True,4,16,Banker,95.0,82.0,66.0,63.0,67.0,92.0,69.0
 133,Tina,Perkins,female,False,4,27,Software Engineer,90.0,63.0,69.0,80.0,99.0,69.0,79.0
-134,Cory,Perez,male,False,6,0,Business Owner,88.0,52.0,53.0,56.0,85.0,93.0,78.0
+134,Cory,Perez,male,True,6,0,Business Owner,88.0,52.0,53.0,56.0,85.0,93.0,78.0
 135,Christopher,Jenkins,male,False,1,3,Designer,87.0,62.0,87.0,96.0,85.0,90.0,74.0
 136,Joanne,Campos,female,False,2,6,Designer,62.0,83.0,84.0,75.0,83.0,85.0,86.0
 137,David,Patel,male,False,2,12,Banker,85.0,65.0,60.0,78.0,81.0,96.0,76.0
@@ -135,7 +140,7 @@
 139,Jessica,Boyd,female,False,4,23,Software Engineer,90.0,94.0,98.0,96.0,68.0,82.0,81.0
 140,Lawrence,Russell,male,False,2,23,Doctor,97.0,71.0,82.0,80.0,97.0,93.0,78.0
 141,James,Singh,male,False,0,16,Software Engineer,88.0,69.0,87.0,81.0,77.0,67.0,93.0
-142,Marc,Villanueva,male,False,2,3,Artist,71.0,85.0,77.0,89.0,98.0,63.0,100.0
+142,Marc,Villanueva,male,True,2,3,Artist,71.0,85.0,77.0,89.0,98.0,63.0,100.0
 143,Cathy,Wilson,female,False,1,29,Lawyer,70.0,99.0,79.0,96.0,60.0,97.0,100.0
 144,Adam,Mitchell,male,False,3,18,Software Engineer,93.0,68.0,76.0,99.0,80.0,80.0,75.0
 145,Sherry,Phillips,female,False,0,3,Game Developer,92.0,79.0,81.0,61.0,86.0,72.0,88.0
@@ -143,24 +148,24 @@
 147,Mark,Young,male,False,8,2,Business Owner,68.0,97.0,51.0,93.0,68.0,58.0,78.0
 148,Matthew,Jackson,male,False,0,34,Lawyer,92.0,90.0,65.0,79.0,96.0,87.0,74.0
 149,Tanya,Nichols,female,False,4,22,Data Science,69.0,91.0,82.0,99.0,94.0,75.0,74.0
-150,Julie,Gray,female,False,5,4,Business Owner,76.0,72.0,72.0,65.0,82.0,71.0,93.0
+150,Julie,Gray,female,True,5,4,Business Owner,76.0,72.0,72.0,65.0,82.0,71.0,93.0
 151,Courtney,Perry,female,False,3,3,Data Science,86.0,92.0,79.0,73.0,73.0,61.0,60.0
-152,Stephen,Rodriguez,male,False,10,2,Business Owner,41.0,57.0,97.0,56.0,50.0,98.0,83.0
+152,Stephen,Rodriguez,male,True,10,2,Business Owner,41.0,57.0,97.0,56.0,50.0,98.0,83.0
 153,Elizabeth,Robinson,female,False,5,18,Data Science,91.0,100.0,84.0,72.0,84.0,90.0,82.0
 154,William,Graves,male,False,0,8,Real Estate Developer,78.0,67.0,82.0,70.0,65.0,68.0,81.0
 155,Nancy,Moore,female,False,1,33,Software Engineer,89.0,73.0,85.0,84.0,73.0,81.0,98.0
 156,Matthew,Newman,male,False,0,13,Data Science,96.0,71.0,88.0,74.0,80.0,92.0,65.0
 157,Anita,Moore,female,False,0,17,Data Science,66.0,99.0,85.0,90.0,76.0,64.0,95.0
-158,Brian,Sanchez,male,False,8,1,Business Owner,97.0,54.0,62.0,66.0,58.0,69.0,96.0
-159,Dennis,Phillips,male,False,7,3,Business Owner,49.0,64.0,97.0,61.0,62.0,72.0,65.0
-160,Michael,Rivas,male,False,4,33,Data Science,88.0,66.0,96.0,82.0,65.0,76.0,79.0
+158,Brian,Sanchez,male,True,8,1,Business Owner,97.0,54.0,62.0,66.0,58.0,69.0,96.0
+159,Dennis,Phillips,male,True,7,3,Business Owner,49.0,64.0,97.0,61.0,62.0,72.0,65.0
+160,Michael,Rivas,male,True,4,33,Data Science,88.0,66.0,96.0,82.0,65.0,76.0,79.0
 161,Ryan,Smith,male,False,1,12,Data Science,92.0,64.0,77.0,61.0,76.0,72.0,87.0
-162,Anthony,Sullivan,male,False,3,24,Construction Engineer,96.0,66.0,92.0,88.0,65.0,76.0,72.0
+162,Anthony,Sullivan,male,True,3,24,Construction Engineer,96.0,66.0,92.0,88.0,65.0,76.0,72.0
 163,Troy,Shepherd,male,False,4,33,Construction Engineer,86.0,88.0,99.0,79.0,93.0,97.0,91.0
 164,Nicholas,Clayton,male,False,1,44,Doctor,86.0,100.0,100.0,96.0,95.0,97.0,93.0
 165,Denise,Schneider,female,False,1,15,Teacher,88.0,72.0,96.0,60.0,90.0,80.0,88.0
 166,Lisa,Silva,female,False,2,5,Game Developer,92.0,81.0,99.0,98.0,77.0,80.0,73.0
-167,Laura,Reilly,female,False,7,5,Business Owner,87.0,76.0,71.0,65.0,64.0,81.0,61.0
+167,Laura,Reilly,female,True,7,5,Business Owner,87.0,76.0,71.0,65.0,64.0,81.0,61.0
 168,Amy,Peterson,female,False,5,22,Data Science,89.0,94.0,67.0,68.0,69.0,92.0,76.0
 169,Fernando,Sexton,male,False,1,9,Data Science,97.0,96.0,66.0,96.0,71.0,97.0,66.0
 170,Evan,Christian,male,False,4,34,Software Engineer,100.0,62.0,67.0,97.0,73.0,84.0,99.0
@@ -181,7 +186,7 @@
 185,Rachel,Hill,female,False,1,33,Software Engineer,92.0,84.0,85.0,77.0,81.0,69.0,95.0
 186,Jenny,Lloyd,female,False,3,2,Artist,69.0,78.0,69.0,70.0,100.0,88.0,85.0
 187,Joan,Cohen,female,False,5,9,Real Estate Developer,78.0,99.0,64.0,99.0,65.0,84.0,80.0
-188,Kimberly,Lopez,female,False,2,0,Business Owner,92.0,62.0,86.0,97.0,54.0,76.0,76.0
+188,Kimberly,Lopez,female,True,2,0,Business Owner,92.0,62.0,86.0,97.0,54.0,76.0,76.0
 189,Steven,Walker,male,False,5,26,Data Science,70.0,77.0,91.0,96.0,100.0,89.0,67.0
 190,Sonia,Bowers,female,False,5,30,Scientist,95.0,79.0,98.0,95.0,89.0,99.0,87.0
 191,Penny,Perez,female,False,7,1,Game Developer,99.0,82.0,93.0,83.0,92.0,90.0,60.0
@@ -206,13 +211,13 @@
 210,Michele,Thomas,female,False,1,14,Teacher,63.0,80.0,99.0,78.0,60.0,84.0,86.0
 211,Tim,Turner,male,False,0,41,Doctor,96.0,88.0,90.0,100.0,94.0,87.0,96.0
 212,Joe,Strickland,male,False,4,32,Construction Engineer,91.0,73.0,86.0,73.0,84.0,60.0,71.0
-213,Trevor,Cruz,male,False,1,4,Business Owner,52.0,58.0,60.0,97.0,93.0,89.0,68.0
+213,Trevor,Cruz,male,True,1,4,Business Owner,52.0,58.0,60.0,97.0,93.0,89.0,68.0
 214,Melissa,Roberts,female,False,1,22,Doctor,99.0,71.0,80.0,82.0,95.0,64.0,64.0
 215,Tammy,Miller,female,False,3,17,Banker,84.0,62.0,92.0,74.0,73.0,98.0,91.0
 216,Chad,Morgan,male,False,2,2,Artist,100.0,90.0,82.0,79.0,94.0,83.0,78.0
 217,Samantha,Maldonado,female,False,4,33,Banker,82.0,71.0,93.0,90.0,90.0,76.0,97.0
 218,Marie,Martin,female,False,5,29,Banker,75.0,88.0,65.0,80.0,76.0,94.0,97.0
-219,Theresa,Tucker,female,False,1,27,Data Science,66.0,71.0,94.0,72.0,96.0,70.0,63.0
+219,Theresa,Tucker,female,True,1,27,Data Science,66.0,71.0,94.0,72.0,96.0,70.0,63.0
 220,Joseph,Morris,male,False,6,34,Banker,99.0,88.0,72.0,76.0,68.0,92.0,72.0
 221,Charles,Parker,male,False,3,2,Real Estate Developer,99.0,76.0,94.0,88.0,75.0,66.0,84.0
 222,Rachel,Alvarez,female,False,3,22,Software Engineer,95.0,87.0,79.0,95.0,84.0,90.0,74.0
@@ -224,12 +229,12 @@
 228,Angela,Thomas,female,False,7,17,Software Engineer,91.0,78.0,72.0,69.0,77.0,91.0,96.0
 229,Roberto,Evans,male,False,3,6,Real Estate Developer,92.0,95.0,61.0,98.0,89.0,85.0,80.0
 230,Christopher,Perez,male,False,7,9,Data Science,62.0,64.0,65.0,86.0,67.0,94.0,68.0
-231,William,Torres,male,False,2,35,Software Engineer,87.0,91.0,98.0,94.0,100.0,87.0,89.0
+231,William,Torres,male,True,2,35,Software Engineer,87.0,91.0,98.0,94.0,100.0,87.0,89.0
 232,Lisa,Gardner,female,False,3,17,Software Engineer,97.0,88.0,87.0,61.0,86.0,92.0,94.0
 233,Catherine,Owens,female,False,1,7,Government Officer,97.0,92.0,79.0,88.0,92.0,99.0,85.0
 234,Keith,Summers,male,False,5,16,Designer,98.0,88.0,92.0,84.0,90.0,90.0,71.0
 235,Linda,Adams,female,False,1,20,Software Engineer,96.0,67.0,88.0,95.0,82.0,75.0,84.0
-236,Michael,Wright,male,False,7,0,Business Owner,98.0,89.0,81.0,56.0,72.0,74.0,94.0
+236,Michael,Wright,male,True,7,0,Business Owner,98.0,89.0,81.0,56.0,72.0,74.0,94.0
 237,Kyle,James,male,False,2,27,Lawyer,87.0,82.0,95.0,81.0,85.0,84.0,73.0
 238,Christopher,Cook,male,False,0,24,Construction Engineer,96.0,80.0,86.0,94.0,63.0,72.0,75.0
 239,John,Conley,male,False,2,30,Data Science,82.0,74.0,77.0,95.0,81.0,76.0,91.0
@@ -237,7 +242,7 @@
 241,Peter,Garner,male,False,0,27,Software Engineer,91.0,81.0,91.0,76.0,100.0,92.0,87.0
 242,Douglas,Stewart,male,False,6,2,Business Owner,87.0,62.0,85.0,64.0,63.0,61.0,85.0
 243,Heidi,Jones,female,False,6,16,Banker,75.0,95.0,84.0,87.0,78.0,82.0,86.0
-244,Jeremy,Daniels,male,False,1,27,Banker,86.0,78.0,61.0,71.0,94.0,92.0,65.0
+244,Jeremy,Daniels,male,True,1,27,Banker,86.0,78.0,61.0,71.0,94.0,92.0,65.0
 245,Dustin,Dodson,male,False,4,24,Accountant,94.0,62.0,97.0,96.0,74.0,68.0,69.0
 246,Christopher,Cohen,male,False,4,23,Accountant,99.0,64.0,92.0,78.0,30.0,78.0,88.0
 247,Willie,Ellis,male,False,1,15,Government Officer,84.0,91.0,94.0,66.0,78.0,71.0,93.0
@@ -251,12 +256,12 @@
 255,Nathan,Riley,male,False,3,35,Data Science,85.0,85.0,92.0,86.0,99.0,86.0,93.0
 256,Andrea,Sutton,female,False,7,35,Software Engineer,91.0,87.0,89.0,97.0,93.0,87.0,100.0
 257,Tracey,Turner,female,False,7,14,Accountant,82.0,95.0,92.0,62.0,73.0,75.0,93.0
-258,Tammy,Olsen,female,False,7,1,Business Owner,59.0,56.0,87.0,97.0,62.0,74.0,61.0
+258,Tammy,Olsen,female,True,7,1,Business Owner,59.0,56.0,87.0,97.0,62.0,74.0,61.0
 259,Sheila,Wilkinson,female,False,9,0,Business Owner,78.0,71.0,73.0,51.0,80.0,84.0,65.0
 260,Nathan,Padilla,male,False,2,12,Construction Engineer,89.0,65.0,82.0,65.0,76.0,95.0,62.0
 261,Sarah,Santiago,female,False,3,35,Software Engineer,86.0,91.0,92.0,96.0,90.0,96.0,90.0
 262,Christopher,Cruz,male,False,4,2,Artist,76.0,93.0,65.0,95.0,76.0,88.0,88.0
-263,Nicholas,Sanders,male,False,2,16,Data Science,79.0,68.0,63.0,72.0,81.0,67.0,67.0
+263,Nicholas,Sanders,male,True,2,16,Data Science,79.0,68.0,63.0,72.0,81.0,67.0,67.0
 264,Jessica,Waters,female,False,3,31,Lawyer,91.0,96.0,77.0,76.0,80.0,97.0,80.0
 265,James,Miller,male,False,5,4,Business Owner,89.0,66.0,80.0,77.0,60.0,88.0,74.0
 266,Adam,Kane,male,False,3,19,Data Science,97.0,94.0,81.0,97.0,79.0,86.0,63.0
@@ -267,17 +272,17 @@
 271,Jacob,Henderson,male,False,1,3,Business Owner,53.0,71.0,98.0,95.0,94.0,71.0,77.0
 272,Melissa,Huerta,female,False,7,4,Business Owner,44.0,64.0,58.0,66.0,87.0,62.0,68.0
 273,Kevin,Camacho,male,False,0,25,Data Science,85.0,70.0,73.0,95.0,100.0,70.0,94.0
-274,Anthony,Martinez,male,False,10,1,Business Owner,51.0,91.0,67.0,79.0,58.0,52.0,75.0
+274,Anthony,Martinez,male,True,10,1,Business Owner,51.0,91.0,67.0,79.0,58.0,52.0,75.0
 275,Randy,Rodriguez,male,False,1,24,Lawyer,90.0,89.0,82.0,74.0,67.0,92.0,82.0
 276,Patrick,Vazquez,male,False,1,15,Software Engineer,100.0,92.0,90.0,66.0,73.0,68.0,70.0
-277,Kim,Flores,female,False,7,1,Business Owner,95.0,73.0,61.0,91.0,84.0,92.0,94.0
+277,Kim,Flores,female,True,7,1,Business Owner,95.0,73.0,61.0,91.0,84.0,92.0,94.0
 278,Robert,Salazar,male,False,1,33,Lawyer,76.0,81.0,96.0,74.0,75.0,80.0,98.0
 279,Victoria,Vasquez,female,False,1,11,Designer,71.0,98.0,96.0,60.0,90.0,79.0,72.0
 280,Ricardo,Macias,male,False,3,10,Banker,95.0,60.0,87.0,71.0,91.0,84.0,98.0
 281,Brandi,Bauer,female,False,7,15,Software Engineer,92.0,88.0,76.0,93.0,69.0,75.0,97.0
 282,Jorge,Roth,male,False,5,34,Scientist,82.0,95.0,96.0,100.0,89.0,64.0,91.0
 283,Benjamin,Davis,male,False,3,30,Lawyer,85.0,94.0,83.0,76.0,77.0,81.0,92.0
-284,Nancy,Pierce,female,False,4,4,Artist,82.0,85.0,75.0,92.0,76.0,95.0,85.0
+284,Nancy,Pierce,female,True,4,4,Artist,82.0,85.0,75.0,92.0,76.0,95.0,85.0
 285,Catherine,Weiss,female,False,2,28,Stock Investor,98.0,77.0,94.0,63.0,69.0,88.0,100.0
 286,Jacob,Perez,male,False,5,29,Doctor,93.0,96.0,94.0,84.0,91.0,67.0,68.0
 287,Penny,Zuniga,female,False,7,30,Lawyer,84.0,97.0,60.0,100.0,83.0,88.0,94.0
@@ -285,10 +290,10 @@
 289,Angela,Nelson,female,False,8,1,Business Owner,62.0,64.0,84.0,67.0,78.0,51.0,62.0
 290,Lisa,White,female,False,6,16,Software Engineer,92.0,70.0,60.0,94.0,87.0,90.0,86.0
 291,Robin,Parker,female,False,2,18,Teacher,64.0,93.0,61.0,61.0,74.0,94.0,64.0
-292,Cynthia,Shields,female,False,1,4,Game Developer,89.0,67.0,97.0,67.0,75.0,94.0,93.0
+292,Cynthia,Shields,female,True,1,4,Game Developer,89.0,67.0,97.0,67.0,75.0,94.0,93.0
 293,Pamela,Wilkinson,female,False,8,32,Accountant,99.0,88.0,84.0,87.0,36.0,96.0,86.0
 294,Brenda,Nichols,female,False,2,12,Banker,95.0,82.0,93.0,99.0,66.0,93.0,86.0
-295,Laura,Rodriguez,female,False,6,5,Designer,72.0,92.0,67.0,100.0,70.0,94.0,81.0
+295,Laura,Rodriguez,female,True,6,5,Designer,72.0,92.0,67.0,100.0,70.0,94.0,81.0
 296,Julie,Carey,female,False,2,15,Government Officer,68.0,89.0,68.0,90.0,68.0,99.0,74.0
 297,Barbara,Andrews,female,False,3,31,Accountant,92.0,69.0,78.0,68.0,70.0,80.0,73.0
 298,Tracy,Johnson,male,False,2,2,Game Developer,97.0,74.0,97.0,60.0,65.0,90.0,97.0
@@ -298,25 +303,25 @@
 302,Heather,Faulkner,female,False,10,26,Banker,77.0,62.0,97.0,82.0,74.0,98.0,95.0
 303,Wanda,Baxter,female,False,3,22,Accountant,89.0,81.0,99.0,71.0,67.0,74.0,89.0
 304,Amanda,Davis,female,False,1,12,Government Officer,65.0,69.0,66.0,65.0,90.0,76.0,60.0
-305,Gina,Powell,female,False,10,4,Business Owner,82.0,55.0,76.0,63.0,70.0,61.0,60.0
+305,Gina,Powell,female,True,10,4,Business Owner,82.0,55.0,76.0,63.0,70.0,61.0,60.0
 306,Sabrina,Hall,female,False,3,34,Banker,77.0,60.0,61.0,91.0,62.0,78.0,91.0
 307,Lauren,Miller,female,False,0,9,Teacher,66.0,70.0,88.0,70.0,62.0,70.0,75.0
 308,Jessica,Diaz,female,False,5,43,Doctor,90.0,96.0,100.0,87.0,100.0,90.0,89.0
 309,Ashley,Garcia,female,False,2,1,Real Estate Developer,73.0,87.0,90.0,96.0,61.0,61.0,76.0
 310,Miranda,Johnson,female,False,2,19,Software Engineer,89.0,64.0,74.0,97.0,95.0,77.0,88.0
-311,Tracy,Johnston,female,False,4,2,Business Owner,72.0,55.0,54.0,62.0,75.0,79.0,96.0
+311,Tracy,Johnston,female,True,4,2,Business Owner,72.0,55.0,54.0,62.0,75.0,79.0,96.0
 312,Erik,Butler,male,False,1,34,Scientist,87.0,90.0,89.0,88.0,93.0,87.0,70.0
 313,Tiffany,Jones,female,False,4,31,Scientist,75.0,98.0,96.0,85.0,81.0,69.0,90.0
 314,Brandy,Campbell,female,False,4,11,Teacher,80.0,85.0,98.0,99.0,92.0,70.0,96.0
 315,Joel,Hicks,male,False,2,35,Data Science,85.0,87.0,87.0,90.0,91.0,91.0,99.0
 316,John,Miller,male,False,4,20,Software Engineer,92.0,93.0,74.0,76.0,79.0,65.0,74.0
-317,Nancy,Jones,female,False,0,22,Data Science,63.0,60.0,92.0,88.0,90.0,68.0,100.0
+317,Nancy,Jones,female,True,0,22,Data Science,63.0,60.0,92.0,88.0,90.0,68.0,100.0
 318,Jody,Mueller,female,False,3,2,Game Developer,99.0,99.0,87.0,80.0,89.0,78.0,87.0
 319,Steven,Fox,male,False,7,1,Business Owner,87.0,88.0,51.0,96.0,77.0,71.0,61.0
 320,Taylor,Klein,female,False,4,34,Software Engineer,87.0,84.0,62.0,76.0,89.0,83.0,93.0
-321,David,Barron,male,False,6,17,Software Engineer,90.0,75.0,71.0,64.0,97.0,89.0,88.0
+321,David,Barron,male,True,6,17,Software Engineer,90.0,75.0,71.0,64.0,97.0,89.0,88.0
 322,Kevin,Thompson,male,False,6,34,Doctor,94.0,83.0,99.0,100.0,94.0,91.0,69.0
-323,Andrea,Walters,female,False,5,25,Data Science,86.0,76.0,81.0,83.0,81.0,70.0,65.0
+323,Andrea,Walters,female,True,5,25,Data Science,86.0,76.0,81.0,83.0,81.0,70.0,65.0
 324,David,Wright,male,False,3,8,Data Science,96.0,81.0,95.0,78.0,79.0,65.0,86.0
 325,Anthony,Oconnor,male,False,3,4,Data Science,75.0,69.0,85.0,73.0,79.0,93.0,74.0
 326,Laura,Miller,female,False,1,26,Lawyer,74.0,92.0,81.0,79.0,74.0,85.0,86.0
@@ -328,7 +333,7 @@
 332,Carla,Lewis,female,False,1,13,Designer,90.0,72.0,78.0,61.0,78.0,88.0,74.0
 333,Jeffrey,Shannon,male,False,1,31,Construction Engineer,87.0,100.0,86.0,60.0,80.0,78.0,96.0
 334,Angela,Park,female,False,3,8,Teacher,69.0,99.0,78.0,85.0,98.0,86.0,73.0
-335,Brandon,Smith,male,False,9,0,Business Owner,66.0,99.0,50.0,62.0,97.0,60.0,84.0
+335,Brandon,Smith,male,True,9,0,Business Owner,66.0,99.0,50.0,62.0,97.0,60.0,84.0
 336,Kenneth,Moody,male,False,7,6,Government Officer,65.0,95.0,78.0,65.0,74.0,69.0,63.0
 337,Scott,Hughes,male,False,2,7,Government Officer,83.0,81.0,88.0,82.0,97.0,83.0,74.0
 338,Cody,Jimenez,male,False,1,32,Lawyer,100.0,89.0,95.0,63.0,67.0,92.0,75.0
@@ -339,8 +344,8 @@
 343,Wayne,Lane,male,False,8,32,Lawyer,96.0,95.0,61.0,72.0,71.0,83.0,96.0
 344,Robert,Johnson,male,False,2,24,Construction Engineer,94.0,72.0,96.0,93.0,93.0,79.0,64.0
 345,Melissa,Le,female,False,1,18,Teacher,92.0,69.0,69.0,60.0,90.0,88.0,95.0
-346,David,Rice,male,False,10,5,Business Owner,56.0,52.0,76.0,95.0,54.0,59.0,85.0
-347,Dawn,Gomez,female,False,3,24,Banker,85.0,74.0,65.0,76.0,100.0,95.0,68.0
+346,David,Rice,male,True,10,5,Business Owner,56.0,52.0,76.0,95.0,54.0,59.0,85.0
+347,Dawn,Gomez,female,True,3,24,Banker,85.0,74.0,65.0,76.0,100.0,95.0,68.0
 348,Ricky,Nichols,male,False,1,16,Designer,65.0,90.0,68.0,99.0,74.0,82.0,86.0
 349,Henry,Pitts,male,False,1,15,Writer,64.0,81.0,95.0,87.0,86.0,91.0,80.0
 350,Christopher,Price,male,False,3,26,Software Engineer,100.0,88.0,94.0,67.0,62.0,66.0,96.0
@@ -365,9 +370,9 @@
 369,Ashley,Mendez,female,False,7,2,Business Owner,62.0,53.0,78.0,77.0,59.0,95.0,80.0
 370,Matthew,Griffin,male,False,3,4,Stock Investor,83.0,61.0,79.0,99.0,66.0,60.0,76.0
 371,Timothy,Mann,male,False,3,32,Software Engineer,85.0,96.0,87.0,63.0,69.0,69.0,81.0
-372,Christine,Foster,female,False,7,0,Business Owner,83.0,55.0,87.0,74.0,73.0,77.0,61.0
+372,Christine,Foster,female,True,7,0,Business Owner,83.0,55.0,87.0,74.0,73.0,77.0,61.0
 373,Julie,Yates,female,False,2,4,Business Owner,73.0,95.0,54.0,94.0,99.0,58.0,94.0
-374,William,Ballard,male,False,10,0,Business Owner,61.0,65.0,73.0,78.0,77.0,97.0,96.0
+374,William,Ballard,male,True,10,0,Business Owner,61.0,65.0,73.0,78.0,77.0,97.0,96.0
 375,Kristen,Adams,female,False,5,21,Data Science,77.0,72.0,81.0,63.0,69.0,73.0,80.0
 376,Chelsea,Mitchell,female,False,2,29,Writer,77.0,87.0,65.0,91.0,71.0,90.0,90.0
 377,Patrick,Everett,male,False,3,32,Data Science,99.0,94.0,94.0,62.0,68.0,79.0,68.0
@@ -376,18 +381,18 @@
 380,Eric,Moran,male,False,7,4,Data Science,94.0,79.0,92.0,100.0,93.0,63.0,98.0
 381,Tabitha,Hudson,female,False,2,32,Stock Investor,75.0,83.0,85.0,65.0,76.0,94.0,60.0
 382,Lance,Salazar,male,False,2,7,Data Science,66.0,83.0,77.0,91.0,84.0,74.0,62.0
-383,Melissa,Williamson,female,False,1,22,Software Engineer,91.0,79.0,89.0,74.0,79.0,74.0,61.0
+383,Melissa,Williamson,female,True,1,22,Software Engineer,91.0,79.0,89.0,74.0,79.0,74.0,61.0
 384,James,Castro,male,False,5,3,Data Science,81.0,61.0,75.0,65.0,90.0,92.0,80.0
-385,Joseph,Johnson,male,False,8,1,Business Owner,71.0,69.0,69.0,67.0,70.0,78.0,66.0
+385,Joseph,Johnson,male,True,8,1,Business Owner,71.0,69.0,69.0,67.0,70.0,78.0,66.0
 386,Gene,Woodward,male,False,4,23,Writer,77.0,94.0,97.0,77.0,63.0,98.0,98.0
 387,Patricia,Watson,female,False,0,42,Doctor,91.0,87.0,93.0,85.0,98.0,85.0,95.0
 388,John,Carey,male,False,1,30,Scientist,83.0,98.0,100.0,93.0,100.0,77.0,76.0
 389,Sara,Cochran,female,False,1,1,Business Owner,75.0,51.0,70.0,84.0,66.0,64.0,88.0
-390,Jamie,Suarez,female,False,3,17,Software Engineer,86.0,96.0,68.0,71.0,86.0,94.0,89.0
+390,Jamie,Suarez,female,True,3,17,Software Engineer,86.0,96.0,68.0,71.0,86.0,94.0,89.0
 391,Steven,Frazier,male,False,2,48,Doctor,86.0,88.0,89.0,89.0,98.0,89.0,96.0
 392,Nicholas,Hart,male,False,4,24,Software Engineer,85.0,67.0,60.0,82.0,77.0,72.0,72.0
 393,Cheryl,Arias,female,False,6,31,Writer,62.0,81.0,80.0,88.0,78.0,94.0,85.0
-394,Marc,Brock,male,False,7,0,Business Owner,100.0,65.0,67.0,61.0,76.0,58.0,84.0
+394,Marc,Brock,male,True,7,0,Business Owner,100.0,65.0,67.0,61.0,76.0,58.0,84.0
 395,Timothy,Perez,male,False,9,2,Business Owner,79.0,86.0,97.0,60.0,66.0,74.0,96.0
 396,Courtney,Rodriguez,female,False,1,24,Lawyer,99.0,97.0,68.0,85.0,86.0,85.0,73.0
 397,Samantha,Clark,female,False,7,2,Business Owner,46.0,65.0,97.0,100.0,56.0,73.0,95.0
@@ -401,17 +406,17 @@
 405,Deborah,Miller,female,False,3,17,Banker,86.0,61.0,68.0,91.0,60.0,86.0,62.0
 406,Autumn,Hernandez,female,False,5,25,Data Science,79.0,70.0,71.0,95.0,79.0,77.0,68.0
 407,Paul,Serrano,male,False,5,18,Accountant,76.0,82.0,76.0,71.0,70.0,89.0,76.0
-408,Matthew,Griffin,male,False,1,23,Software Engineer,96.0,63.0,69.0,67.0,69.0,92.0,77.0
+408,Matthew,Griffin,male,True,1,23,Software Engineer,96.0,63.0,69.0,67.0,69.0,92.0,77.0
 409,Evan,Holmes,male,False,4,23,Software Engineer,100.0,77.0,75.0,74.0,80.0,94.0,74.0
 410,Cynthia,Baker,female,False,6,21,Software Engineer,88.0,84.0,87.0,97.0,94.0,87.0,85.0
 411,Sandra,Melendez,female,False,3,27,Software Engineer,96.0,76.0,98.0,89.0,93.0,85.0,75.0
 412,Claudia,Munoz,female,False,5,14,Software Engineer,92.0,66.0,96.0,71.0,87.0,89.0,61.0
 413,Christopher,Nguyen,male,False,2,37,Doctor,87.0,93.0,99.0,100.0,97.0,92.0,90.0
 414,David,Jennings,male,False,3,29,Accountant,95.0,82.0,74.0,87.0,36.0,61.0,88.0
-415,Joel,Morris,male,False,6,4,Business Owner,44.0,76.0,56.0,71.0,66.0,54.0,91.0
+415,Joel,Morris,male,True,6,4,Business Owner,44.0,76.0,56.0,71.0,66.0,54.0,91.0
 416,Rhonda,Bradley,female,False,3,16,Banker,78.0,89.0,68.0,63.0,81.0,92.0,97.0
 417,Melissa,Brown,female,False,4,30,Accountant,95.0,78.0,93.0,85.0,48.0,68.0,75.0
-418,Matthew,Kramer,male,False,7,1,Business Owner,57.0,56.0,53.0,75.0,98.0,92.0,73.0
+418,Matthew,Kramer,male,True,7,1,Business Owner,57.0,56.0,53.0,75.0,98.0,92.0,73.0
 419,Austin,Bass,male,False,3,24,Software Engineer,86.0,99.0,95.0,94.0,92.0,90.0,77.0
 420,Jennifer,West,female,False,2,35,Writer,92.0,97.0,100.0,91.0,95.0,90.0,95.0
 421,Patricia,Mccormick,female,False,1,14,Teacher,69.0,69.0,84.0,100.0,69.0,77.0,87.0
@@ -428,18 +433,18 @@
 432,Nathan,Armstrong,male,False,2,18,Software Engineer,100.0,96.0,74.0,61.0,87.0,94.0,60.0
 433,Patrick,Ryan,male,False,9,4,Business Owner,48.0,55.0,86.0,51.0,54.0,94.0,61.0
 434,Christian,Wilkins,male,False,6,10,Real Estate Developer,63.0,87.0,71.0,68.0,66.0,67.0,99.0
-435,Clinton,Martin,male,False,2,22,Software Engineer,89.0,83.0,89.0,91.0,94.0,93.0,69.0
+435,Clinton,Martin,male,True,2,22,Software Engineer,89.0,83.0,89.0,91.0,94.0,93.0,69.0
 436,Adriana,Sandoval,female,False,5,28,Stock Investor,88.0,90.0,93.0,81.0,88.0,90.0,74.0
 437,Jeremy,Harvey,male,False,2,2,Real Estate Developer,98.0,87.0,67.0,97.0,62.0,60.0,79.0
 438,Caitlin,Murillo,female,False,1,0,Business Owner,92.0,86.0,88.0,75.0,60.0,50.0,79.0
 439,Andrew,Green,male,False,3,24,Doctor,80.0,60.0,100.0,99.0,98.0,75.0,94.0
 440,Rodney,Bennett,male,False,2,15,Construction Engineer,92.0,63.0,91.0,65.0,69.0,94.0,98.0
-441,Megan,Moyer,female,False,2,1,Artist,82.0,95.0,68.0,64.0,97.0,99.0,60.0
+441,Megan,Moyer,female,True,2,1,Artist,82.0,95.0,68.0,64.0,97.0,99.0,60.0
 442,Mathew,Burns,male,False,1,8,Stock Investor,84.0,74.0,74.0,75.0,99.0,99.0,85.0
 443,Tammie,Stanley,female,False,7,9,Teacher,61.0,70.0,65.0,67.0,93.0,81.0,63.0
 444,James,Glover,male,False,4,33,Software Engineer,99.0,87.0,98.0,76.0,65.0,94.0,67.0
 445,Michelle,Reeves,female,False,3,32,Accountant,83.0,69.0,90.0,78.0,39.0,95.0,82.0
-446,Rhonda,Hall,female,False,9,4,Business Owner,56.0,90.0,95.0,59.0,91.0,77.0,99.0
+446,Rhonda,Hall,female,True,9,4,Business Owner,56.0,90.0,95.0,59.0,91.0,77.0,99.0
 447,Matthew,Kidd,male,False,2,2,Business Owner,65.0,64.0,52.0,56.0,63.0,82.0,83.0
 448,Joseph,Stone,male,False,3,20,Designer,94.0,61.0,77.0,73.0,79.0,65.0,89.0
 449,Jessica,Mendoza,female,False,1,21,Software Engineer,90.0,96.0,73.0,89.0,93.0,87.0,96.0
@@ -458,31 +463,31 @@
 462,Samuel,Thompson,male,False,4,28,Software Engineer,91.0,97.0,86.0,77.0,83.0,79.0,62.0
 463,Taylor,Nelson,female,False,3,32,Lawyer,79.0,81.0,63.0,79.0,96.0,96.0,89.0
 464,Kimberly,West,female,False,1,33,Doctor,80.0,71.0,94.0,92.0,92.0,60.0,78.0
-465,Brad,Lee,male,False,2,4,Business Owner,86.0,90.0,88.0,73.0,50.0,93.0,71.0
+465,Brad,Lee,male,True,2,4,Business Owner,86.0,90.0,88.0,73.0,50.0,93.0,71.0
 466,Clayton,Green,male,False,1,31,Software Engineer,88.0,88.0,90.0,67.0,77.0,83.0,64.0
 467,Richard,Anderson,male,False,5,17,Construction Engineer,83.0,95.0,86.0,80.0,64.0,66.0,97.0
 468,Antonio,Flores,male,False,2,23,Doctor,84.0,84.0,80.0,97.0,87.0,97.0,91.0
 469,Margaret,Mullins,female,False,0,29,Software Engineer,85.0,82.0,81.0,85.0,72.0,90.0,71.0
 470,Michael,Ball,male,False,2,19,Software Engineer,91.0,85.0,96.0,83.0,74.0,87.0,74.0
-471,Allen,Booth,male,False,4,26,Banker,83.0,71.0,94.0,60.0,63.0,93.0,67.0
+471,Allen,Booth,male,True,4,26,Banker,83.0,71.0,94.0,60.0,63.0,93.0,67.0
 472,Stephanie,Clark,female,False,7,7,Real Estate Developer,97.0,93.0,99.0,98.0,96.0,79.0,88.0
 473,Sharon,Nelson,female,False,6,4,Real Estate Developer,63.0,68.0,92.0,73.0,66.0,69.0,87.0
 474,Marco,Clark,male,False,6,22,Doctor,92.0,98.0,90.0,82.0,86.0,86.0,89.0
-475,Victor,Smith,male,False,6,4,Business Owner,78.0,78.0,64.0,94.0,79.0,92.0,63.0
+475,Victor,Smith,male,True,6,4,Business Owner,78.0,78.0,64.0,94.0,79.0,92.0,63.0
 476,Christina,Patterson,female,False,3,29,Lawyer,78.0,90.0,69.0,100.0,90.0,91.0,90.0
 477,Jerry,Knight,male,False,8,21,Stock Investor,89.0,60.0,93.0,79.0,72.0,76.0,85.0
 478,Madison,Jacobs,female,False,3,5,Real Estate Developer,53.0,87.0,100.0,84.0,63.0,62.0,95.0
 479,Douglas,Watson,male,False,5,15,Data Science,63.0,84.0,60.0,85.0,91.0,83.0,84.0
 480,Manuel,Barrett,male,False,3,10,Data Science,100.0,98.0,71.0,100.0,71.0,92.0,63.0
-481,Janet,Martin,female,False,7,2,Business Owner,79.0,54.0,81.0,87.0,67.0,74.0,85.0
+481,Janet,Martin,female,True,7,2,Business Owner,79.0,54.0,81.0,87.0,67.0,74.0,85.0
 482,Teresa,Flores,female,False,4,0,Real Estate Developer,93.0,77.0,71.0,62.0,94.0,69.0,72.0
 483,Anthony,Mullins,male,False,5,3,Artist,97.0,88.0,67.0,72.0,83.0,87.0,62.0
 484,Julie,Zamora,female,False,6,1,Data Science,76.0,82.0,93.0,98.0,98.0,60.0,65.0
 485,Maria,Nguyen,female,False,3,26,Accountant,84.0,83.0,80.0,91.0,88.0,61.0,61.0
-486,Selena,Castro,female,False,5,2,Business Owner,56.0,96.0,65.0,61.0,78.0,77.0,95.0
+486,Selena,Castro,female,True,5,2,Business Owner,56.0,96.0,65.0,61.0,78.0,77.0,95.0
 487,Whitney,Miller,female,False,3,21,Data Science,97.0,89.0,94.0,91.0,95.0,70.0,75.0
 488,Brenda,Mooney,female,False,10,5,Business Owner,67.0,60.0,97.0,53.0,93.0,78.0,81.0
-489,Angela,Allen,female,False,10,5,Business Owner,97.0,93.0,64.0,74.0,94.0,74.0,76.0
+489,Angela,Allen,female,True,10,5,Business Owner,97.0,93.0,64.0,74.0,94.0,74.0,76.0
 490,Erica,Cohen,female,False,5,0,Business Owner,100.0,67.0,50.0,78.0,73.0,90.0,91.0
 491,Kelly,Sanders,female,False,5,10,Teacher,83.0,61.0,76.0,75.0,62.0,79.0,94.0
 492,Michael,Clark,male,False,5,2,Artist,85.0,63.0,83.0,83.0,69.0,94.0,80.0
@@ -495,7 +500,7 @@
 499,Mark,Sanchez,male,False,3,25,Software Engineer,93.0,70.0,84.0,68.0,71.0,85.0,70.0
 500,Katelyn,Moses,female,False,3,24,Accountant,79.0,96.0,78.0,90.0,94.0,76.0,88.0
 501,Corey,Davis,male,False,1,21,Stock Investor,98.0,99.0,72.0,100.0,94.0,77.0,84.0
-502,Susan,Klein,female,False,8,0,Business Owner,93.0,99.0,81.0,67.0,87.0,76.0,60.0
+502,Susan,Klein,female,True,8,0,Business Owner,93.0,99.0,81.0,67.0,87.0,76.0,60.0
 503,John,Martinez,male,False,4,30,Banker,91.0,79.0,78.0,95.0,86.0,89.0,100.0
 504,Kendra,Robertson,female,False,4,32,Software Engineer,86.0,99.0,77.0,61.0,72.0,92.0,70.0
 505,Tamara,Olson,female,False,8,15,Data Science,81.0,80.0,85.0,93.0,68.0,75.0,90.0
@@ -508,7 +513,7 @@
 512,Dawn,Poole,female,False,2,13,Data Science,60.0,75.0,70.0,96.0,63.0,82.0,80.0
 513,Emily,Jordan,female,False,3,49,Doctor,85.0,96.0,99.0,94.0,95.0,92.0,95.0
 514,John,Owen,male,False,6,34,Lawyer,82.0,85.0,72.0,69.0,63.0,99.0,68.0
-515,Andrew,Best,male,False,4,28,Construction Engineer,83.0,79.0,92.0,69.0,85.0,71.0,95.0
+515,Andrew,Best,male,True,4,28,Construction Engineer,83.0,79.0,92.0,69.0,85.0,71.0,95.0
 516,Holly,Burns,female,False,2,44,Doctor,96.0,88.0,100.0,95.0,85.0,94.0,93.0
 517,Alicia,Rodriguez,female,False,1,14,Software Engineer,85.0,87.0,78.0,72.0,91.0,88.0,93.0
 518,Erin,Ray,female,False,4,1,Real Estate Developer,95.0,61.0,84.0,98.0,63.0,66.0,80.0
@@ -517,36 +522,36 @@
 521,Cynthia,Williams,female,False,3,2,Data Science,69.0,98.0,77.0,63.0,88.0,64.0,60.0
 522,Jenny,Washington,female,False,9,3,Business Owner,84.0,55.0,65.0,62.0,56.0,91.0,81.0
 523,Angela,Joyce,female,False,5,28,Banker,92.0,100.0,100.0,98.0,83.0,75.0,72.0
-524,William,Alvarado,male,False,2,0,Business Owner,87.0,95.0,78.0,82.0,53.0,59.0,66.0
+524,William,Alvarado,male,True,2,0,Business Owner,87.0,95.0,78.0,82.0,53.0,59.0,66.0
 525,Michael,Mercer,male,False,5,22,Banker,97.0,87.0,90.0,70.0,96.0,75.0,93.0
-526,Erin,Miller,female,False,8,3,Business Owner,92.0,96.0,77.0,95.0,63.0,57.0,90.0
+526,Erin,Miller,female,True,8,3,Business Owner,92.0,96.0,77.0,95.0,63.0,57.0,90.0
 527,Robert,Heath,male,False,2,25,Data Science,72.0,91.0,68.0,79.0,98.0,71.0,89.0
 528,Deborah,Rojas,female,False,3,1,Business Owner,50.0,55.0,96.0,72.0,55.0,50.0,64.0
 529,Diana,Jones,female,False,7,37,Doctor,97.0,96.0,93.0,94.0,91.0,96.0,87.0
 530,Meredith,Clark,female,False,3,28,Software Engineer,89.0,77.0,69.0,72.0,63.0,84.0,99.0
 531,Christina,Garrett,female,False,3,30,Scientist,77.0,76.0,90.0,95.0,94.0,99.0,94.0
 532,Daniel,Jackson,male,False,1,19,Stock Investor,91.0,89.0,66.0,69.0,100.0,88.0,79.0
-533,Bradley,Robinson,male,False,7,2,Business Owner,64.0,92.0,70.0,81.0,85.0,55.0,76.0
-534,Phyllis,Schneider,female,False,4,26,Data Science,71.0,87.0,63.0,73.0,89.0,77.0,66.0
+533,Bradley,Robinson,male,True,7,2,Business Owner,64.0,92.0,70.0,81.0,85.0,55.0,76.0
+534,Phyllis,Schneider,female,True,4,26,Data Science,71.0,87.0,63.0,73.0,89.0,77.0,66.0
 535,Thomas,Clark,male,False,10,0,Business Owner,56.0,79.0,74.0,66.0,92.0,57.0,61.0
 536,Gregory,Gonzalez,male,False,4,5,Game Developer,87.0,70.0,98.0,64.0,65.0,78.0,83.0
 537,Michelle,Roth,female,False,0,17,Software Engineer,99.0,69.0,85.0,91.0,77.0,88.0,75.0
 538,Christopher,Murphy,male,False,2,26,Lawyer,98.0,88.0,76.0,72.0,92.0,81.0,89.0
 539,Mark,Davis,male,False,2,32,Data Science,87.0,83.0,74.0,61.0,81.0,72.0,98.0
 540,Lauren,Harrington,female,False,6,16,Software Engineer,88.0,96.0,90.0,92.0,68.0,97.0,73.0
-541,Michelle,Owens,female,False,8,2,Business Owner,71.0,52.0,53.0,64.0,89.0,76.0,70.0
+541,Michelle,Owens,female,True,8,2,Business Owner,71.0,52.0,53.0,64.0,89.0,76.0,70.0
 542,Scott,Weaver,male,False,2,35,Construction Engineer,96.0,90.0,91.0,95.0,99.0,95.0,99.0
 543,Monica,Williams,female,False,0,17,Accountant,81.0,95.0,99.0,65.0,56.0,79.0,98.0
 544,Kathryn,Hampton,female,False,9,3,Business Owner,94.0,92.0,63.0,84.0,79.0,66.0,96.0
-545,Christina,Shields,female,False,3,47,Doctor,94.0,87.0,98.0,90.0,92.0,88.0,100.0
+545,Christina,Shields,female,True,3,47,Doctor,94.0,87.0,98.0,90.0,92.0,88.0,100.0
 546,Andrew,Thomas,male,False,0,29,Lawyer,98.0,87.0,75.0,63.0,85.0,88.0,75.0
 547,Holly,Sexton,female,False,10,5,Business Owner,100.0,58.0,54.0,97.0,58.0,51.0,80.0
 548,Christopher,Peterson,male,False,3,12,Designer,66.0,89.0,65.0,99.0,84.0,84.0,86.0
 549,Eric,Murray,male,False,2,35,Doctor,94.0,99.0,97.0,94.0,85.0,97.0,97.0
-550,Kristina,Watson,female,False,0,3,Game Developer,83.0,90.0,93.0,89.0,64.0,63.0,82.0
-551,Greg,Martin,male,False,8,2,Business Owner,92.0,54.0,50.0,88.0,90.0,91.0,95.0
+550,Kristina,Watson,female,True,0,3,Game Developer,83.0,90.0,93.0,89.0,64.0,63.0,82.0
+551,Greg,Martin,male,True,8,2,Business Owner,92.0,54.0,50.0,88.0,90.0,91.0,95.0
 552,Paul,Shaffer,male,False,10,35,Software Engineer,93.0,100.0,90.0,94.0,97.0,98.0,98.0
-553,Alexander,Daniel,male,False,1,7,Government Officer,69.0,92.0,84.0,98.0,98.0,83.0,87.0
+553,Alexander,Daniel,male,True,1,7,Government Officer,69.0,92.0,84.0,98.0,98.0,83.0,87.0
 554,Carla,Davis,female,False,4,15,Software Engineer,94.0,71.0,63.0,73.0,66.0,90.0,91.0
 555,Chelsea,Clark,female,False,1,3,Stock Investor,100.0,92.0,95.0,90.0,67.0,81.0,66.0
 556,Justin,Douglas,male,False,2,35,Data Science,96.0,92.0,98.0,100.0,94.0,93.0,86.0
@@ -556,24 +561,24 @@
 560,Bruce,Woods,male,False,3,16,Software Engineer,95.0,61.0,68.0,75.0,64.0,76.0,66.0
 561,Christopher,Hines,male,False,1,26,Accountant,90.0,64.0,94.0,84.0,66.0,61.0,72.0
 562,Theodore,Williams,male,False,3,30,Data Science,96.0,89.0,73.0,75.0,99.0,89.0,71.0
-563,Jennifer,Valdez,female,False,6,2,Business Owner,80.0,81.0,92.0,73.0,71.0,71.0,84.0
+563,Jennifer,Valdez,female,True,6,2,Business Owner,80.0,81.0,92.0,73.0,71.0,71.0,84.0
 564,Alexandra,Day,female,False,2,34,Software Engineer,87.0,83.0,75.0,73.0,92.0,91.0,71.0
 565,John,Pacheco,male,False,10,0,Business Owner,94.0,75.0,91.0,64.0,67.0,93.0,65.0
 566,Sherry,Brown,female,False,10,3,Artist,87.0,82.0,88.0,100.0,73.0,96.0,75.0
 567,Douglas,Clark,male,False,2,30,Software Engineer,95.0,97.0,88.0,77.0,96.0,96.0,74.0
-568,Alex,Farmer,male,False,3,15,Construction Engineer,85.0,96.0,82.0,64.0,82.0,94.0,81.0
+568,Alex,Farmer,male,True,3,15,Construction Engineer,85.0,96.0,82.0,64.0,82.0,94.0,81.0
 569,Brandon,Gonzales,male,False,8,1,Business Owner,67.0,65.0,77.0,72.0,94.0,88.0,77.0
 570,Wayne,Trevino,male,False,3,6,Government Officer,84.0,100.0,92.0,82.0,85.0,70.0,69.0
 571,Pamela,Horne,female,False,7,1,Game Developer,83.0,88.0,90.0,100.0,71.0,98.0,96.0
-572,Michael,Schaefer,male,False,9,5,Business Owner,67.0,78.0,68.0,51.0,77.0,72.0,78.0
+572,Michael,Schaefer,male,True,9,5,Business Owner,67.0,78.0,68.0,51.0,77.0,72.0,78.0
 573,Carlos,Ramirez,male,False,1,30,Banker,75.0,92.0,72.0,88.0,92.0,77.0,84.0
 574,Antonio,Lucero,male,False,3,8,Government Officer,67.0,76.0,70.0,73.0,81.0,85.0,80.0
-575,Terry,Ashley,male,False,9,5,Business Owner,67.0,54.0,51.0,72.0,75.0,60.0,88.0
+575,Terry,Ashley,male,True,9,5,Business Owner,67.0,54.0,51.0,72.0,75.0,60.0,88.0
 576,Rita,Cochran,female,False,1,5,Artist,72.0,91.0,78.0,97.0,86.0,93.0,77.0
 577,Joseph,Gregory,male,False,4,4,Government Officer,78.0,98.0,76.0,68.0,86.0,91.0,82.0
 578,Alexandra,Robinson,female,False,1,47,Doctor,85.0,87.0,92.0,96.0,92.0,90.0,88.0
 579,Tina,Sparks,female,False,3,16,Stock Investor,100.0,70.0,69.0,61.0,100.0,65.0,81.0
-580,Christopher,Buchanan,male,False,5,3,Business Owner,56.0,59.0,89.0,68.0,79.0,83.0,68.0
+580,Christopher,Buchanan,male,True,5,3,Business Owner,56.0,59.0,89.0,68.0,79.0,83.0,68.0
 581,Christina,Guerrero,female,False,5,32,Scientist,93.0,75.0,83.0,99.0,100.0,91.0,74.0
 582,Jessica,Hutchinson,female,False,2,31,Banker,89.0,91.0,85.0,69.0,76.0,92.0,94.0
 583,Tyler,Carrillo,male,False,3,6,Real Estate Developer,59.0,88.0,74.0,92.0,72.0,97.0,64.0
@@ -583,14 +588,14 @@
 587,Tanya,Green,female,False,6,21,Banker,79.0,65.0,91.0,65.0,61.0,88.0,95.0
 588,Bryan,Lee,male,False,3,46,Doctor,96.0,89.0,91.0,90.0,90.0,91.0,99.0
 589,Melanie,Bridges,female,False,6,48,Doctor,95.0,90.0,85.0,90.0,96.0,89.0,96.0
-590,Eric,Bowers,male,False,1,46,Doctor,96.0,85.0,90.0,95.0,100.0,96.0,88.0
-591,Meredith,Reed,female,False,3,28,Data Science,95.0,80.0,64.0,97.0,85.0,94.0,60.0
-592,David,Brown,male,False,4,2,Data Science,80.0,62.0,84.0,95.0,71.0,85.0,87.0
-593,William,Johns,male,False,0,32,Stock Investor,86.0,70.0,73.0,85.0,67.0,91.0,98.0
-594,Eric,Patton,male,False,10,5,Business Owner,42.0,95.0,99.0,61.0,62.0,77.0,99.0
+590,Eric,Bowers,male,True,1,46,Doctor,96.0,85.0,90.0,95.0,100.0,96.0,88.0
+591,Meredith,Reed,female,True,3,28,Data Science,95.0,80.0,64.0,97.0,85.0,94.0,60.0
+592,David,Brown,male,True,4,2,Data Science,80.0,62.0,84.0,95.0,71.0,85.0,87.0
+593,William,Johns,male,True,0,32,Stock Investor,86.0,70.0,73.0,85.0,67.0,91.0,98.0
+594,Eric,Patton,male,True,10,5,Business Owner,42.0,95.0,99.0,61.0,62.0,77.0,99.0
 595,Wendy,Warner,female,False,4,31,Lawyer,80.0,93.0,93.0,94.0,81.0,81.0,78.0
 596,Timothy,Powell,male,False,4,1,Artist,79.0,97.0,100.0,94.0,65.0,62.0,76.0
-597,Victoria,Thompson,female,False,9,4,Business Owner,43.0,63.0,91.0,67.0,74.0,71.0,88.0
+597,Victoria,Thompson,female,True,9,4,Business Owner,43.0,63.0,91.0,67.0,74.0,71.0,88.0
 598,Jeremy,Brown,male,False,2,8,Real Estate Developer,58.0,84.0,95.0,66.0,99.0,91.0,70.0
 599,Barbara,Schneider,female,False,3,23,Accountant,86.0,73.0,83.0,93.0,46.0,91.0,70.0
 600,Lindsay,Morales,female,False,1,23,Doctor,96.0,91.0,97.0,84.0,89.0,82.0,75.0
@@ -601,7 +606,7 @@
 605,Jennifer,Guerra,female,False,2,26,Data Science,76.0,85.0,67.0,60.0,100.0,63.0,64.0
 606,Kelly,Schwartz,female,False,4,33,Lawyer,84.0,89.0,74.0,79.0,86.0,93.0,95.0
 607,Brittany,Orozco,female,False,4,34,Lawyer,87.0,94.0,74.0,84.0,77.0,82.0,85.0
-608,Samantha,Alvarado,female,False,4,16,Accountant,82.0,79.0,64.0,75.0,93.0,82.0,60.0
+608,Samantha,Alvarado,female,True,4,16,Accountant,82.0,79.0,64.0,75.0,93.0,82.0,60.0
 609,Christopher,Anderson,male,False,4,3,Business Owner,64.0,61.0,73.0,70.0,87.0,75.0,100.0
 610,William,Smith,male,False,3,25,Lawyer,77.0,80.0,88.0,84.0,84.0,92.0,82.0
 611,Courtney,Patterson,female,False,0,4,Stock Investor,86.0,82.0,90.0,69.0,66.0,93.0,94.0
@@ -617,22 +622,22 @@
 621,Gina,Solomon,female,False,6,1,Business Owner,89.0,55.0,89.0,67.0,55.0,64.0,70.0
 622,David,Madden,male,False,5,26,Data Science,90.0,75.0,67.0,85.0,64.0,95.0,96.0
 623,William,Brennan,male,False,1,5,Data Science,79.0,95.0,81.0,67.0,66.0,71.0,66.0
-624,Judy,Mckenzie,female,False,5,17,Teacher,86.0,88.0,98.0,66.0,62.0,95.0,90.0
+624,Judy,Mckenzie,female,True,5,17,Teacher,86.0,88.0,98.0,66.0,62.0,95.0,90.0
 625,Logan,Lindsey,male,False,3,4,Artist,83.0,78.0,68.0,72.0,77.0,89.0,70.0
 626,Kyle,Williams,male,False,6,27,Lawyer,85.0,92.0,62.0,95.0,65.0,89.0,95.0
 627,Mark,Padilla,male,False,3,0,Artist,66.0,78.0,86.0,87.0,64.0,65.0,64.0
 628,Eugene,Clark,male,False,6,16,Accountant,93.0,80.0,60.0,62.0,43.0,68.0,67.0
 629,Sean,Wagner,male,False,6,14,Data Science,65.0,89.0,79.0,95.0,71.0,61.0,62.0
-630,Christine,Larson,female,False,2,5,Real Estate Developer,52.0,66.0,98.0,83.0,92.0,82.0,91.0
+630,Christine,Larson,female,True,2,5,Real Estate Developer,52.0,66.0,98.0,83.0,92.0,82.0,91.0
 631,Melinda,Freeman,female,False,3,31,Banker,90.0,80.0,84.0,70.0,65.0,89.0,64.0
 632,Elizabeth,Smith,female,False,2,4,Artist,83.0,89.0,99.0,100.0,73.0,86.0,88.0
 633,Walter,King,male,False,1,5,Artist,62.0,89.0,72.0,68.0,85.0,80.0,75.0
 634,Lisa,Bean,female,False,1,11,Writer,98.0,72.0,99.0,84.0,60.0,95.0,93.0
 635,Douglas,Hayes,male,False,8,12,Data Science,76.0,75.0,74.0,67.0,76.0,82.0,79.0
 636,Heather,Jefferson,female,False,0,5,Game Developer,97.0,62.0,98.0,70.0,67.0,71.0,70.0
-637,Melinda,Byrd,female,False,6,1,Business Owner,63.0,60.0,95.0,99.0,87.0,58.0,66.0
+637,Melinda,Byrd,female,True,6,1,Business Owner,63.0,60.0,95.0,99.0,87.0,58.0,66.0
 638,Alexander,Burnett,male,False,5,2,Artist,98.0,99.0,64.0,88.0,72.0,87.0,99.0
-639,Maria,Campos,female,False,10,1,Business Owner,78.0,84.0,84.0,61.0,88.0,67.0,92.0
+639,Maria,Campos,female,True,10,1,Business Owner,78.0,84.0,84.0,61.0,88.0,67.0,92.0
 640,Lindsey,Anthony,female,False,2,30,Stock Investor,85.0,77.0,89.0,77.0,84.0,71.0,71.0
 641,Darryl,Schultz,male,False,6,0,Business Owner,59.0,100.0,84.0,93.0,70.0,56.0,74.0
 642,Bethany,French,female,False,2,6,Data Science,99.0,77.0,88.0,60.0,93.0,61.0,96.0
@@ -642,7 +647,7 @@
 646,Levi,Mason,male,False,1,18,Software Engineer,89.0,64.0,72.0,61.0,75.0,68.0,83.0
 647,Michael,Vang,male,False,4,20,Software Engineer,89.0,79.0,75.0,80.0,97.0,94.0,68.0
 648,April,Humphrey,female,False,0,23,Software Engineer,86.0,89.0,94.0,95.0,60.0,90.0,90.0
-649,Steven,Hancock,male,False,4,4,Business Owner,65.0,76.0,92.0,86.0,93.0,61.0,97.0
+649,Steven,Hancock,male,True,4,4,Business Owner,65.0,76.0,92.0,86.0,93.0,61.0,97.0
 650,Chelsea,Olson,female,False,4,30,Banker,77.0,95.0,77.0,84.0,60.0,90.0,89.0
 651,Emily,Huang,female,False,4,34,Banker,88.0,85.0,68.0,62.0,64.0,99.0,66.0
 652,Rachel,Jones,female,False,1,26,Accountant,98.0,77.0,94.0,87.0,44.0,85.0,61.0
@@ -651,25 +656,25 @@
 655,Pamela,Henry,female,False,4,39,Doctor,97.0,95.0,94.0,90.0,86.0,85.0,95.0
 656,Nicole,Davidson,female,False,7,29,Banker,77.0,88.0,63.0,87.0,71.0,93.0,84.0
 657,Jeffery,Parker,male,False,0,27,Doctor,100.0,84.0,93.0,96.0,97.0,70.0,95.0
-658,Christopher,Banks,male,False,3,17,Software Engineer,93.0,70.0,62.0,99.0,63.0,83.0,60.0
-659,Tara,Griffin,female,False,5,31,Banker,93.0,99.0,79.0,78.0,64.0,87.0,76.0
-660,Lisa,Lloyd,female,False,4,13,Banker,94.0,89.0,74.0,75.0,73.0,78.0,61.0
+658,Christopher,Banks,male,True,3,17,Software Engineer,93.0,70.0,62.0,99.0,63.0,83.0,60.0
+659,Tara,Griffin,female,True,5,31,Banker,93.0,99.0,79.0,78.0,64.0,87.0,76.0
+660,Lisa,Lloyd,female,True,4,13,Banker,94.0,89.0,74.0,75.0,73.0,78.0,61.0
 661,Elizabeth,Maldonado,female,False,4,12,Banker,88.0,86.0,79.0,93.0,68.0,92.0,99.0
-662,Samuel,Anderson,male,False,10,0,Business Owner,93.0,95.0,94.0,70.0,83.0,86.0,94.0
+662,Samuel,Anderson,male,True,10,0,Business Owner,93.0,95.0,94.0,70.0,83.0,86.0,94.0
 663,Xavier,Johnson,male,False,2,21,Construction Engineer,83.0,75.0,84.0,68.0,95.0,80.0,88.0
-664,Lauren,Cordova,female,False,3,28,Lawyer,96.0,93.0,100.0,96.0,97.0,81.0,72.0
-665,Amanda,Hawkins,female,False,8,35,Accountant,87.0,88.0,93.0,88.0,96.0,85.0,94.0
+664,Lauren,Cordova,female,True,3,28,Lawyer,96.0,93.0,100.0,96.0,97.0,81.0,72.0
+665,Amanda,Hawkins,female,True,8,35,Accountant,87.0,88.0,93.0,88.0,96.0,85.0,94.0
 666,Donald,Coleman,male,False,9,24,Lawyer,95.0,82.0,84.0,69.0,63.0,85.0,69.0
 667,Phillip,Bennett,male,False,1,28,Accountant,87.0,87.0,86.0,84.0,66.0,83.0,81.0
 668,John,George,male,False,9,0,Business Owner,43.0,95.0,64.0,95.0,66.0,67.0,74.0
-669,Katherine,Moore,female,False,6,0,Business Owner,40.0,100.0,88.0,79.0,71.0,86.0,89.0
+669,Katherine,Moore,female,True,6,0,Business Owner,40.0,100.0,88.0,79.0,71.0,86.0,89.0
 670,Jose,Dominguez,male,False,2,3,Real Estate Developer,64.0,70.0,98.0,82.0,100.0,72.0,78.0
 671,Lauren,Morrow,female,False,3,16,Data Science,72.0,79.0,95.0,68.0,75.0,70.0,88.0
 672,Katie,Davenport,female,False,2,26,Lawyer,77.0,96.0,86.0,84.0,90.0,85.0,91.0
-673,Michelle,Martinez,female,False,10,4,Business Owner,40.0,86.0,53.0,63.0,50.0,87.0,77.0
+673,Michelle,Martinez,female,True,10,4,Business Owner,40.0,86.0,53.0,63.0,50.0,87.0,77.0
 674,Jeremiah,Stanley,male,False,2,24,Construction Engineer,100.0,89.0,90.0,96.0,72.0,90.0,86.0
 675,Isaac,Tucker,male,False,5,22,Software Engineer,89.0,93.0,95.0,88.0,72.0,76.0,71.0
-676,Hannah,Garcia,female,False,2,14,Software Engineer,97.0,74.0,76.0,72.0,62.0,69.0,90.0
+676,Hannah,Garcia,female,True,2,14,Software Engineer,97.0,74.0,76.0,72.0,62.0,69.0,90.0
 677,Thomas,Nelson,male,False,2,21,Data Science,100.0,77.0,74.0,61.0,81.0,96.0,96.0
 678,William,Kennedy,male,False,4,29,Lawyer,81.0,88.0,85.0,89.0,81.0,91.0,98.0
 679,Jennifer,Williams,female,False,6,3,Business Owner,100.0,91.0,53.0,78.0,55.0,91.0,74.0
@@ -686,7 +691,7 @@
 690,Phillip,Nelson,male,False,3,10,Data Science,76.0,61.0,68.0,88.0,86.0,87.0,66.0
 691,Michael,Hinton,male,False,1,29,Construction Engineer,84.0,66.0,99.0,80.0,71.0,88.0,89.0
 692,Alex,Shelton,male,False,0,17,Software Engineer,96.0,77.0,91.0,85.0,69.0,91.0,91.0
-693,Ross,Esparza,male,False,10,1,Business Owner,57.0,75.0,64.0,85.0,53.0,95.0,81.0
+693,Ross,Esparza,male,True,10,1,Business Owner,57.0,75.0,64.0,85.0,53.0,95.0,81.0
 694,Lisa,Murphy,female,False,1,14,Teacher,93.0,79.0,82.0,67.0,64.0,90.0,65.0
 695,Richard,Gibson,male,False,1,24,Data Science,88.0,84.0,61.0,61.0,79.0,62.0,99.0
 696,Jackson,Olson,male,False,2,35,Construction Engineer,89.0,99.0,86.0,97.0,98.0,97.0,93.0
@@ -703,12 +708,12 @@
 707,Anthony,Armstrong,male,False,2,11,Banker,96.0,87.0,99.0,65.0,98.0,79.0,93.0
 708,Julian,Ortiz,male,False,3,4,Artist,83.0,75.0,77.0,61.0,93.0,61.0,75.0
 709,Melinda,Sanchez,female,False,0,15,Teacher,78.0,84.0,79.0,96.0,76.0,71.0,71.0
-710,James,Carter,male,False,10,25,Banker,82.0,74.0,84.0,74.0,86.0,81.0,100.0
+710,James,Carter,male,True,10,25,Banker,82.0,74.0,84.0,74.0,86.0,81.0,100.0
 711,Alejandra,Johns,female,False,1,31,Accountant,94.0,91.0,68.0,61.0,34.0,60.0,63.0
 712,Susan,Long,female,False,7,30,Doctor,93.0,73.0,97.0,89.0,88.0,63.0,70.0
 713,Sharon,Allen,female,False,3,17,Teacher,80.0,95.0,98.0,95.0,96.0,97.0,85.0
 714,Leah,Brown,female,False,10,0,Business Owner,55.0,99.0,71.0,94.0,69.0,87.0,84.0
-715,Maria,Barker,female,False,2,10,Government Officer,94.0,71.0,83.0,76.0,99.0,95.0,94.0
+715,Maria,Barker,female,True,2,10,Government Officer,94.0,71.0,83.0,76.0,99.0,95.0,94.0
 716,Kelly,Church,female,False,2,22,Writer,72.0,72.0,85.0,90.0,75.0,94.0,65.0
 717,Michael,Walsh,male,False,3,16,Software Engineer,98.0,89.0,75.0,68.0,87.0,69.0,96.0
 718,Alyssa,Gallagher,female,False,2,11,Data Science,71.0,98.0,66.0,65.0,78.0,81.0,82.0
@@ -723,10 +728,10 @@
 727,Ann,Mccann,female,False,1,32,Software Engineer,85.0,86.0,84.0,81.0,92.0,84.0,93.0
 728,Curtis,Bennett,male,False,6,25,Lawyer,70.0,83.0,63.0,86.0,97.0,88.0,79.0
 729,Debra,Gutierrez,female,False,9,26,Lawyer,76.0,83.0,90.0,68.0,96.0,94.0,87.0
-730,Linda,West,female,False,7,34,Lawyer,75.0,82.0,89.0,65.0,85.0,89.0,81.0
+730,Linda,West,female,True,7,34,Lawyer,75.0,82.0,89.0,65.0,85.0,89.0,81.0
 731,Justin,Hughes,male,False,2,25,Stock Investor,97.0,65.0,96.0,87.0,87.0,95.0,100.0
-732,Jose,Jackson,male,False,10,3,Business Owner,72.0,81.0,61.0,73.0,96.0,72.0,86.0
-733,Larry,Smith,male,False,3,12,Stock Investor,84.0,69.0,68.0,92.0,86.0,67.0,73.0
+732,Jose,Jackson,male,True,10,3,Business Owner,72.0,81.0,61.0,73.0,96.0,72.0,86.0
+733,Larry,Smith,male,True,3,12,Stock Investor,84.0,69.0,68.0,92.0,86.0,67.0,73.0
 734,Austin,Dunn,male,False,1,25,Data Science,84.0,94.0,65.0,74.0,92.0,81.0,79.0
 735,Michael,Heath,male,False,6,50,Doctor,94.0,87.0,99.0,99.0,86.0,86.0,85.0
 736,Beth,Acosta,female,False,7,15,Designer,80.0,91.0,100.0,87.0,87.0,94.0,100.0
@@ -737,34 +742,34 @@
 741,Nicholas,Martin,male,False,5,15,Software Engineer,96.0,73.0,91.0,71.0,72.0,74.0,76.0
 742,Breanna,Lee,female,False,2,31,Scientist,97.0,62.0,93.0,80.0,96.0,94.0,67.0
 743,Angie,White,female,False,6,0,Artist,62.0,79.0,75.0,65.0,71.0,75.0,93.0
-744,William,Lester,male,False,1,5,Business Owner,97.0,79.0,96.0,94.0,59.0,83.0,64.0
+744,William,Lester,male,True,1,5,Business Owner,97.0,79.0,96.0,94.0,59.0,83.0,64.0
 745,Joshua,Miller,male,False,3,35,Software Engineer,85.0,100.0,90.0,93.0,94.0,97.0,98.0
 746,Thomas,Stone,male,False,0,27,Data Science,68.0,95.0,66.0,65.0,89.0,84.0,100.0
-747,Sarah,King,female,False,7,1,Business Owner,45.0,68.0,99.0,91.0,88.0,63.0,61.0
-748,Jeffery,Carlson,male,False,6,2,Business Owner,86.0,79.0,86.0,73.0,53.0,84.0,79.0
+747,Sarah,King,female,True,7,1,Business Owner,45.0,68.0,99.0,91.0,88.0,63.0,61.0
+748,Jeffery,Carlson,male,True,6,2,Business Owner,86.0,79.0,86.0,73.0,53.0,84.0,79.0
 749,Ashley,Gutierrez,female,False,10,34,Software Engineer,97.0,94.0,73.0,98.0,87.0,97.0,98.0
-750,Adam,Herring,male,False,2,18,Software Engineer,93.0,67.0,65.0,61.0,61.0,96.0,65.0
+750,Adam,Herring,male,True,2,18,Software Engineer,93.0,67.0,65.0,61.0,61.0,96.0,65.0
 751,David,Ramirez,male,False,1,14,Software Engineer,85.0,93.0,75.0,72.0,84.0,63.0,63.0
 752,Angela,Brown,female,False,1,6,Designer,88.0,88.0,98.0,92.0,71.0,66.0,90.0
 753,Eric,Jones,male,False,5,2,Artist,100.0,67.0,98.0,71.0,92.0,79.0,99.0
 754,Angel,Garner,male,False,2,19,Software Engineer,93.0,74.0,88.0,92.0,77.0,89.0,96.0
 755,Lisa,Cowan,female,False,1,1,Artist,70.0,63.0,73.0,97.0,63.0,61.0,90.0
 756,Nicole,Perry,female,False,2,13,Banker,82.0,67.0,94.0,88.0,86.0,89.0,98.0
-757,Annette,Wells,female,False,8,3,Business Owner,41.0,76.0,94.0,93.0,79.0,84.0,96.0
+757,Annette,Wells,female,True,8,3,Business Owner,41.0,76.0,94.0,93.0,79.0,84.0,96.0
 758,Ian,Scott,male,False,2,21,Banker,94.0,74.0,74.0,89.0,67.0,93.0,96.0
-759,Kari,Hernandez,female,False,2,29,Designer,67.0,69.0,75.0,94.0,98.0,80.0,74.0
+759,Kari,Hernandez,female,True,2,29,Designer,67.0,69.0,75.0,94.0,98.0,80.0,74.0
 760,Mary,Haynes,female,False,0,11,Government Officer,89.0,75.0,64.0,81.0,66.0,82.0,92.0
 761,Raymond,Smith,male,False,3,23,Doctor,82.0,82.0,100.0,93.0,91.0,61.0,83.0
-762,Christopher,Ayala,male,False,2,30,Software Engineer,96.0,79.0,93.0,92.0,92.0,71.0,87.0
+762,Christopher,Ayala,male,True,2,30,Software Engineer,96.0,79.0,93.0,92.0,92.0,71.0,87.0
 763,Jacqueline,Frazier,female,False,1,13,Accountant,94.0,84.0,84.0,89.0,52.0,97.0,76.0
 764,Jesse,Kelly,male,False,4,19,Construction Engineer,84.0,65.0,83.0,99.0,86.0,75.0,67.0
 765,Teresa,Lee,female,False,5,33,Software Engineer,87.0,98.0,97.0,70.0,80.0,67.0,82.0
 766,Michael,Aguirre,male,False,2,21,Software Engineer,90.0,93.0,66.0,77.0,72.0,82.0,82.0
 767,April,Delgado,female,False,7,31,Scientist,86.0,81.0,91.0,83.0,97.0,83.0,80.0
 768,Troy,Prince,male,False,6,3,Business Owner,48.0,72.0,64.0,65.0,64.0,55.0,79.0
-769,Martha,Summers,female,False,7,3,Business Owner,49.0,59.0,99.0,59.0,75.0,54.0,70.0
-770,William,Dean,male,False,0,30,Data Science,90.0,83.0,72.0,77.0,99.0,84.0,67.0
-771,Cheryl,Gutierrez,female,False,5,1,Business Owner,40.0,51.0,93.0,100.0,76.0,60.0,99.0
+769,Martha,Summers,female,True,7,3,Business Owner,49.0,59.0,99.0,59.0,75.0,54.0,70.0
+770,William,Dean,male,True,0,30,Data Science,90.0,83.0,72.0,77.0,99.0,84.0,67.0
+771,Cheryl,Gutierrez,female,True,5,1,Business Owner,40.0,51.0,93.0,100.0,76.0,60.0,99.0
 772,Diane,Spears,female,False,0,8,Data Science,78.0,81.0,71.0,91.0,79.0,79.0,75.0
 773,Brian,David,male,False,2,29,Software Engineer,87.0,68.0,75.0,96.0,91.0,72.0,78.0
 774,Heather,Brooks,female,False,2,18,Accountant,79.0,81.0,68.0,70.0,60.0,65.0,71.0
@@ -796,7 +801,7 @@
 800,Matthew,Miles,male,False,5,4,Business Owner,94.0,68.0,72.0,99.0,83.0,53.0,83.0
 801,Mary,Cox,female,False,4,14,Teacher,67.0,100.0,77.0,85.0,73.0,95.0,86.0
 802,Jessica,Young,female,False,1,29,Software Engineer,92.0,63.0,99.0,77.0,82.0,88.0,72.0
-803,Tiffany,Small,female,False,3,20,Accountant,76.0,75.0,60.0,77.0,71.0,70.0,88.0
+803,Tiffany,Small,female,True,3,20,Accountant,76.0,75.0,60.0,77.0,71.0,70.0,88.0
 804,Mary,Wyatt,female,False,3,24,Software Engineer,86.0,75.0,96.0,62.0,81.0,91.0,84.0
 805,Maria,Mercer,female,False,3,27,Software Engineer,94.0,94.0,86.0,62.0,73.0,90.0,75.0
 806,Erin,Moore,female,False,3,31,Software Engineer,100.0,85.0,62.0,62.0,89.0,65.0,67.0
@@ -807,21 +812,21 @@
 811,John,Henderson,male,False,1,33,Data Science,97.0,76.0,99.0,85.0,98.0,62.0,97.0
 812,Steven,Martin,male,False,5,11,Banker,81.0,71.0,76.0,95.0,99.0,85.0,71.0
 813,Tina,Bowers,female,False,9,10,Banker,95.0,88.0,62.0,85.0,82.0,94.0,73.0
-814,Luis,Jones,male,False,6,3,Business Owner,55.0,69.0,53.0,75.0,86.0,95.0,61.0
+814,Luis,Jones,male,True,6,3,Business Owner,55.0,69.0,53.0,75.0,86.0,95.0,61.0
 815,Jeffrey,Thomas,male,False,3,5,Real Estate Developer,50.0,62.0,97.0,90.0,93.0,75.0,80.0
 816,Jeffrey,Cox,male,False,5,34,Software Engineer,98.0,84.0,90.0,83.0,84.0,61.0,99.0
 817,Jennifer,Bautista,female,False,7,15,Accountant,88.0,67.0,71.0,85.0,68.0,88.0,67.0
 818,Judy,Pugh,female,False,1,20,Software Engineer,87.0,99.0,92.0,85.0,62.0,69.0,67.0
 819,Henry,Craig,male,False,1,3,Government Officer,73.0,74.0,94.0,76.0,97.0,86.0,85.0
-820,Steven,Alvarez,male,False,2,2,Business Owner,46.0,71.0,60.0,50.0,85.0,69.0,62.0
+820,Steven,Alvarez,male,True,2,2,Business Owner,46.0,71.0,60.0,50.0,85.0,69.0,62.0
 821,Rebecca,Mckay,female,False,1,27,Banker,88.0,82.0,90.0,94.0,99.0,78.0,65.0
-822,James,Reynolds,male,False,0,29,Software Engineer,95.0,62.0,68.0,64.0,71.0,87.0,60.0
+822,James,Reynolds,male,True,0,29,Software Engineer,95.0,62.0,68.0,64.0,71.0,87.0,60.0
 823,Heather,Bentley,female,False,1,2,Artist,73.0,71.0,60.0,70.0,78.0,72.0,78.0
 824,Alexis,Hall,female,False,5,9,Designer,70.0,88.0,100.0,91.0,98.0,68.0,81.0
 825,Ryan,Soto,male,False,7,14,Construction Engineer,84.0,100.0,99.0,94.0,84.0,86.0,63.0
 826,Brent,Clements,male,False,8,25,Doctor,88.0,60.0,87.0,90.0,87.0,86.0,62.0
 827,Thomas,Hernandez,male,False,1,9,Data Science,66.0,65.0,82.0,96.0,87.0,87.0,63.0
-828,Kevin,Mack,male,False,9,2,Business Owner,46.0,54.0,93.0,57.0,99.0,59.0,73.0
+828,Kevin,Mack,male,True,9,2,Business Owner,46.0,54.0,93.0,57.0,99.0,59.0,73.0
 829,Patrick,Kirk,male,False,5,31,Lawyer,71.0,92.0,60.0,73.0,74.0,86.0,94.0
 830,Christopher,Jenkins,male,False,5,3,Designer,76.0,77.0,99.0,87.0,95.0,94.0,85.0
 831,Cassandra,Hodges,female,False,5,12,Designer,78.0,95.0,66.0,70.0,75.0,99.0,84.0
@@ -830,9 +835,9 @@
 834,James,Bridges,male,False,2,4,Game Developer,96.0,63.0,85.0,77.0,82.0,65.0,88.0
 835,Alexander,Fowler,male,False,2,25,Data Science,82.0,84.0,93.0,70.0,99.0,66.0,80.0
 836,Andrew,Wong,male,False,1,33,Data Science,81.0,91.0,71.0,79.0,98.0,69.0,75.0
-837,Bobby,Valdez,male,False,1,24,Data Science,97.0,80.0,67.0,71.0,75.0,96.0,100.0
+837,Bobby,Valdez,male,True,1,24,Data Science,97.0,80.0,67.0,71.0,75.0,96.0,100.0
 838,Mary,Bird,female,False,3,0,Artist,92.0,65.0,95.0,60.0,93.0,69.0,82.0
-839,Andrew,Rodriguez,male,False,6,0,Business Owner,81.0,77.0,92.0,97.0,62.0,65.0,92.0
+839,Andrew,Rodriguez,male,True,6,0,Business Owner,81.0,77.0,92.0,97.0,62.0,65.0,92.0
 840,Melanie,Carter,female,False,2,3,Government Officer,99.0,69.0,71.0,84.0,96.0,84.0,69.0
 841,Randy,Lopez,male,False,2,26,Lawyer,97.0,100.0,87.0,90.0,96.0,86.0,93.0
 842,David,Cole,male,False,7,31,Construction Engineer,80.0,87.0,94.0,68.0,89.0,82.0,76.0
@@ -840,18 +845,18 @@
 844,Shannon,Graham,female,False,1,9,Data Science,95.0,72.0,99.0,67.0,83.0,78.0,65.0
 845,Stephanie,Bush,female,False,10,15,Software Engineer,90.0,81.0,69.0,70.0,95.0,97.0,62.0
 846,Keith,Tanner,male,False,10,1,Business Owner,77.0,89.0,50.0,82.0,71.0,78.0,70.0
-847,Robert,Anderson,male,False,1,4,Business Owner,82.0,69.0,91.0,95.0,82.0,85.0,60.0
+847,Robert,Anderson,male,True,1,4,Business Owner,82.0,69.0,91.0,95.0,82.0,85.0,60.0
 848,Matthew,Cantu,male,False,3,2,Real Estate Developer,90.0,74.0,88.0,97.0,88.0,73.0,66.0
 849,Heather,Johnson,female,False,5,32,Software Engineer,94.0,90.0,81.0,82.0,100.0,82.0,98.0
-850,Lee,Taylor,male,False,7,2,Business Owner,87.0,84.0,76.0,87.0,65.0,80.0,72.0
-851,Jessica,Williams,female,False,1,2,Game Developer,86.0,66.0,88.0,98.0,68.0,79.0,77.0
+850,Lee,Taylor,male,True,7,2,Business Owner,87.0,84.0,76.0,87.0,65.0,80.0,72.0
+851,Jessica,Williams,female,True,1,2,Game Developer,86.0,66.0,88.0,98.0,68.0,79.0,77.0
 852,Holly,Sanchez,female,False,6,19,Banker,84.0,85.0,83.0,69.0,82.0,91.0,69.0
 853,James,Ray,male,False,4,12,Accountant,86.0,63.0,85.0,64.0,98.0,97.0,86.0
 854,William,Hernandez,male,False,10,5,Business Owner,70.0,66.0,98.0,96.0,64.0,65.0,91.0
 855,Lisa,Brown,female,False,4,22,Accountant,87.0,94.0,72.0,93.0,44.0,92.0,83.0
-856,Kevin,York,male,False,7,1,Business Owner,47.0,78.0,75.0,62.0,61.0,55.0,93.0
+856,Kevin,York,male,True,7,1,Business Owner,47.0,78.0,75.0,62.0,61.0,55.0,93.0
 857,Benjamin,Davis,male,False,0,21,Software Engineer,96.0,63.0,77.0,93.0,61.0,86.0,83.0
-858,Sarah,Nielsen,female,False,4,5,Business Owner,54.0,93.0,96.0,59.0,84.0,79.0,93.0
+858,Sarah,Nielsen,female,True,4,5,Business Owner,54.0,93.0,96.0,59.0,84.0,79.0,93.0
 859,Elizabeth,Parks,female,False,3,5,Real Estate Developer,59.0,100.0,64.0,68.0,86.0,89.0,91.0
 860,Deborah,Moore,female,False,2,8,Data Science,92.0,99.0,93.0,82.0,97.0,70.0,79.0
 861,Michael,Anderson,male,False,4,25,Software Engineer,100.0,62.0,78.0,74.0,72.0,73.0,78.0
@@ -859,46 +864,46 @@
 863,Anthony,Silva,male,False,3,0,Real Estate Developer,75.0,66.0,91.0,73.0,100.0,94.0,67.0
 864,Melinda,Velazquez,female,False,0,34,Software Engineer,93.0,74.0,63.0,97.0,64.0,61.0,92.0
 865,Andre,Hoffman,male,False,2,31,Lawyer,100.0,96.0,67.0,63.0,91.0,96.0,84.0
-866,Vanessa,Coleman,female,False,7,1,Business Owner,80.0,84.0,67.0,96.0,88.0,94.0,86.0
+866,Vanessa,Coleman,female,True,7,1,Business Owner,80.0,84.0,67.0,96.0,88.0,94.0,86.0
 867,Stephanie,Hernandez,female,False,1,28,Lawyer,100.0,92.0,66.0,96.0,76.0,88.0,77.0
-868,Timothy,David,male,False,4,5,Business Owner,52.0,65.0,74.0,71.0,63.0,59.0,67.0
+868,Timothy,David,male,True,4,5,Business Owner,52.0,65.0,74.0,71.0,63.0,59.0,67.0
 869,Carol,Cortez,female,False,1,26,Software Engineer,95.0,69.0,91.0,67.0,67.0,70.0,71.0
 870,Justin,Kelly,male,False,1,21,Data Science,100.0,67.0,100.0,65.0,67.0,92.0,67.0
 871,George,King,male,False,4,22,Software Engineer,96.0,73.0,90.0,84.0,64.0,75.0,62.0
 872,Ashley,Craig,female,False,3,30,Data Science,60.0,67.0,94.0,74.0,71.0,98.0,74.0
-873,Patricia,Sullivan,female,False,7,2,Business Owner,51.0,98.0,90.0,54.0,77.0,80.0,71.0
+873,Patricia,Sullivan,female,True,7,2,Business Owner,51.0,98.0,90.0,54.0,77.0,80.0,71.0
 874,David,Jones,male,False,5,24,Software Engineer,85.0,100.0,93.0,64.0,81.0,78.0,64.0
 875,Cody,Smith,male,False,10,15,Accountant,76.0,86.0,68.0,83.0,82.0,67.0,69.0
 876,Joseph,Jackson,male,False,1,24,Software Engineer,92.0,63.0,87.0,92.0,81.0,78.0,74.0
 877,Adam,Edwards,male,False,5,3,Government Officer,90.0,89.0,95.0,73.0,79.0,98.0,68.0
-878,Brian,Morales,male,False,6,4,Business Owner,73.0,53.0,68.0,60.0,95.0,96.0,99.0
+878,Brian,Morales,male,True,6,4,Business Owner,73.0,53.0,68.0,60.0,95.0,96.0,99.0
 879,Melissa,Fry,female,False,5,42,Doctor,90.0,89.0,92.0,93.0,97.0,92.0,100.0
 880,Lori,Jacobson,female,False,6,24,Accountant,87.0,87.0,86.0,91.0,90.0,75.0,79.0
 881,Jessica,Shannon,female,False,1,0,Real Estate Developer,93.0,96.0,70.0,92.0,65.0,90.0,84.0
 882,Sharon,Ramirez,female,False,3,4,Real Estate Developer,75.0,91.0,68.0,86.0,81.0,72.0,89.0
 883,Nicole,Rice,female,False,3,25,Software Engineer,96.0,100.0,99.0,82.0,79.0,95.0,89.0
-884,Alison,Webster,female,False,1,1,Artist,63.0,75.0,68.0,63.0,63.0,73.0,79.0
+884,Alison,Webster,female,True,1,1,Artist,63.0,75.0,68.0,63.0,63.0,73.0,79.0
 885,Alexander,Mitchell,male,False,5,35,Lawyer,85.0,90.0,89.0,98.0,100.0,97.0,95.0
 886,Bryan,Grimes,male,False,7,20,Software Engineer,93.0,61.0,65.0,77.0,97.0,90.0,90.0
 887,Nicole,Mcdonald,female,False,7,11,Data Science,60.0,92.0,82.0,65.0,82.0,91.0,67.0
-888,Christopher,Ramirez,male,False,3,21,Data Science,95.0,91.0,63.0,83.0,75.0,73.0,74.0
-889,Lawrence,Fields,male,False,9,1,Business Owner,61.0,73.0,76.0,51.0,76.0,50.0,77.0
+888,Christopher,Ramirez,male,True,3,21,Data Science,95.0,91.0,63.0,83.0,75.0,73.0,74.0
+889,Lawrence,Fields,male,True,9,1,Business Owner,61.0,73.0,76.0,51.0,76.0,50.0,77.0
 890,Rebecca,Molina,female,False,3,15,Software Engineer,97.0,81.0,65.0,70.0,62.0,96.0,75.0
 891,John,Castillo,male,False,1,33,Software Engineer,90.0,64.0,91.0,93.0,86.0,91.0,97.0
-892,Sandra,Davis,female,False,10,4,Business Owner,90.0,100.0,80.0,66.0,63.0,69.0,66.0
+892,Sandra,Davis,female,True,10,4,Business Owner,90.0,100.0,80.0,66.0,63.0,69.0,66.0
 893,Andrew,Smith,male,False,2,24,Software Engineer,85.0,74.0,68.0,68.0,75.0,78.0,95.0
 894,Elizabeth,Smith,female,False,1,13,Banker,82.0,87.0,98.0,73.0,74.0,89.0,66.0
-895,Scott,Schultz,male,False,6,5,Business Owner,95.0,88.0,66.0,72.0,92.0,52.0,70.0
+895,Scott,Schultz,male,True,6,5,Business Owner,95.0,88.0,66.0,72.0,92.0,52.0,70.0
 896,Joseph,Harper,male,False,1,12,Government Officer,95.0,96.0,66.0,68.0,90.0,91.0,99.0
 897,Ryan,Salazar,male,False,4,8,Real Estate Developer,81.0,90.0,71.0,97.0,81.0,86.0,73.0
 898,Brenda,Davis,female,False,2,8,Teacher,62.0,69.0,99.0,95.0,73.0,79.0,83.0
 899,Chad,Taylor,male,False,5,8,Real Estate Developer,95.0,92.0,89.0,64.0,77.0,80.0,66.0
-900,Natasha,Edwards,female,False,4,0,Business Owner,64.0,62.0,51.0,85.0,74.0,91.0,93.0
+900,Natasha,Edwards,female,True,4,0,Business Owner,64.0,62.0,51.0,85.0,74.0,91.0,93.0
 901,Pamela,Edwards,female,False,5,14,Designer,96.0,67.0,88.0,82.0,90.0,74.0,96.0
-902,Cynthia,Richardson,female,False,4,3,Business Owner,40.0,58.0,57.0,68.0,57.0,99.0,95.0
+902,Cynthia,Richardson,female,True,4,3,Business Owner,40.0,58.0,57.0,68.0,57.0,99.0,95.0
 903,Robert,Johnson,male,False,2,19,Stock Investor,87.0,80.0,84.0,65.0,91.0,84.0,65.0
 904,Kevin,Ryan,male,False,4,29,Data Science,74.0,95.0,82.0,61.0,70.0,88.0,92.0
-905,Eileen,Nicholson,female,False,7,0,Business Owner,51.0,56.0,64.0,85.0,91.0,78.0,97.0
+905,Eileen,Nicholson,female,True,7,0,Business Owner,51.0,56.0,64.0,85.0,91.0,78.0,97.0
 906,Robert,Torres,male,False,7,5,Real Estate Developer,57.0,74.0,98.0,93.0,63.0,70.0,67.0
 907,Alicia,Beltran,female,False,6,4,Business Owner,84.0,54.0,52.0,52.0,65.0,54.0,69.0
 908,Jessica,Wong,female,False,7,1,Business Owner,84.0,83.0,71.0,98.0,93.0,95.0,99.0
@@ -908,7 +913,7 @@
 912,Carl,Ferguson,male,False,3,21,Banker,77.0,93.0,69.0,75.0,88.0,81.0,89.0
 913,Valerie,Romero,female,False,9,15,Teacher,82.0,61.0,79.0,84.0,73.0,95.0,85.0
 914,Laura,Romero,female,False,3,26,Software Engineer,89.0,68.0,83.0,88.0,69.0,79.0,74.0
-915,Heidi,Adams,female,False,10,3,Business Owner,43.0,83.0,58.0,89.0,87.0,78.0,86.0
+915,Heidi,Adams,female,True,10,3,Business Owner,43.0,83.0,58.0,89.0,87.0,78.0,86.0
 916,Regina,Spencer,female,False,1,31,Lawyer,86.0,85.0,66.0,94.0,62.0,86.0,92.0
 917,Lee,Campbell,male,False,9,31,Scientist,92.0,74.0,95.0,97.0,87.0,78.0,68.0
 918,Noah,Mcdaniel,male,False,3,3,Data Science,71.0,70.0,60.0,84.0,87.0,87.0,64.0
@@ -918,15 +923,15 @@
 922,John,Riley,male,False,1,46,Doctor,91.0,85.0,98.0,96.0,98.0,96.0,93.0
 923,Shelly,Dominguez,female,False,1,24,Software Engineer,88.0,72.0,96.0,97.0,71.0,60.0,61.0
 924,Ann,Evans,female,False,2,2,Real Estate Developer,98.0,73.0,85.0,78.0,61.0,74.0,96.0
-925,David,Perez,male,False,10,2,Business Owner,87.0,60.0,67.0,88.0,99.0,56.0,92.0
+925,David,Perez,male,True,10,2,Business Owner,87.0,60.0,67.0,88.0,99.0,56.0,92.0
 926,Nicole,Bell,female,False,3,9,Teacher,66.0,64.0,82.0,82.0,72.0,96.0,100.0
-927,Amanda,Garcia,female,False,7,0,Business Owner,83.0,98.0,51.0,72.0,90.0,59.0,73.0
+927,Amanda,Garcia,female,True,7,0,Business Owner,83.0,98.0,51.0,72.0,90.0,59.0,73.0
 928,Charles,Owens,male,False,8,4,Business Owner,40.0,94.0,90.0,68.0,61.0,77.0,92.0
 929,Teresa,Henry,female,False,6,4,Business Owner,43.0,90.0,78.0,63.0,68.0,63.0,72.0
 930,Luis,Frank,male,False,4,34,Software Engineer,100.0,97.0,74.0,74.0,82.0,75.0,69.0
 931,Timothy,Booth,male,False,2,34,Data Science,93.0,70.0,74.0,78.0,94.0,75.0,96.0
 932,Michael,Moon,male,False,5,32,Software Engineer,98.0,86.0,82.0,72.0,79.0,93.0,94.0
-933,Rachel,Hall,female,False,4,23,Software Engineer,90.0,95.0,73.0,81.0,81.0,62.0,81.0
+933,Rachel,Hall,female,True,4,23,Software Engineer,90.0,95.0,73.0,81.0,81.0,62.0,81.0
 934,Thomas,Nguyen,male,False,2,20,Software Engineer,90.0,77.0,86.0,91.0,76.0,78.0,62.0
 935,Tiffany,Fields,female,False,1,5,Artist,68.0,67.0,65.0,68.0,63.0,97.0,63.0
 936,Jessica,Marshall,female,False,5,15,Software Engineer,91.0,60.0,98.0,77.0,72.0,74.0,63.0
@@ -934,7 +939,7 @@
 938,William,Kelly,male,False,1,30,Software Engineer,91.0,90.0,88.0,92.0,75.0,98.0,91.0
 939,Harry,Hunter,male,False,3,15,Accountant,98.0,72.0,87.0,74.0,100.0,84.0,85.0
 940,Gary,Gentry,male,False,6,18,Banker,85.0,74.0,79.0,82.0,71.0,87.0,67.0
-941,Maria,Malone,female,False,10,4,Business Owner,40.0,97.0,71.0,70.0,73.0,81.0,85.0
+941,Maria,Malone,female,True,10,4,Business Owner,40.0,97.0,71.0,70.0,73.0,81.0,85.0
 942,Jason,Vazquez,male,False,3,24,Accountant,76.0,75.0,76.0,67.0,60.0,77.0,100.0
 943,Patrick,West,male,False,3,15,Banker,89.0,76.0,84.0,93.0,64.0,86.0,95.0
 944,Alexandra,Brown,female,False,3,2,Artist,76.0,73.0,74.0,73.0,81.0,87.0,84.0
@@ -942,13 +947,13 @@
 946,Daniel,Smith,male,False,1,5,Business Owner,55.0,58.0,96.0,88.0,99.0,98.0,71.0
 947,Catherine,Boyle,female,False,5,0,Real Estate Developer,93.0,88.0,76.0,73.0,67.0,88.0,76.0
 948,Amanda,Bush,female,False,1,10,Real Estate Developer,84.0,68.0,60.0,86.0,90.0,84.0,81.0
-949,Emma,Copeland,female,False,5,2,Business Owner,62.0,65.0,98.0,52.0,66.0,94.0,82.0
+949,Emma,Copeland,female,True,5,2,Business Owner,62.0,65.0,98.0,52.0,66.0,94.0,82.0
 950,Bradley,Avery,male,False,3,30,Lawyer,80.0,81.0,75.0,72.0,71.0,84.0,87.0
 951,Danielle,Martinez,female,False,7,28,Doctor,93.0,84.0,85.0,94.0,95.0,74.0,83.0
 952,Anna,Wolf,female,False,0,29,Lawyer,92.0,82.0,63.0,61.0,66.0,84.0,98.0
 953,Megan,Whitaker,female,False,0,35,Software Engineer,87.0,89.0,91.0,89.0,93.0,92.0,95.0
 954,Melissa,Richard,female,False,1,12,Banker,83.0,69.0,93.0,60.0,98.0,83.0,88.0
-955,Richard,Small,male,False,3,32,Stock Investor,95.0,75.0,87.0,67.0,96.0,86.0,85.0
+955,Richard,Small,male,True,3,32,Stock Investor,95.0,75.0,87.0,67.0,96.0,86.0,85.0
 956,Victor,Phillips,male,False,2,27,Accountant,79.0,65.0,92.0,67.0,78.0,66.0,98.0
 957,Madison,Callahan,female,False,4,25,Data Science,87.0,68.0,84.0,92.0,96.0,88.0,60.0
 958,Connor,Olson,male,False,10,11,Data Science,94.0,92.0,76.0,74.0,65.0,96.0,87.0
@@ -967,30 +972,30 @@
 971,Andrew,Miller,male,False,0,30,Construction Engineer,96.0,98.0,99.0,65.0,95.0,76.0,68.0
 972,Scott,Jacobson,male,False,2,12,Banker,81.0,68.0,97.0,86.0,90.0,78.0,80.0
 973,Jennifer,Baker,female,False,2,29,Software Engineer,87.0,89.0,61.0,66.0,72.0,90.0,61.0
-974,Suzanne,Morrow,female,False,9,4,Business Owner,67.0,56.0,77.0,93.0,95.0,50.0,74.0
-975,Melissa,Gonzales,female,False,2,0,Artist,100.0,95.0,60.0,89.0,77.0,89.0,67.0
+974,Suzanne,Morrow,female,True,9,4,Business Owner,67.0,56.0,77.0,93.0,95.0,50.0,74.0
+975,Melissa,Gonzales,female,True,2,0,Artist,100.0,95.0,60.0,89.0,77.0,89.0,67.0
 976,Erik,Miller,male,False,3,17,Software Engineer,88.0,74.0,60.0,60.0,78.0,94.0,69.0
 977,Pamela,Flores,female,False,1,20,Software Engineer,86.0,64.0,100.0,76.0,99.0,77.0,86.0
 978,Amanda,Hernandez,female,False,2,35,Scientist,85.0,87.0,90.0,88.0,87.0,97.0,100.0
 979,Gregory,Schaefer,male,False,2,26,Software Engineer,93.0,95.0,80.0,88.0,83.0,62.0,65.0
 980,Annette,Logan,female,False,3,24,Data Science,80.0,66.0,77.0,81.0,99.0,99.0,83.0
-981,Tamara,Long,female,False,6,0,Business Owner,56.0,67.0,57.0,79.0,87.0,89.0,89.0
+981,Tamara,Long,female,True,6,0,Business Owner,56.0,67.0,57.0,79.0,87.0,89.0,89.0
 982,John,Baker,male,False,7,32,Construction Engineer,87.0,62.0,84.0,96.0,69.0,98.0,64.0
 983,Justin,Lynch,male,False,4,4,Real Estate Developer,97.0,85.0,96.0,61.0,97.0,79.0,70.0
 984,Daniel,Knight,male,False,3,34,Scientist,86.0,67.0,98.0,86.0,86.0,83.0,89.0
-985,Angelica,Jones,female,False,3,29,Software Engineer,97.0,85.0,81.0,71.0,62.0,62.0,82.0
+985,Angelica,Jones,female,True,3,29,Software Engineer,97.0,85.0,81.0,71.0,62.0,62.0,82.0
 986,Lance,Nelson,male,False,2,35,Data Science,91.0,94.0,97.0,97.0,100.0,88.0,99.0
 987,Katherine,Jacobson,female,False,5,23,Software Engineer,86.0,64.0,96.0,84.0,86.0,96.0,92.0
-988,Corey,Taylor,male,False,8,5,Business Owner,90.0,97.0,54.0,59.0,82.0,76.0,72.0
+988,Corey,Taylor,male,True,8,5,Business Owner,90.0,97.0,54.0,59.0,82.0,76.0,72.0
 989,Laura,Russell,female,False,0,1,Game Developer,95.0,87.0,87.0,84.0,95.0,84.0,65.0
 990,Arthur,Harris,male,False,1,31,Banker,90.0,100.0,76.0,76.0,84.0,79.0,84.0
 991,Victoria,Garcia,female,False,1,14,Data Science,66.0,68.0,87.0,70.0,77.0,76.0,89.0
 992,David,Gonzales,male,False,6,3,Business Owner,81.0,92.0,72.0,91.0,67.0,71.0,88.0
+993,Charles,Thomas,male,True,2,18,Software Engineer,85.0,99.0,86.0,69.0,68.0,98.0,62.0
 994,Oscar,Gonzalez,male,False,1,47,Doctor,94.0,90.0,95.0,85.0,98.0,91.0,96.0
 995,Sarah,Miller,female,False,2,4,Game Developer,81.0,71.0,83.0,63.0,80.0,79.0,83.0
-996,Eric,Davis,male,False,1,32,Software Engineer,97.0,87.0,95.0,67.0,98.0,93.0,89.0
+996,Eric,Davis,male,True,1,32,Software Engineer,97.0,87.0,95.0,67.0,98.0,93.0,89.0
 997,Patrick,Martin,male,False,3,20,Accountant,100.0,79.0,72.0,98.0,87.0,76.0,76.0
-998,Susan,Schmidt,female,False,6,3,Business Owner,54.0,64.0,72.0,80.0,98.0,83.0,85.0
-999,Brett,Bell,male,False,5,19,Software Engineer,97.0,87.0,70.0,74.0,73.0,74.0,81.0
-1000,gg,lat,male,False,1,5,banker,65.0,83.0,67.0,84.0,89.0,65.0,73.0
-993,Charles,Thomas,male,False,2,18,Software Engineer,85.0,99.0,86.0,69.0,68.0,98.0,62.0
+998,Susan,Schmidt,female,True,6,3,Business Owner,54.0,64.0,72.0,80.0,98.0,83.0,85.0
+999,Brett,Bell,male,True,5,19,Software Engineer,97.0,87.0,70.0,74.0,73.0,74.0,81.0
+1000,Dennis,Summers,male,False,1,5,Real Estate Developer,65.0,83.0,67.0,84.0,89.0,65.0,73.0

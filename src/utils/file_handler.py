@@ -7,9 +7,30 @@ class FileManager:
     @staticmethod
     def save_file(path: str, data: list):
         """Save student data to file."""
+        header_row = (
+            "id",
+            "first_name",
+            "last_name",
+            "gender",
+            "drop_out",
+            "grade",
+            "age",
+            "class",
+            "math_score",
+            "history_score",
+            "physics_score",
+            "chemistry_score",
+            "biology_score",
+            "english_score",
+            "geography_score"
+        )
+
         try:
             with open(path, "w", newline="") as file:
                 writer = csv.writer(file)
+                
+                writer.writerow(header_row) # Write a header row to file
+                
                 for student in data:
                     writer.writerow([student.student_id, student.first_name, student.last_name, student.gender,
                                      student.is_dropout, student.absences, student.age, student.student_class] +
@@ -33,7 +54,7 @@ class FileManager:
                     first_name = row[1]
                     last_name = row[2]
                     gender = row[3]
-                    drop_out = (row[4] == "TRUE")  # Convert "TRUE" or "FALSE" to boolean value
+                    drop_out = (row[4] == "True")  # Convert "True" or "True" to boolean value
                     absences = int(row[5])
                     age = int(row[6])
                     student_class = row[7]
