@@ -1,3 +1,5 @@
+import csv
+import os
 from utils import *
 def main_menu():
     school = School(FileManager.load_file("DATA/student-scores.csv"))
@@ -113,100 +115,149 @@ def show_all_students():
     if not students:
         print("No student data available.")
         return
-    print("   ID | First Name           | Last Name            | Gender  | Dropout | Absences | Age | Class")
+    print("    ID | First Name            | Last Name             | Gender  | Dropout | Absences | Age | Class")
     print("--------------------------------------------------------------------------------------------------------------")
     for student in students:
         print(f"{student.student_id:5} | {student.first_name:20} | {student.last_name:20} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:10}")
 
-
 def add_student():
     """Add a new student to the school"""
-    try:
-        student_id = int(input("Enter Student ID: "))
-        first_name = input("Enter First Name: ").strip()
-        last_name = input("Enter Last Name: ").strip()
-        gender = input("Enter Gender (male/female): ").strip().lower()
-        is_dropout = input("Is the student a dropout? (yes/no): ").strip().lower() == "yes"
-        absences = int(input("Enter number of absences: "))
-        age = int(input("Enter age: "))
-        student_class = input("Enter class name: ").strip()
-        scores = {
-            "math_score": float(input("Enter Math Score: ")),
-            "history_score": float(input("Enter History Score: ")),
-            "physics_score": float(input("Enter Physics Score: ")),
-            "chemistry_score": float(input("Enter Chemistry Score: ")),
-            "biology_score": float(input("Enter Biology Score: ")),
-            "english_score": float(input("Enter English Score: ")),
-            "geography_score": float(input("Enter Geography Score: "))
-        }
-        
-        new_student = Student(student_id, first_name, last_name, gender, is_dropout, absences, age, student_class, **scores)
-        FileManager.append_to_file("DATA/student-scores.csv", new_student)
-        print("Student added successfully!")
-    except ValueError:
-        print("Invalid input! Please enter correct values.")
+    while True:
+        try:
+            student_id = int(input("Enter Student ID: "))
+            
+            first_name = input("Enter First Name: ").strip()
+            while not first_name.isalpha():
+                print("Invalid input! First name can only contain letters.")
+                first_name = input("Enter First Name: ").strip()
 
+            last_name = input("Enter Last Name: ").strip()
+            while not last_name.isalpha():
+                print("Invalid input! Last name can only contain letters.")
+                last_name = input("Enter Last Name: ").strip()
+
+            gender = input("Enter Gender (male/female): ").strip().lower()
+            while gender not in ("male", "female"):
+                print("Invalid input! Gender must be 'male' or 'female'.")
+                gender = input("Enter Gender (male/female): ").strip().lower()
+
+            is_dropout_input = input("Is the student a dropout? (yes/no): ").strip().lower()
+            while is_dropout_input not in ("yes", "no"):
+                print("Invalid input! Please enter 'yes' or 'no'.")
+                is_dropout_input = input("Is the student a dropout? (yes/no): ").strip().lower()
+            is_dropout = is_dropout_input == "yes"
+
+            while True:
+                try:
+                    absences = int(input("Enter number of absences: "))
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter a number for absences.")
+
+            while True:
+                try:
+                    age = int(input("Enter age: "))
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter a number for age.")
+
+            student_class = input("Enter class name: ").strip()
+            while not student_class.isalpha():
+                print("Invalid input! Class name can only contain letters.")
+                student_class = input("Enter class name: ").strip()
+
+            scores = {}
+            score_names = ["math_score", "history_score", "physics_score", "chemistry_score", "biology_score", "english_score", "geography_score"]
+            for score_name in score_names:
+                while True:
+                    try:
+                        scores[score_name] = float(input(f"Enter {score_name.replace('_', ' ').capitalize()}: "))
+                        break
+                    except ValueError:
+                        print(f"Invalid input. Please enter a number for {score_name.replace('_', ' ').capitalize()}.")
+
+            new_student = Student(student_id, first_name, last_name, gender, is_dropout, absences, age, student_class, **scores)
+            FileManager.append_to_file("DATA/student-scores.csv", new_student)
+            print("Student added successfully!")
+            break  # Exit the loop if successful
+        except ValueError:
+            print("Invalid input! Please enter correct values.")
 
 def remove_student():
     """Remove a student from the school"""
-    students = FileManager.load_file("DATA/student-scores.csv")
-    student_id = int(input("Enter Student ID to remove: "))
-    
-    updated_students = [student for student in students if student.student_id != student_id]
-    
-    if len(updated_students) == len(students):
-        print("Student not found!")
-        return
-    
-    FileManager.save_file("DATA/student-scores.csv", updated_students)
-    print("Student removed successfully!")
+    while True:
+        try:
+            students = FileManager.load_file("DATA/student-scores.csv")
+            student_id = int(input("Enter Student ID to remove: "))
 
+            updated_students = [student for student in students if student.student_id != student_id]
+
+            if len(updated_students) == len(students):
+                print("Student not found!")
+                return
+
+            FileManager.save_file("DATA/student-scores.csv", updated_students)
+            print("Student removed successfully!")
+            break
+        except ValueError:
+            print("Invalid Student ID input. Please enter a valid number.")
 
 def modify_student():
     """Modify an existing student's details"""
-    students = FileManager.load_file("DATA/student-scores.csv")
-    student_id = int(input("Enter Student ID to modify: "))
-    
-    for student in students:
-        if student.student_id == student_id:
-            student.first_name = input(f"Enter new First Name ({student.first_name}): ") or student.first_name
-            student.last_name = input(f"Enter new Last Name ({student.last_name}): ") or student.last_name
-            student.gender = input(f"Enter new Gender ({student.gender}): ") or student.gender
-            student.is_dropout = input(f"Is dropout? (yes/no) ({student.is_dropout}): ").strip().lower() == "yes"
-            student.absences = int(input(f"Enter new Absences ({student.absences}): ") or student.absences)
-            student.age = int(input(f"Enter new Age ({student.age}): ") or student.age)
-            student.student_class = input(f"Enter new Class ({student.student_class}): ") or student.student_class
-            
-            for subject in student.scores.keys():
-                new_score = input(f"Enter new {subject} ({student.scores[subject]}): ")
-                if new_score:
-                    student.scores[subject] = float(new_score)
-            
-            FileManager.save_file("DATA/student-scores.csv", students)
-            print("Student details updated successfully!")
-            return
-    
-    print("Student not found!")
+    while True:
+        try:
+            students = FileManager.load_file("DATA/student-scores.csv")
+            student_id = int(input("Enter Student ID to modify: "))
 
+            for student in students:
+                if student.student_id == student_id:
+                    new_first_name = input(f"Enter new First Name ({student.first_name}): ").strip()
+                    while new_first_name and not new_first_name.isalpha():
+                        print("Invalid input! First name can only contain letters.")
+                        new_first_name = input(f"Enter new First Name ({student.first_name}): ").strip()
+                    student.first_name = new_first_name or student.first_name
+
+                    new_last_name = input(f"Enter new Last Name ({student.last_name}): ").strip()
+                    while new_last_name and not new_last_name.isalpha():
+                        print("Invalid input! Last name can only contain letters.")
+                        new_last_name = input(f"Enter new Last Name ({student.last_name}): ").strip()
+                    student.last_name = new_last_name or student.last_name
+
+                    new_gender = input(f"Enter new Gender ({student.gender}): ").strip().lower()
+                    while new_gender and new_gender not in ("male", "female"):
+                        print("Invalid input! Gender must be 'male' or 'female'.")
+                        new_gender = input(f"Enter new Gender ({student.gender}): ").strip().lower()
+                    student.gender = new_gender or student.gender
+
+                    student_class = input(f"Enter new Class ({student.student_class}): ").strip()
+                    while student_class and not student_class.isalpha():
+                        print("Invalid input! Class name can only contain letters.")
+                        student_class = input(f"Enter new Class ({student.student_class}): ").strip()
+                    student.student_class = student_class or student.student_class
+
+                    FileManager.save_file("DATA/student-scores.csv", students)
+                    print("Student details updated successfully!")
+                    return
+
+            print("Student not found!")
+        except ValueError:
+            print("Invalid Student ID or other input. Please enter valid values.")
 
 def find_student_by_id():
     """Find a student by their ID"""
-    students = FileManager.load_file("DATA/student-scores.csv")
-    student_id = int(input("Enter Student ID: "))
-    
-    for student in students:
-        if student.student_id == student_id:
-            print("Student found:")
-            print(f"ID: {student.student_id}, Name: {student.first_name} {student.last_name}, Class: {student.student_class}, Average Score: {student.get_average_score():.2f}")
-            return
-    print("Student not found!")
+    while True:
+        try:
+            students = FileManager.load_file("DATA/student-scores.csv")
+            student_id = int(input("Enter Student ID: "))
 
-
-def count_dropout_students(school):
-    """Count the number of dropout students"""
-    dropout_count = sum(1 for student in school.students if student.is_dropout)
-    print(f"Total dropout students: {dropout_count}")
-
+            for student in students:
+                if student.student_id == student_id:
+                    print("Student found:")
+                    print(f"ID: {student.student_id}, Name: {student.first_name} {student.last_name}, Class: {student.student_class}, Average Score: {student.get_average_score():.2f}")
+                    return
+            print("Student not found!")
+        except ValueError:
+            print("Invalid Student ID input. Please enter a valid number.")             
 # ===== PERFORMANCE ANALYSIS FUNCTIONS =====
 
 def find_average_score_of_student(school):
