@@ -4,8 +4,8 @@ from abc import ABC, abstractmethod
 class GroupStudent(ABC):
     """A abstract class for grouped student classes"""
     @abstractmethod
-    def display_students_info(self):
-        """Display information of all students in the group (school or class)"""
+    def display_info(self):
+        """Display summarize information of the group (school or class)"""
         pass
 
     @abstractmethod

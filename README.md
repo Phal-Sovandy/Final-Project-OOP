@@ -38,7 +38,8 @@ The Student Grade Analyzer addresses a real need in education and administration
 2. Find Average Score of Students in a Class
 3. Find Average Score of Students in a School
 4. Identify Outstanding and Low-Performing Students
-5. Summary Report
+5. Find Below Average Students
+6. Summary Report
 
 ### III. Visual Data
 

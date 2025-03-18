@@ -35,9 +35,9 @@ class FileManager:
                     writer.writerow([student.student_id, student.first_name, student.last_name, student.gender,
                                      student.is_dropout, student.absences, student.age, student.student_class] +
                                     list(student.scores.values()))
-                print("File saving... Completed!")
+                print("✅ File saving... Completed!")
         except Exception as e:
-            print(e)
+            print(f"⚠️ Error: {e}")
     @staticmethod
     def load_file(path: str):
         """Load student data from file and return it as a list of Student objects."""
@@ -76,7 +76,7 @@ class FileManager:
             return students  # Return the list of student objects
             
         except Exception as e:
-            print(e)
+            print(f"⚠️ Error: {e}")
             return []
     @staticmethod
     def append_to_file(path: str, student: list):
@@ -87,6 +87,6 @@ class FileManager:
                 writer.writerow([student.student_id, student.first_name, student.last_name, student.gender,
                                  student.is_dropout, student.absences, student.age, student.student_class] +
                                 list(student.scores.values()))
-                print("Student data appended successfully!")
+                print("✅ Student data appended successfully!")
         except Exception as e:
-            print(e)        
+            print(f"⚠️ Error: {e}")        

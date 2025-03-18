@@ -6,16 +6,28 @@ class Analyzer:
     @staticmethod
     def find_top_performers(students, n=10):
         """Find the top N students based on average score"""
+        # If there is no student in the list passed in
+        if not students:
+            print("🔍 No students' data available")
+            return []
         sorted_students = sorted(students, key=lambda student: student.get_average_score(), reverse=True)
         return sorted_students[:n]
     @staticmethod
     def find_low_performers(students, n=10):
         """Find the low N students based on average score"""
+        # If there is no student in the list passed in
+        if not students:
+            print("🔍 No students' data available")
+            return []
         sorted_students = sorted(students, key=lambda student: student.get_average_score())
         return sorted_students[:n]
     @staticmethod
     def find_average_score_per_subject(students):
         """Calculate the average score for each subject across all students"""
+        # If there is no student in the list passed in
+        if not students:
+            print("🔍 No students' data available")
+            return {}
         subjects = ["math", "history", "physics", "chemistry", "biology", "english", "geography"]
         subject_scores = {subject: [] for subject in subjects}
         
@@ -30,7 +42,7 @@ class Analyzer:
         """List students in a given class"""
         # If there is no student in the list passed in and/or no student_class passed in
         if not (students and student_class):
-            print("No students' data available")
+            print("🔍 No students' data available")
             return []
         
         return [student for student in students if student.student_class.lower() == student_class.lower()]
@@ -39,7 +51,7 @@ class Analyzer:
         """Find overall average score on a group of students"""
         # If there is no student in the list passed in
         if not students:
-            print("No students' data available")
+            print("🔍 No students' data available")
             return 0.0
         
         total = 0.0
@@ -53,6 +65,7 @@ class Analyzer:
         """Identify students who are failing based on average score"""
         # If there is no student in the list passed in
         if not students:
+            print("🔍 No students' data available")
             return []
         # If student fall behind the average score, then consider a fail student
         failing_students = [student for student in students if student.get_average_score() < Analyzer.find_overall_average(students)]

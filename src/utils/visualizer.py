@@ -12,7 +12,7 @@ class Visualizer:
         # NECCESSARY DATA FOR VISULLIZATION
         # If there is no student in the list passed in
         if not students:
-            print("No students' data available")
+            print("🔍 No students' data available")
             return
         
         # A dictionary contains class_name as key and list of its students' average scores
@@ -46,7 +46,7 @@ class Visualizer:
         # NECCESSARY DATA FOR VISULLIZATION
         # If there is no student in the list passed in
         if not students:
-            print("No students' data available")
+            print("🔍 No students' data available")
             return
         
         male_students = [student for student in students if student.gender == "male"]       # List of male studnets
@@ -69,7 +69,7 @@ class Visualizer:
         # NECCESSARY DATA FOR VISULLIZATION
         # If there is no student in the list passed in
         if not students:
-            print("No students' data available")
+            print("🔍 No students' data available")
             return
         
         # A dictionary contains class_name as key and list of its students' average scores
@@ -101,7 +101,7 @@ class Visualizer:
         # NECCESSARY DATA FOR VISULLIZATION
         # If there is no student in the list passed in
         if not students:
-            print("No students' data available")
+            print("🔍 No students' data available")
             return
         
         # A dictionary contains Age as key and Number of student with that age as value
@@ -128,7 +128,7 @@ class Visualizer:
         # NECCESSARY DATA FOR VISULLIZATION
         # If there is no student in the list passed in
         if not students:
-            print("No students' data available")
+            print("🔍 No students' data available")
             return
         
         subjects = ["math", "history", "physics", "chemistry", "biology", "english", "geography"]   # All subject

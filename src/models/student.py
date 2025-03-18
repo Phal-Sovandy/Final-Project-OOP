@@ -34,27 +34,33 @@ class Student:
     @property
     def full_name(self):
         """Get the student's full name"""
-        return f"{self.__first_name} {self.__last_name}"
+        return f"{self.__first_name.capitalize()} {self.__last_name.capitalize()}"
 
     @property
     def first_name(self):
         """Get the student's first name"""
-        return self.__first_name
+        return self.__first_name.capitalize()
 
     @first_name.setter
-    def first_name(self, value):
+    def first_name(self, value: str):
         """Set the student's first name"""
-        self.__first_name = value
+        if value and all(char.isalpha() for char in value):
+            self.__first_name = value
+        else:
+            raise ValueError("First Name must contains only characters (No Spaces)")
 
     @property
     def last_name(self):
         """Get the student's last name"""
-        return self.__last_name
+        return self.__last_name.capitalize()
 
     @last_name.setter
-    def last_name(self, value):
+    def last_name(self, value: str):
         """Set the student's last name"""
-        self.__last_name = value
+        if value and all(char.isalpha() for char in value):
+            self.__last_name = value
+        else:
+            raise ValueError("Last Name must contains only characters (No Spaces)")
 
     @property
     def gender(self):
@@ -62,9 +68,12 @@ class Student:
         return self.__gender
 
     @gender.setter
-    def gender(self, value):
+    def gender(self, value: str):
         """Set the student's gender"""
-        self.__gender = value
+        if value and all(char.isalpha() for char in value):
+            self.__gender = value
+        else: 
+            raise ValueError("Gender must be character")
 
     @property
     def age(self):
@@ -72,7 +81,7 @@ class Student:
         return self.__age
    
     @age.setter
-    def age(self, value):
+    def age(self, value: int):
         """Set the student's age (must be positive)"""
         if value < 0:
             raise ValueError("Age cannot be negative")
@@ -84,9 +93,12 @@ class Student:
         return self.__drop_out
 
     @is_dropout.setter
-    def is_dropout(self, value):
+    def is_dropout(self, value: bool):
         """Set the student's dropout status"""
-        self.__drop_out = value
+        if isinstance(value, bool):
+            self.__drop_out = value
+        else:
+            raise ValueError("Drop Out state must be a boolean")
 
     @property
     def absences(self):
@@ -94,7 +106,7 @@ class Student:
         return self.__absences
 
     @absences.setter
-    def absences(self, value):
+    def absences(self, value: int):
         """Set the student's number of absences (must be zero or positive)"""
         if value < 0:
             raise ValueError("Absences cannot be negative")
@@ -106,50 +118,73 @@ class Student:
         return self.__student_class
 
     @student_class.setter
-    def student_class(self, value):
+    def student_class(self, new_class_name: str):
         """Set the student's class"""
-        self.__student_class = value
-    
+        if new_class_name and all(char.isalpha() or char.isspace() for char in new_class_name):
+            self.student_class = new_class_name
+
     @property
     def scores(self):
         """Get the student's scores"""
         return self.__scores
 
     @scores.setter
-    def scores(self, new_scores):
+    def scores(self, new_scores: dict):
         """Set the student's scores (all must be positive)"""
+        subjects = list(self.scores.keys())
         if any(score < 0 for score in new_scores.values()):
             raise ValueError("Scores cannot be negative")
+        if any(key not in subjects for key in new_scores.keys()):
+            raise ValueError(f"Subjects can only be {subjects}")
         self.__scores = new_scores
 
     def get_average_score(self):
         """Calculate and return the student's average score"""
         return sum(self.__scores.values()) / len(self.__scores)
-
     def get_highest_subject(self):
         """Return the subject which the student scored highest"""
         return max(self.__scores.items(), key=lambda x: x[1])[0]
-
     def get_lowest_subject(self):
         """Return the subject which the student scored lowest"""
         return min(self.__scores.items(), key=lambda x: x[1])[0]
-    
     def get_alpha_grade_gpa(self):
-        """Return a alphabetical grade of student"""
+        """Return a alphabetical grade of student and GPA"""
         grades = {
             # GRADE : (low-bound, high-bound, GPA)
             "A" : (90, 100, 4.0),
-            "B" : (80, 89, 3.0),
-            "C" : (70, 79, 2.0),
-            "D" : (60, 69, 1.0),
-            "E" : (50, 59, 0.5),
-            "F" : (0, 49, 0.0)
+            "B" : (80, 89.9, 3.0),
+            "C" : (70, 79.9, 2.0),
+            "D" : (60, 69.9, 1.0),
+            "E" : (50, 59.9, 0.5),
+            "F" : (0, 49.9, 0.0)
         }
         for key, value in grades.items():
-            if self.get_average_score() >= value[0] and self.get_average_score() <= value[1]:
+            if round(self.get_average_score(), 1) >= value[0] and round(self.get_average_score(), 1) <= value[1]:
                 return (key.upper(), value[2]) # (Alpha_Grade, GPA)
-        return None
-            
+        return None         
     def show_info(self):
         """Print detailed information about the student"""
-        print(f"ID: {self.__student_id}, Name: {self.full_name}, Age: {self.__age}, Class: {self.__student_class}, Attendance: {self.__absences}, Average Score: {self.get_average_score():.2f}")
+        print("*" * 40)
+        print(f"{"🙍‍♂️ Student Information 🙍‍♂️":^40}")
+        print("*" * 40)
+        print(f"{"ID":<20}: {self.student_id}")
+        print(f"{"First Name":<20}: {self.first_name}")
+        print(f"{"Last Name":<20}: {self.last_name}")
+        print(f"{"Gender":<20}: {self.gender}")
+        print(f"{"Age":<20}: {self.age}")
+        print(f"{"Class":<20}: {self.student_class}")
+        print(f"{"Drop Out State":<20}: {"Yes" if self.is_dropout else "No"}")
+        print(f"{"Number of Absences":<20}: {self.absences}")
+        print("-" * 40)
+        print(f"{"Subject":<20}{"Score":>20}")
+        print("-" * 40)
+        for subject, score in self.scores.items():
+            print(f"{subject.capitalize():<20}{score:>20}")
+        print("-" * 40)
+        print(f"{"Average Score":<20}:{self.get_average_score():>19.2f}")
+        if self.get_alpha_grade_gpa():
+            print(f"{"Alphabetical Grade":<20}:{self.get_alpha_grade_gpa()[0]:>19}")
+            print(f"{"GPA":<20}:{self.get_alpha_grade_gpa()[1]:>19.1f}")
+        else:
+            print("⚠️ Cannot get Alphabetical Grade and GPA")
+        print("*" * 40)
