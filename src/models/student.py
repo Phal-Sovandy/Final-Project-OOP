@@ -133,7 +133,23 @@ class Student:
     def get_lowest_subject(self):
         """Return the subject which the student scored lowest"""
         return min(self.__scores.items(), key=lambda x: x[1])[0]
-
+    
+    def get_alpha_grade_gpa(self):
+        """Return a alphabetical grade of student"""
+        grades = {
+            # GRADE : (low-bound, high-bound, GPA)
+            "A" : (90, 100, 4.0),
+            "B" : (80, 89, 3.0),
+            "C" : (70, 79, 2.0),
+            "D" : (60, 69, 1.0),
+            "E" : (50, 59, 0.5),
+            "F" : (0, 49, 0.0)
+        }
+        for key, value in grades.items():
+            if self.get_average_score() >= value[0] and self.get_average_score() <= value[1]:
+                return (key.upper(), value[2]) # (Alpha_Grade, GPA)
+        return None
+            
     def show_info(self):
         """Print detailed information about the student"""
         print(f"ID: {self.__student_id}, Name: {self.full_name}, Age: {self.__age}, Class: {self.__student_class}, Attendance: {self.__absences}, Average Score: {self.get_average_score():.2f}")

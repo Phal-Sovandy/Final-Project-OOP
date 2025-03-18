@@ -72,7 +72,7 @@ def analyze_performance():
     """Analyze data menu"""
     while True:        
         print("\n" + "=" * 25 + " ANALYZE PERFORMANCE " + "=" * 24)
-        print("1. Find Average Score of Student")
+        print("1. Find Grade of Student")
         print("2. Find Average Score of Students in Class")
         print("3. Find Average Score of Students in School")
         print("4. Identify Outstanding and Low Performing Students")
@@ -83,7 +83,7 @@ def analyze_performance():
         choice = choice.strip()
         
         if choice == "1":
-            find_average_score_of_student()
+            find_grade_of_student()
         elif choice == "2":
             find_average_score_of_students_in_class()
         elif choice == "3":
@@ -96,7 +96,7 @@ def analyze_performance():
             print("Invalid choice. Try again.")
 def visualizer_data():
     """Visualize plot/chart menu"""
-    while True:        
+    while True:       
         print("\n" + "=" * 27 + " VISUALIZE DATA " + "=" * 26)
         print("1. Show Box and Whisker Plot of Scores")
         print("2. Show Pie Chart of Gender Distribution")
@@ -366,8 +366,8 @@ def find_student_by_id():
                     break
                 print("Invalid input. Please enter a numeric ID.")
 
-            for student in school.students:
-                if student.student_id == student_id:
+            student = school.find_student(student_id)
+            if student:
                     print("Student found:")
                     print("-" * 112)
                     print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
@@ -382,12 +382,10 @@ def find_student_by_id():
 
 # ===== PERFORMANCE ANALYSIS FUNCTIONS =====
 #Should find details of student with this one with GPA, Percentage,...
-def find_average_score_of_student():
+def find_grade_of_student():
     """Find and display the average score of a student"""
     try:
         school = School(FileManager.load_file(DATA_BASE_PATH))
-    except ValueError:
-        print(f"Error: {ValueError}")
     except Exception as e:
         print(f"Error: {e}")
         
@@ -398,12 +396,22 @@ def find_average_score_of_student():
             break
         print("Invalid input. Please enter a numeric ID.")
 
-    student = school.find_student(int(student_id))   # find the student by ID
+    try:
+        student = school.find_student(int(student_id))   # find the student by ID
+    except Exception as e:
+        print(f"Error: {e}")
     if not student:
         print("Student not found")      # Print a message if the student doesn't found
         return
-    print(f"Average score of student ID: {student_id} is {student.get_average_score():.2f}")
-        # Print the average score of the student
+    
+    if student.get_alpha_grade_gpa():
+        print("-" * 127)
+        print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score   | Grade | GPA")
+        print("-" * 127)
+        print(f"{student.student_id:04} | {student.first_name:12} | {student.last_name:12} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:21} | {student.get_average_score():15.2f} | {student.get_alpha_grade_gpa()[0]:5} | {student.get_alpha_grade_gpa()[1]:.1f}")
+        return
+    print("Student does NOT have Grade!")
+    return 
 def find_average_score_of_students_in_class():
     """Find and display the average score of students in a specific class"""
     student_class_input = input("Enter the class name: ")   # Let user to enter the class name

@@ -1,7 +1,9 @@
 # Student Grade Analyzer
+
 Analyze student grade performance and information.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Functionality](#functionality)
 - [Prerequisite](#prerequisite)
@@ -10,6 +12,7 @@ Analyze student grade performance and information.
 - [Conclusion](#conclusion)
 
 ## Overview
+
 The Student Grade Analyzer is a Python application designed to improve grade management and performance analysis in educational environments. This tool uses object-oriented programming to provide educators with a comprehensive solution for tracking student academic achievement.
 
 With the ability to view, add, and modify grade entries for various subjects and assessment formats, the system allows users to maintain a structured database of student grades. Beyond simple data management, the analyzer identifies academic performance trends, such as recognizing high-achieving students, and computes performance indicators like average grades.
@@ -19,41 +22,55 @@ A key feature of this application is its reporting capabilities, which utilize s
 The Student Grade Analyzer addresses a real need in education and administration while demonstrating the practical application of programming principles through fundamental OOP concepts.
 
 ## Functionality
+
 ### I. Manage Students
-  1. Show All Students
-  2. Add Student
-  3. Remove Student
-  4. Modify Student
-  5. Find Student by ID
-  6. Count Dropout Students
+
+1. Show All Students
+2. Add Student
+3. Remove Student
+4. Modify Student
+5. Find Student by ID
+6. Count Dropout Students
 
 ### II. Analyze Student Performance
-  1. Find Average Score of a Student
-  2. Find Average Score of Students in a Class
-  3. Find Average Score of Students in a School
-  4. Identify Outstanding and Low-Performing Students
+
+1. Find Alphabetical Grade and GPA of a Student
+2. Find Average Score of Students in a Class
+3. Find Average Score of Students in a School
+4. Identify Outstanding and Low-Performing Students
+5. Summary Report
 
 ### III. Visual Data
-  1. Display Box-and-Whisker Plot of Class Scores
-  2. Display Gender Distribution Using a Pie Chart
-  3. Display Bar Chart of Student Count
-  4. Display Scatter Plot of Student Ages
-  5. Show Subject Average Scores Using Bar Chart
+
+1. Display Box-and-Whisker Plot of Class Scores
+2. Display Gender Distribution Using a Pie Chart
+3. Display Bar Chart of Student Count
+4. Display Scatter Plot of Student Ages
+5. Show Subject Average Scores Using Bar Chart
 
 ## Prerequisite
-  Before running the project, please ensure that you have the following installed:
+
+Before running the project, please ensure that you have the following installed:
+
 - [Python](https://www.python.org/downloads/)
 - [Matplotlib](https://matplotlib.org/)
+
 ## Installation
-  1. Clone repository
+
+1. Clone repository
+
 ```sh
 git clone https://github.com/Phal-Sovandy/Final-Project-OOP.git
 ```
-  2. Navigate to project directory
+
+2. Navigate to project directory
+
 ```sh
 cd Final-Project-OOP
 ```
-  3. Install the required library
+
+3. Install the required library
+
 - Windows
   ```sh
   pip install matplotlib
@@ -62,7 +79,9 @@ cd Final-Project-OOP
   ```sh
   pip3 install matplotlib
   ```
+
 ## How To Run the Code?
+
 - Execute the following command (Windows):
   ```sh
   python Final-Project-OOP/main.py
@@ -73,4 +92,5 @@ cd Final-Project-OOP
   ```
 
 ## Conclusion
+
 The Student Grade Analyzer addresses a real need in education and administration while demonstrating the practical application of programming principles through fundamental OOP concepts.
