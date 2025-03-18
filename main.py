@@ -153,12 +153,12 @@ def show_all_students():
             except Exception as e:
                 print(f"⚠️ Error: {e}")
             
+            print("-" * 112)
+            print(f"{("Student in Class " + f"{class_to_show.upper()}"):^122}")
+            print("-" * 112)
             if not classroom.students:
                 print("No student student in class.")
                 return
-            print("-" * 112)
-            print(f"                                            Student in Class {class_to_show.upper()}                                          ")
-            print("-" * 112)
             print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
             print("-" * 112)
             for student in classroom.students:
@@ -171,11 +171,13 @@ def show_all_students():
                 print(f"⚠️ Error: {ValueError}")
             except Exception as e:
                 print(f"⚠️ Error: {e}")
-                
+            
+            print("-" * 112)
+            print(f"{"Student in School":^122}")
+            print("-" * 112)
             if not school.students:
                 print("No student student in school.")
                 return
-            print("-" * 112 + "\n")
             print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
             print("-" * 112)
             for student in school.students:
@@ -183,119 +185,123 @@ def show_all_students():
             break
         else:
             print("❌ Invalid choice. Try again.")     # Print a message if the choice is invalid
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
 def add_student():
     """Add a new student to the school"""
-    while True:
-        try:
-            school = School(FileManager.load_file(DATA_BASE_PATH))
-            student_id = len(school.students) + 1
-            
+    try:
+        school = School(FileManager.load_file(DATA_BASE_PATH))
+        student_id = len(school.students) + 1
+        
+        first_name = input("Enter First Name: ").strip()
+        while not first_name.isalpha():
+            print("❌ Invalid input! First name can only contain letters.")
             first_name = input("Enter First Name: ").strip()
-            while not first_name.isalpha():
-                print("❌ Invalid input! First name can only contain letters.")
-                first_name = input("Enter First Name: ").strip()
 
+        last_name = input("Enter Last Name: ").strip()
+        while not last_name.isalpha():
+            print("❌ Invalid input! Last name can only contain letters.")
             last_name = input("Enter Last Name: ").strip()
-            while not last_name.isalpha():
-                print("❌ Invalid input! Last name can only contain letters.")
-                last_name = input("Enter Last Name: ").strip()
 
+        gender = input("Enter Gender (male/female): ").strip().lower()
+        while gender not in ("male", "female"):
+            print("❌ Invalid input! Gender must be 'male' or 'female'.")
             gender = input("Enter Gender (male/female): ").strip().lower()
-            while gender not in ("male", "female"):
-                print("❌ Invalid input! Gender must be 'male' or 'female'.")
-                gender = input("Enter Gender (male/female): ").strip().lower()
 
+        is_dropout_input = input("Is the student a dropout? (yes/no): ").strip().lower()
+        while is_dropout_input not in ("yes", "no"):
+            print("❌ Invalid input! Please enter 'yes' or 'no'.")
             is_dropout_input = input("Is the student a dropout? (yes/no): ").strip().lower()
-            while is_dropout_input not in ("yes", "no"):
-                print("❌ Invalid input! Please enter 'yes' or 'no'.")
-                is_dropout_input = input("Is the student a dropout? (yes/no): ").strip().lower()
-            is_dropout = is_dropout_input == "yes"
+        is_dropout = is_dropout_input == "yes"
 
-            while True:
-                try:
-                    absences = int(input("Enter number of absences: "))
-                    break
-                except ValueError:
-                    print("❌ Invalid input. Please enter a number for absences.")
+        while True:
+            try:
+                absences = int(input("Enter number of absences: "))
+                break
+            except ValueError:
+                print("❌ Invalid input. Please enter a number for absences.")
 
-            while True:
-                try:
-                    age = int(input("Enter age: "))
-                    break
-                except ValueError:
-                    print("❌ Invalid input. Please enter a number for age.")
+        while True:
+            try:
+                age = int(input("Enter age: "))
+                break
+            except ValueError:
+                print("❌ Invalid input. Please enter a number for age.")
 
+        student_class = input("Enter class name: ").strip()
+        while not all(char.isalpha() or char.isspace() for char in student_class):
+            print("❌ Invalid input! Class name can only contain letters.")
             student_class = input("Enter class name: ").strip()
-            while not all(char.isalpha() or char.isspace() for char in student_class):
-                print("❌ Invalid input! Class name can only contain letters.")
-                student_class = input("Enter class name: ").strip()
 
-            scores = {}
-            score_names = ["math_score", "history_score", "physics_score", "chemistry_score", "biology_score", "english_score", "geography_score"]
-            for score_name in score_names:
-                while True:
-                    try:
-                        scores[score_name] = float(input(f"Enter {score_name.replace('_', ' ').capitalize()}: "))
-                        break
-                    except ValueError:
-                        print(f"❌ Invalid input. Please enter a number for {score_name.replace('_', ' ').capitalize()}.")
+        scores = {}
+        score_names = ["math_score", "history_score", "physics_score", "chemistry_score", "biology_score", "english_score", "geography_score"]
+        for score_name in score_names:
+            while True:
+                try:
+                    scores[score_name] = float(input(f"Enter {score_name.replace('_', ' ').capitalize()}: "))
+                    break
+                except ValueError:
+                    print(f"❌ Invalid input. Please enter a number for {score_name.replace('_', ' ').capitalize()}.")
 
-            new_student = Student(student_id, first_name.capitalize(), last_name.capitalize(), gender, is_dropout, absences, age, student_class.capitalize(), **scores)
-            FileManager.append_to_file("DATA/student-scores.csv", new_student)
-            print("✅ Student added successfully!")
-            print("-" * 112 + "\n")
-            print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
-            print("-" * 112)
-            print(f"{new_student.student_id:04} | {new_student.first_name:12} | {new_student.last_name:12} | {new_student.gender:7} | {new_student.is_dropout:7} | {new_student.absences:8} | {new_student.age:3} | {new_student.student_class:21} | {new_student.get_average_score():10.2f}")
-            break  # Exit the loop if successful
-        except ValueError:
-            print("❌ Invalid input! Please enter correct values.")
-        except Exception as e:
-            print(f"⚠️ Error: {e}")
+        new_student = Student(student_id, first_name.capitalize(), last_name.capitalize(), gender, is_dropout, absences, age, student_class.capitalize(), **scores)
+        FileManager.append_to_file("DATA/student-scores.csv", new_student)
+        print("✅ Student added successfully!")
+        print("-" * 112)
+        print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
+        print("-" * 112)
+        print(f"{new_student.student_id:04} | {new_student.first_name:12} | {new_student.last_name:12} | {new_student.gender:7} | {new_student.is_dropout:7} | {new_student.absences:8} | {new_student.age:3} | {new_student.student_class:21} | {new_student.get_average_score():10.2f}")
+        return
+    except ValueError:
+        print("❌ Invalid input! Please enter correct values.")
+    except Exception as e:
+        print(f"⚠️ Error: {e}")
+    return
 def modify_student():
     """Modify an existing student's details"""
-    while True:
-        try:
-            students = FileManager.load_file("DATA/student-scores.csv")
-            while True:
-                student_id = input("Enter the student ID to remove: ")     # Let user to enter the student ID
-                if student_id.isdigit():
-                    student_id = int(student_id)
-                    break
-                print("❌ Invalid input. Please enter a numeric ID.")
+    try:
+        students = FileManager.load_file("DATA/student-scores.csv")
+        while True:
+            student_id = input("Enter the student ID to modify: ")     # Let user to enter the student ID
+            if student_id.isdigit():
+                student_id = int(student_id)
+                break
+            print("❌ Invalid input. Please enter a numeric ID.")
 
-            for student in students:
-                if student.student_id == student_id:
+        for student in students:
+            if student.student_id == student_id:
+                new_first_name = input(f"Enter new First Name ({student.first_name}): ").strip()
+                while new_first_name and not new_first_name.isalpha():
+                    print("❌ Invalid input! First name can only contain letters.")
                     new_first_name = input(f"Enter new First Name ({student.first_name}): ").strip()
-                    while new_first_name and not new_first_name.isalpha():
-                        print("❌ Invalid input! First name can only contain letters.")
-                        new_first_name = input(f"Enter new First Name ({student.first_name}): ").strip()
-                    student.first_name = new_first_name or student.first_name
+                student.first_name = new_first_name or student.first_name
 
+                new_last_name = input(f"Enter new Last Name ({student.last_name}): ").strip()
+                while new_last_name and not new_last_name.isalpha():
+                    print("❌ Invalid input! Last name can only contain letters.")
                     new_last_name = input(f"Enter new Last Name ({student.last_name}): ").strip()
-                    while new_last_name and not new_last_name.isalpha():
-                        print("❌ Invalid input! Last name can only contain letters.")
-                        new_last_name = input(f"Enter new Last Name ({student.last_name}): ").strip()
-                    student.last_name = new_last_name or student.last_name
+                student.last_name = new_last_name or student.last_name
 
+                new_gender = input(f"Enter new Gender ({student.gender}): ").strip().lower()
+                while new_gender and new_gender not in ("male", "female"):
+                    print("❌ Invalid input! Gender must be 'male' or 'female'.")
                     new_gender = input(f"Enter new Gender ({student.gender}): ").strip().lower()
-                    while new_gender and new_gender not in ("male", "female"):
-                        print("❌ Invalid input! Gender must be 'male' or 'female'.")
-                        new_gender = input(f"Enter new Gender ({student.gender}): ").strip().lower()
-                    student.gender = new_gender or student.gender
+                student.gender = new_gender or student.gender
 
-                    student_class = input(f"Enter new Class ({student.student_class}): ").strip()
-                    while not all(char.isalpha() or char.isspace() for char in student_class):
-                        print("❌ Invalid input! Class name can only contain letters.")
-                        student_class = input("Enter class name: ").strip()
-                    student.student_class = student_class or student.student_class
+                student_class = input(f"Enter new Class ({student.student_class}): ").strip()
+                while not all(char.isalpha() or char.isspace() for char in student_class):
+                    print("❌ Invalid input! Class name can only contain letters and spaces.")
+                    student_class = input("Enter class name: ").strip()
+                student.student_class = student_class or student.student_class
 
-                    FileManager.save_file(DATA_BASE_PATH, students)
-                    print("✅ Student details updated successfully!")
-                    return
-            print("🔍 🔍 Student not found!")
-        except Exception as e:
-            print(f"⚠️ Error: {e}")
+                FileManager.save_file(DATA_BASE_PATH, students)
+                print("✅ Student details updated successfully!")
+                return
+        print("🔍 Student not found!")
+        return
+    except Exception as e:
+        print(f"⚠️ Error: {e}")
+        return
 def remove_student():
     """Remove a student from the school"""
     try:
@@ -310,7 +316,7 @@ def remove_student():
         updated_students = [student for student in school.students if student.student_id != student_id]
 
         if len(updated_students) == len(school.students):
-            print("🔍 🔍 Student not found!")
+            print("🔍 Student not found!")
             return
         FileManager.save_file(DATA_BASE_PATH, updated_students)
         print("✅ Student removed successfully!")
@@ -359,6 +365,9 @@ def count_dropout_students():
             break
         else:
             print("❌ Invalid choice. Try again.")
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
     print(f"Total dropout students: {dropout_count}")
 def find_student_by_id():
     """Find a student by their ID"""
@@ -380,11 +389,17 @@ def find_student_by_id():
                     print("-" * 112)
                     print(f"{student.student_id:04} | {student.first_name:12} | {student.last_name:12} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:21} | {student.get_average_score():10.2f}")
                     return
-            print("🔍 🔍 Student not found!")
+            print("🔍 Student not found!")
+            continueing = input("Would you like to continue?(y/*): ")
+            if continueing.lower != 'y':
+                return
         except ValueError:
             print("❌ Invalid Student ID input. Please enter a valid number.")
         except Exception as e:
             print(f"⚠️ Error: {e}")
+        continueing = input("Would you like to try again?(y/*): ")
+        if continueing.lower().strip() != 'y':
+            return
 
 # ===== PERFORMANCE ANALYSIS FUNCTIONS =====
 #Should find details of student with this one with GPA, Percentage,...
@@ -406,6 +421,7 @@ def find_grade_of_student():
         student = school.find_student(int(student_id))   # find the student by ID
     except Exception as e:
         print(f"⚠️ Error: {e}")
+        
     if not student:
         print("🔍 Student not found!")      # Print a message if the student doesn't found
         return
@@ -476,6 +492,9 @@ def find_high_and_low_performers():
                 if class_to_show in valid_classses:
                     break
                 print("❌ Invalid input. Please enter a valid class name.")
+                continueing = input("Would you like to try again?(y/*): ")
+                if continueing.lower().strip() != 'y':
+                    return
                 
             try:
                 specific_class = Classroom(class_to_show, Analyzer.find_students_in_class(school.students, class_to_show))
@@ -493,7 +512,7 @@ def find_high_and_low_performers():
                 
             top_perfomers_in_class = Analyzer.find_top_performers(specific_class.students, student_to_show)   # Find top performers in the class
             print("-" * 112)
-            print("                                            Top Performer Students                                          ")
+            print(f"{"Top Performing Students":^112}")
             print("-" * 112 + "\n")
             print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
             print("-" * 112)
@@ -503,7 +522,7 @@ def find_high_and_low_performers():
 
             low_perfomers_in_class = Analyzer.find_low_performers(specific_class.students, student_to_show)   # Find low performers in the class
             print("\n" + "-" * 112)
-            print("                                            Low Performer Students                                          ")
+            print(f"{"Low Performing Students":^112}")
             print("-" * 112 + "\n")
             print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
             print("-" * 112)
@@ -521,7 +540,7 @@ def find_high_and_low_performers():
                 
             top_perfomers_in_school = Analyzer.find_top_performers(school.students, student_to_show)  # Find top performers in the school
             print("-" * 112)
-            print("                                         Top Performer Students In School                                       ")
+            print(f"{"Top Performing Students":^112}")
             print("-" * 112 + "\n")
             print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
             print("-" * 112)
@@ -531,7 +550,7 @@ def find_high_and_low_performers():
             
             low_perfomers_in_school = Analyzer.find_low_performers(school.students, student_to_show)  # Find low performers in the school
             print("\n" + "-" * 112)
-            print("                                         Low Performer Students In School                                       ")
+            print(f"{"Low Performing Students":^112}")
             print("-" * 112 + "\n")
             print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
             print("-" * 112)
@@ -541,6 +560,9 @@ def find_high_and_low_performers():
             break       
         else:
             print("❌ Invalid choice. Try again.")     # Print a message if the choice is invalid
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
 def find_below_avg_student():
     """List all students that scored below average score among all students (class or school)"""
     try:
@@ -570,6 +592,9 @@ def find_below_avg_student():
                 if class_to_show in valid_classses:
                     break
                 print("❌ Invalid input. Please enter a valid class name.")
+                continueing = input("Would you like to try again?(y/*): ")
+                if continueing.lower().strip() != 'y':
+                    return
                 
             try:
                 specific_class = Classroom(class_to_show, Analyzer.find_students_in_class(school.students, class_to_show))
@@ -580,7 +605,7 @@ def find_below_avg_student():
             below_avg_students = Analyzer.find_failing_students(specific_class.students)
             if below_avg_students:
                 print("-" * 112)
-                print(f"                                    Below Average Students in Class: {class_to_show.capitalize()}")
+                print(f"{("Below Average Students in Class: " + f"{class_to_show.capitalize()}"):^112}")
                 print("-" * 112 + "\n")
                 print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
                 print("-" * 112)
@@ -596,7 +621,7 @@ def find_below_avg_student():
             below_avg_students = Analyzer.find_failing_students(school.students)
             if below_avg_students:
                 print("-" * 112)
-                print("                                    Below Average Students in School")
+                print(f"{"Below Average Students in School":^112}")
                 print("-" * 112 + "\n")
                 print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
                 print("-" * 112)
@@ -610,6 +635,9 @@ def find_below_avg_student():
             break
         else:
             print("❌ Invalid choice. Try again.")     # Print a message if the choice is invalid
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
 def summary_report():
     """Print Summary Report of Student/Class/School"""
     try:
@@ -657,6 +685,10 @@ def summary_report():
                 if class_to_show in valid_classses:
                     break
                 print("❌ Invalid input. Please enter a valid class name.")
+                continueing = input("Would you like to try again?(y/*): ")
+                if continueing.lower().strip() != 'y':
+                    return
+                
                 
             try:
                 specific_class = Classroom(class_to_show, Analyzer.find_students_in_class(school.students, class_to_show))
@@ -672,6 +704,9 @@ def summary_report():
             break
         else:
             print("❌ Invalid choice. Try again.")     # Print a message if the choice is invalid
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
       
 # ===== DATA VISUALIZATION FUNCTIONS =====
 
@@ -710,6 +745,9 @@ def show_whisker_plot_scores():
             break
         else:
             print("❌ Invalid choice. Try again.")
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
 def show_pie_chart_gender():
     """Show a pie chart of the gender distribution in the school/class"""
     while True:
@@ -745,6 +783,9 @@ def show_pie_chart_gender():
             break
         else:
             print("❌ Invalid choice. Try again.")
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
 def show_student_count():
     """Show number of student across class or school"""
     while True:
@@ -780,6 +821,9 @@ def show_student_count():
             break
         else:
             print("❌ Invalid choice. Try again.")
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
 def show_scatter_plot_age():
     """Show a scatter plot of student ages in the school/class"""
     while True:
@@ -815,6 +859,9 @@ def show_scatter_plot_age():
             break
         else:
             print("❌ Invalid choice. Try again.")
+            continueing = input("Would you like to try again?(y/*): ")
+            if continueing.lower().strip() != 'y':
+                return
 def show_subject_average_scores():
     """Show the average scores for each subject in the school (Compare Each Class based on Subject)"""
     print()
