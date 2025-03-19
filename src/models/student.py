@@ -121,7 +121,7 @@ class Student:
     def student_class(self, new_class_name: str):
         """Set the student's class"""
         if new_class_name and all(char.isalpha() or char.isspace() for char in new_class_name):
-            self.student_class = new_class_name
+            self.__student_class = new_class_name
 
     @property
     def scores(self):
