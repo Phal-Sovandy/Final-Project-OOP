@@ -106,7 +106,7 @@ def visualizer_data():
         print("\n" + "=" * 27 + " VISUALIZE DATA " + "=" * 26)
         print("1. Show Box and Whisker Plot of Scores")
         print("2. Show Pie Chart of Gender Distribution")
-        print("3. Show Dot Plot of Student Count Distribution")
+        print("3. Show Bar Chart of Student Count Distribution")
         print("4. Show Scatter Plot of Student Ages")
         print("5. Show Subject Average Scores")
         print("6. Back to Main Menu")
