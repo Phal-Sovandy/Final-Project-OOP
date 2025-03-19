@@ -143,18 +143,28 @@ def show_all_students():
         print("2. Show All Classes")
         print("-" * 70)
         
+        try:
+            school = School(FileManager.load_file(DATA_BASE_PATH))
+        except Exception as e:
+            print(f"⚠️ Error: {e}")
+                
         option = input("Enter your choice: ")
         if option.strip() == "1":
+            class_list = school.classes_list
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             class_to_show = input("Enter the class name: ")
             try:
                 classroom = Classroom(class_to_show, Analyzer.find_students_in_class(FileManager.load_file(DATA_BASE_PATH), class_to_show))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
             except Exception as e:
                 print(f"⚠️ Error: {e}")
             
             print("-" * 112)
-            print(f"{("Student in Class " + f"{class_to_show.upper()}"):^122}")
+            print(f"{"Student in Class " + f"{class_to_show.upper()}":^122}")
             print("-" * 112)
             if not classroom.students:
                 print("No student student in class.")
@@ -163,15 +173,11 @@ def show_all_students():
             print("-" * 112)
             for student in classroom.students:
                 print(f"{student.student_id:04} | {student.first_name:12} | {student.last_name:12} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:21} | {student.get_average_score():10.2f}")
+            print("-" * 112)
+            print(f"Total Number of Students: {classroom.count_students}")
+            print("-" * 112)
             break
         elif option.strip() == "2":
-            try:
-                school = School(FileManager.load_file(DATA_BASE_PATH))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
-            except Exception as e:
-                print(f"⚠️ Error: {e}")
-            
             print("-" * 112)
             print(f"{"Student in School":^122}")
             print("-" * 112)
@@ -182,6 +188,9 @@ def show_all_students():
             print("-" * 112)
             for student in school.students:
                 print(f"{student.student_id:04} | {student.first_name:12} | {student.last_name:12} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:21} | {student.get_average_score():10.2f}")
+            print("-" * 112)
+            print(f"Total Number of Students: {school.count_students}")
+            print("-" * 112)
             break
         else:
             print("❌ Invalid choice. Try again.")     # Print a message if the choice is invalid
@@ -228,7 +237,15 @@ def add_student():
                 break
             except ValueError:
                 print("❌ Invalid input. Please enter a number for age.")
-
+        
+        class_list = school.classes_list
+        # Display existed classes name, but user can add other class name too
+        print("-" * 70)
+        print(f"{"Classes Name in School":^70}")
+        print("-" * 70)
+        for class_name in class_list:
+            print(class_name)
+        print("-" * 70)
         student_class = input("Enter class name: ").strip()
         while not all(char.isalpha() or char.isspace() for char in student_class):
             print("❌ Invalid input! Class name can only contain letters.")
@@ -260,7 +277,7 @@ def add_student():
 def modify_student():
     """Modify an existing student's details"""
     try:
-        students = FileManager.load_file("DATA/student-scores.csv")
+        school = School(FileManager.load_file(DATA_BASE_PATH))
         while True:
             student_id = input("Enter the student ID to modify: ")     # Let user to enter the student ID
             if student_id.isdigit():
@@ -268,7 +285,7 @@ def modify_student():
                 break
             print("❌ Invalid input. Please enter a numeric ID.")
 
-        for student in students:
+        for student in school.students:
             if student.student_id == student_id:
                 new_first_name = input(f"Enter new First Name ({student.first_name}): ").strip()
                 while new_first_name and not new_first_name.isalpha():
@@ -288,13 +305,21 @@ def modify_student():
                     new_gender = input(f"Enter new Gender ({student.gender}): ").strip().lower()
                 student.gender = new_gender or student.gender
 
+                class_list = school.classes_list
+                # Display existed classes name, but user can add other class name too
+                print("-" * 70)
+                print(f"{"Classes Name in School":^70}")
+                print("-" * 70)
+                for class_name in class_list:
+                    print(class_name)
+                print("-" * 70)
                 student_class = input(f"Enter new Class ({student.student_class}): ").strip()
                 while not all(char.isalpha() or char.isspace() for char in student_class):
                     print("❌ Invalid input! Class name can only contain letters and spaces.")
                     student_class = input("Enter class name: ").strip()
                 student.student_class = student_class or student.student_class
 
-                FileManager.save_file(DATA_BASE_PATH, students)
+                FileManager.save_file(DATA_BASE_PATH, school.students)
                 print("✅ Student details updated successfully!")
                 return
         print("🔍 Student not found!")
@@ -328,8 +353,6 @@ def count_dropout_students():
     """Count the number of dropout students"""
     try:
         school = School(FileManager.load_file(DATA_BASE_PATH))
-    except ValueError:
-        print(f"⚠️ Error: {ValueError}")
     except Exception as e:
         print(f"⚠️ Error: {e}")
     
@@ -345,7 +368,16 @@ def count_dropout_students():
         
         option = input("Enter your choice: ")
         if option.strip() == "1":
+            class_list = school.classes_list
+            # Display existed classes name, but user can add other class name too
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             class_to_show = input("Enter the class name: ")
+            
             try:
                 classroom = Classroom(class_to_show, Analyzer.find_students_in_class((FileManager.load_file(DATA_BASE_PATH)), class_to_show))
             except ValueError:
@@ -436,11 +468,18 @@ def find_grade_of_student():
     return 
 def find_average_score_of_students_in_class():
     """Find and display the average score of students in a specific class"""
+    school = School(FileManager.load_file(DATA_BASE_PATH))
+    class_list = school.classes_list
+    # Display existed classes name, but user can add other class name too
+    print("-" * 70)
+    print(f"{"Classes Name in School":^70}")
+    print("-" * 70)
+    for class_name in class_list:
+        print(class_name)
+    print("-" * 70)
     student_class_input = input("Enter the class name: ")   # Let user to enter the class name
     try:
-        classroom = Classroom(student_class_input, Analyzer.find_students_in_class((FileManager.load_file(DATA_BASE_PATH)), student_class_input))
-    except ValueError:
-        print(f"⚠️ Error: {ValueError}")
+        classroom = Classroom(student_class_input, Analyzer.find_students_in_class(school.students, student_class_input))
     except Exception as e:
         print(f"⚠️ Error: {e}")
         
@@ -453,8 +492,6 @@ def find_average_score_of_students_in_school():
     """Find and display the average score of all students in the school"""
     try:
         school = School(FileManager.load_file(DATA_BASE_PATH))
-    except ValueError:
-        print(f"⚠️ Error: {ValueError}")
     except Exception as e:
         print(f"⚠️ Error: {e}")
     
@@ -467,8 +504,6 @@ def find_high_and_low_performers():
     """Identify and display high and low-performing students"""    
     try:
         school = School(FileManager.load_file(DATA_BASE_PATH))
-    except ValueError:
-        print(f"⚠️ Error: {ValueError}")
     except Exception as e:
         print(f"⚠️ Error: {e}")
     
@@ -485,11 +520,18 @@ def find_high_and_low_performers():
             
         if option.strip() == "1":
             
-            valid_classses = {student.student_class for student in school.students}
+            class_list = school.classes_list
+            # Display existed classes name
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             
             while True:
                 class_to_show = input("Enter the class name: ")     # Ask the user to enter the class name
-                if class_to_show in valid_classses:
+                if class_to_show in class_list:
                     break
                 print("❌ Invalid input. Please enter a valid class name.")
                 continueing = input("Would you like to try again?(y/*): ")
@@ -567,8 +609,6 @@ def find_below_avg_student():
     """List all students that scored below average score among all students (class or school)"""
     try:
         school = School(FileManager.load_file(DATA_BASE_PATH))
-    except ValueError:
-        print(f"⚠️ Error: {ValueError}")
     except Exception as e:
         print(f"⚠️ Error: {e}")
     
@@ -585,11 +625,18 @@ def find_below_avg_student():
             
         if option.strip() == "1":
             
-            valid_classses = {student.student_class for student in school.students}
+            class_list = school.classes_list
+            # Display existed classes name
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             
             while True:
                 class_to_show = input("Enter the class name: ")     # Ask the user to enter the class name
-                if class_to_show in valid_classses:
+                if class_to_show in class_list:
                     break
                 print("❌ Invalid input. Please enter a valid class name.")
                 continueing = input("Would you like to try again?(y/*): ")
@@ -642,8 +689,6 @@ def summary_report():
     """Print Summary Report of Student/Class/School"""
     try:
         school = School(FileManager.load_file(DATA_BASE_PATH))
-    except ValueError:
-        print(f"⚠️ Error: {ValueError}")
     except Exception as e:
         print(f"⚠️ Error: {e}")
     
@@ -678,11 +723,18 @@ def summary_report():
             student.show_info()
             break
         elif option.strip() == "2":
-            valid_classses = {student.student_class for student in school.students}
+            class_list = school.classes_list
+            # Display existed classes name
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             
             while True:
                 class_to_show = input("Enter the class name: ")     # Ask the user to enter the class name
-                if class_to_show in valid_classses:
+                if class_to_show in class_list:
                     break
                 print("❌ Invalid input. Please enter a valid class name.")
                 continueing = input("Would you like to try again?(y/*): ")
@@ -712,7 +764,13 @@ def summary_report():
 
 def show_whisker_plot_scores():
     """Show a whisker plot (boxplot) of student scores in each class or a class"""
+    try:
+        school = School(FileManager.load_file(DATA_BASE_PATH))
+    except Exception as e:
+        print(f"⚠️ Error: {e}")
+        
     while True:
+    
         print()
         print("-" * 70)
         print("Show Box and Whisker Plot of Scores")
@@ -723,9 +781,17 @@ def show_whisker_plot_scores():
         
         option = input("Enter your choice: ")
         if option.strip() == "1":
+            class_list = school.classes_list
+            # Display existed classes name, but user can add other class name too
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             class_to_show = input("Enter the class name: ")
             try:
-                classroom = Classroom(class_to_show, Analyzer.find_students_in_class((FileManager.load_file(DATA_BASE_PATH)), class_to_show))
+                classroom = Classroom(class_to_show, Analyzer.find_students_in_class(school.students, class_to_show))
             except ValueError:
                 print(f"⚠️ Error: {ValueError}")
             except Exception as e:
@@ -734,12 +800,6 @@ def show_whisker_plot_scores():
             Visualizer.show_whisker_plot_avg_scores(classroom.students)
             break
         elif option.strip() == "2":
-            try:
-                school = School(FileManager.load_file(DATA_BASE_PATH))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
-            except Exception as e:
-                print(f"⚠️ Error: {e}")
             print("Plotting...📊")
             Visualizer.show_whisker_plot_avg_scores(school.students)
             break
@@ -750,6 +810,11 @@ def show_whisker_plot_scores():
                 return
 def show_pie_chart_gender():
     """Show a pie chart of the gender distribution in the school/class"""
+    try:
+        school = School(FileManager.load_file(DATA_BASE_PATH))
+    except Exception as e:
+        print(f"⚠️ Error: {e}")
+        
     while True:
         print()
         print("-" * 70)
@@ -761,6 +826,15 @@ def show_pie_chart_gender():
         
         option = input("Enter your choice: ")
         if option.strip() == "1":
+            class_list = school.classes_list
+            # Display existed classes name, but user can add other class name too
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
+            
             class_to_show = input("Enter the class name: ")
             try:
                 classroom = Classroom(class_to_show, Analyzer.find_students_in_class((FileManager.load_file(DATA_BASE_PATH)), class_to_show))
@@ -772,12 +846,6 @@ def show_pie_chart_gender():
             Visualizer.show_pie_chart_gender(classroom.students)
             break
         elif option.strip() == "2":
-            try:
-                school = School(FileManager.load_file(DATA_BASE_PATH))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
-            except Exception as e:
-                print(f"⚠️ Error: {e}")
             print("Plotting...📊")
             Visualizer.show_pie_chart_gender(school.students)
             break
@@ -788,6 +856,11 @@ def show_pie_chart_gender():
                 return
 def show_student_count():
     """Show number of student across class or school"""
+    try:
+        school = School(FileManager.load_file(DATA_BASE_PATH))
+    except Exception as e:
+        print(f"⚠️ Error: {e}")
+        
     while True:
         print()
         print("-" * 70)
@@ -799,23 +872,23 @@ def show_student_count():
         
         option = input("Enter your choice: ")
         if option.strip() == "1":
+            class_list = school.classes_list
+            # Display existed classes name, but user can add other class name too
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             class_to_show = input("Enter the class name: ")
             try:
                 classroom = Classroom(class_to_show, Analyzer.find_students_in_class(FileManager.load_file(DATA_BASE_PATH), class_to_show))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
             except Exception as e:
                 print(f"⚠️ Error: {e}")
             print("Plotting...📊")
             Visualizer.show_number_students(classroom.students)
             break
         elif option.strip() == "2":
-            try:
-                school = School(FileManager.load_file(DATA_BASE_PATH))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
-            except Exception as e:
-                print(f"⚠️ Error: {e}")
             print("Plotting...📊")
             Visualizer.show_number_students(school.students)
             break
@@ -826,6 +899,11 @@ def show_student_count():
                 return
 def show_scatter_plot_age():
     """Show a scatter plot of student ages in the school/class"""
+    try:
+        school = School(FileManager.load_file(DATA_BASE_PATH))
+    except Exception as e:
+        print(f"⚠️ Error: {e}")
+        
     while True:
         print()
         print("-" * 70)
@@ -837,23 +915,23 @@ def show_scatter_plot_age():
         
         option = input("Enter your choice: ")
         if option.strip() == "1":
+            class_list = school.classes_list
+            # Display existed classes name, but user can add other class name too
+            print("-" * 70)
+            print(f"{"Classes Name in School":^70}")
+            print("-" * 70)
+            for class_name in class_list:
+                print(class_name)
+            print("-" * 70)
             class_to_show = input("Enter the class name: ")
             try:
                 classroom = Classroom(class_to_show, Analyzer.find_students_in_class(FileManager.load_file(DATA_BASE_PATH), class_to_show))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
             except Exception as e:
                 print(f"⚠️ Error: {e}")
             print("Plotting...📊")
             Visualizer.show_scatter_plot_age(classroom.students)
             break
         elif option.strip() == "2":
-            try:
-                school = School(FileManager.load_file(DATA_BASE_PATH))
-            except ValueError:
-                print(f"⚠️ Error: {ValueError}")
-            except Exception as e:
-                print(f"⚠️ Error: {e}")
             print("Plotting...📊")
             Visualizer.show_scatter_plot_age(school.students)
             break
