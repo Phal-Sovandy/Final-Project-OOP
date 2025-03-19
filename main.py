@@ -321,6 +321,10 @@ def modify_student():
 
                 FileManager.save_file(DATA_BASE_PATH, school.students)
                 print("✅ Student details updated successfully!")
+                print("-" * 112)
+                print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
+                print("-" * 112)
+                print(f"{student.student_id:04} | {student.first_name:12} | {student.last_name:12} | {student.gender:7} | {student.is_dropout:7} | {student.absences:8} | {student.age:3} | {student.student_class:21} | {student.get_average_score():10.2f}")  
                 return
         print("🔍 Student not found!")
         return

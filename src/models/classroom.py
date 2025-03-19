@@ -35,7 +35,7 @@ class Classroom(GroupStudent):
     def get_median(self):
         """Get median average score"""
         self.students.sort(key=lambda student: student.get_average_score())
-        num_student = self.count_students()
+        num_student = self.count_students
         if num_student == 0:
             return 0.0
         if num_student % 2 == 0: # Even number of students

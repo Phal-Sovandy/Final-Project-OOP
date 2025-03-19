@@ -6,7 +6,7 @@ from .student import Student
 class School(GroupStudent):
     """Represents a school containing all students (All data in file)"""
     def __init__(self, students=None):  
-        if students is None:
+        if students is None and not isinstance(students, list):
             students = []   # If no students are provided, initialize as an empty list
         self.__students = students     # store the list of students as a private attribute
 
@@ -38,7 +38,7 @@ class School(GroupStudent):
     def get_median(self):
         """Get median average score"""
         self.students.sort(key=lambda student: student.get_average_score())
-        num_student = self.count_students()
+        num_student = self.count_students
         if num_student == 0:
             return 0.0
         if num_student % 2 == 0: # Even number of students
