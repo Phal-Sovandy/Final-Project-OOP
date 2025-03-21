@@ -76,7 +76,7 @@ cd Final-Project-OOP
   ```sh
   pip install matplotlib
   ```
-- Macs
+- macOS/Linux
   ```sh
   pip3 install matplotlib
   ```
@@ -87,7 +87,7 @@ cd Final-Project-OOP
   ```sh
   python Final-Project-OOP/main.py
   ```
-- Execute the following command (Macs):
+- Execute the following command (macOS/Linux):
   ```sh
   python3 Final-Project-OOP/main.py
   ```
