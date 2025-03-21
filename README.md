@@ -1,6 +1,6 @@
 # Student Grade Analyzer
 
-Analyze student grade performance and information.
+Student Grade Analyzer System is designed to simplify the evaluation of student grades across multiple subjects. It collects and analyzes grade data, producing important statistics including distributions, averages, and trends. To help teachers better understand student performance and identify areas for development, the system will also generate visual representations of this data. This will improve learning results overall.
 
 ## Table of Contents
 
