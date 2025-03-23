@@ -32,12 +32,10 @@ class Visualizer:
         # VISUALIZATION
         plt.figure(figsize=(12, 8))                                     # Window size
         plt.boxplot(average_scores, vert=True, patch_artist=True)       # Plot Box plots
-        plt.xticks(range(1, len(class_labels) + 1), class_labels)       # Point position in X-axis
-        plt.xticks(fontsize=8)                                          # X-axis points font size
-        plt.title("Box and Whisker Plot of Average Scores by Class")    # Title of the plot
-        plt.xlabel("Class")                                             # Label of X-axis
-        plt.ylabel("Average Score")                                     # Label of Y-axis
-        plt.tight_layout()                                              # Save space, there are too many label on x axis
+        plt.xticks(range(1, len(class_labels) + 1), class_labels, rotation=45)       # Point position in X-axis
+        plt.title("Box and Whisker Plot of Average Scores by Class", fontsize=16, fontweight="bold")    # Title of the plot
+        plt.xlabel("Class", fontweight="bold")                                             # Label of X-axis
+        plt.ylabel("Average Score", fontweight="bold")                                     # Label of Y-axis
         plt.show()                                                      # Plotting graph
     @staticmethod
     def show_pie_chart_gender(students: list[Student]):
@@ -171,4 +169,5 @@ class Visualizer:
         plt.xticks([x + (width * len(subjects) / 2 - width / 2) for x in x_positions], classes, rotation=45)     # Adjusting points on X-axis
         plt.yticks(range(0, 101, 5))
         plt.grid(True)
+        plt.legend(subjects, title="Subjects", loc= "upper right")   # Add legends
         plt.show()  # Plotting chart
