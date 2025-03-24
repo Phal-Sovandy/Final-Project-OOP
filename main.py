@@ -1,5 +1,6 @@
 from src.models import *
 from src.utils import *
+import math
 
 DATA_BASE_PATH = "data/student-scores.csv"
 
@@ -553,8 +554,9 @@ def find_high_and_low_performers():
                 student_to_show = input("Enter the number of students to show: ")  # Ask the user to enter the number of students to show
                 if student_to_show.isdigit():
                     student_to_show = int(student_to_show)
-                    break
-                print("❌ Invalid input. Please enter a valid number.")
+                    if student_to_show <= math.floor(specific_class.count_students / 2):
+                        break
+                print(f"❌ Invalid input. Please enter a valid number. Enter number below {math.floor(specific_class.count_students / 2)}")
                 
             top_perfomers_in_class = Analyzer.find_top_performers(specific_class.students, student_to_show)   # Find top performers in the class
             print("-" * 112)
@@ -581,8 +583,9 @@ def find_high_and_low_performers():
                 student_to_show = input("Enter the number of students to show: ")   # Ask the user to enter the number of students to show
                 if student_to_show.isdigit():
                     student_to_show = int(student_to_show)
-                    break
-                print("❌ Invalid input. Please enter a valid number.")
+                    if student_to_show <= math.floor(len(school.students) / 2):
+                        break
+                print(f"❌ Invalid input. Please enter a valid number. Enter number below {math.floor(len(school.students) / 2)}")
                 
             top_perfomers_in_school = Analyzer.find_top_performers(school.students, student_to_show)  # Find top performers in the school
             print("-" * 112)
