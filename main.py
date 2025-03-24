@@ -262,7 +262,7 @@ def add_student():
                     print(f"❌ Invalid input. Please enter a number for {score_name.replace('_', ' ').capitalize()}.")
 
         new_student = Student(student_id, first_name.capitalize(), last_name.capitalize(), gender, is_dropout, absences, age, student_class.capitalize(), **scores)
-        FileManager.append_to_file("DATA/student-scores.csv", new_student)
+        FileManager.append_to_file(DATA_BASE_PATH, new_student)
         print("✅ Student added successfully!")
         print("-" * 112)
         print(" ID  | First Name   | Last Name    | Gender  | Dropout | Absences | Age | Class                 | Average Score")
