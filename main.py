@@ -554,7 +554,7 @@ def find_high_and_low_performers():
                 student_to_show = input("Enter the number of students to show: ")  # Ask the user to enter the number of students to show
                 if student_to_show.isdigit():
                     student_to_show = int(student_to_show)
-                    if student_to_show <= math.floor(specific_class.count_students / 2):
+                    if student_to_show <= math.floor(specific_class.count_students / 2) and student_to_show > 0:
                         break
                 print(f"❌ Invalid input. Please enter a valid number. Enter number below {math.floor(specific_class.count_students / 2)}")
                 
@@ -583,7 +583,7 @@ def find_high_and_low_performers():
                 student_to_show = input("Enter the number of students to show: ")   # Ask the user to enter the number of students to show
                 if student_to_show.isdigit():
                     student_to_show = int(student_to_show)
-                    if student_to_show <= math.floor(len(school.students) / 2):
+                    if student_to_show <= math.floor(len(school.students) / 2) and student_to_show > 0:
                         break
                 print(f"❌ Invalid input. Please enter a valid number. Enter number below {math.floor(len(school.students) / 2)}")
                 
